@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.2092
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SisRoquinProduce", "SisRoquinProduce\SisRoquinProduce.vbproj", "{8C1689A7-9982-49DE-B57D-AB137F16720A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C1689A7-9982-49DE-B57D-AB137F16720A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C1689A7-9982-49DE-B57D-AB137F16720A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C1689A7-9982-49DE-B57D-AB137F16720A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C1689A7-9982-49DE-B57D-AB137F16720A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C983528-B4BD-4AB5-97A9-D972F5423AA5}
+	EndGlobalSection
+EndGlobal
