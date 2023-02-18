@@ -1,5 +1,6 @@
 ﻿Public Class FPersonal
-    Private Sub PersonalBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) 
+
+    Private Sub PersonalBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.PersonalBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.RoquinDBDataSet)
@@ -14,7 +15,8 @@
         Try 'Es una funcion que nos ayuda a controlar que no caiga el sistema'
             Me.PersonalTableAdapter.Fill(Me.RoquinDBDataSet.Personal) 'Actualiza el los datos de la tabla'
         Catch ex As Exception
-            MsgBox("Fallo la conexion", vbCritical)
+            GlobalVariables.accionForm = "falloConexion"
+            FAlertInfo.Show()
         End Try
     End Sub
 
@@ -54,10 +56,12 @@
                 TableAdapterManager.UpdateAll(Me.RoquinDBDataSet) 'Actualiza los datos ingresados'
                 Actualiza()
             Catch ex As Exception
-                MsgBox("Fallo al tratar de Guardar", vbCritical)
+                GlobalVariables.accionForm = "falloGuardar"
+                FAlertInfo.Show()
             End Try
         Else
-            MsgBox("Aún hay campos vacíos!", vbCritical)
+            GlobalVariables.accionForm = "falloVacio"
+            FAlertInfo.Show()
         End If
     End Sub
 

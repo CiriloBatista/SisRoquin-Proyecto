@@ -16,3 +16,6 @@ C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FProductores.res
 C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FUsuarios.resources
 C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FProduccion.resources
 C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FSectores.resources
+C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FAlertInfo.resources
+C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FAlertQuestion.resources
+C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FAlertErr.resources

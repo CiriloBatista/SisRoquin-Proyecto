@@ -8,12 +8,8 @@
     'End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
-        Dim OpSalir
-        OpSalir = MsgBox("Al salir del menú también se cerrará la sesión del usuario, ¿Desea salir?", vbQuestion + vbYesNo + vbDefaultButton2, "A T E N C I Ó N !")
-        If OpSalir = vbYes Then
-            'FLogin.Visible = True  ' Abrirá el formulario de login mientras se cierra el menu '
-            Me.Close()
-        End If
+        GlobalVariables.accionForm = "salirMenu"
+        FAlertQuestion.Show()
     End Sub
 
     Private Sub PersonalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PersonalToolStripMenuItem.Click
