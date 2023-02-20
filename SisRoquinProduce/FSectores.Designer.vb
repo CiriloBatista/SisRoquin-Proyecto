@@ -252,9 +252,11 @@ Partial Class FSectores
         Me.IdSectorTextBox.BackColor = System.Drawing.Color.White
         Me.IdSectorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.IdSectorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SectoresBindingSource, "IdSector", True))
+        Me.IdSectorTextBox.Enabled = False
         Me.IdSectorTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.IdSectorTextBox.Location = New System.Drawing.Point(234, 265)
         Me.IdSectorTextBox.Name = "IdSectorTextBox"
+        Me.IdSectorTextBox.ReadOnly = True
         Me.IdSectorTextBox.Size = New System.Drawing.Size(100, 34)
         Me.IdSectorTextBox.TabIndex = 17
         '
@@ -265,6 +267,7 @@ Partial Class FSectores
         Me.NumSectorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SectoresBindingSource, "NumSector", True))
         Me.NumSectorTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.NumSectorTextBox.Location = New System.Drawing.Point(234, 315)
+        Me.NumSectorTextBox.MaxLength = 2
         Me.NumSectorTextBox.Name = "NumSectorTextBox"
         Me.NumSectorTextBox.Size = New System.Drawing.Size(100, 34)
         Me.NumSectorTextBox.TabIndex = 19
@@ -276,6 +279,7 @@ Partial Class FSectores
         Me.NombreSecTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SectoresBindingSource, "NombreSec", True))
         Me.NombreSecTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.NombreSecTextBox.Location = New System.Drawing.Point(234, 365)
+        Me.NombreSecTextBox.MaxLength = 255
         Me.NombreSecTextBox.Name = "NombreSecTextBox"
         Me.NombreSecTextBox.Size = New System.Drawing.Size(150, 34)
         Me.NombreSecTextBox.TabIndex = 21

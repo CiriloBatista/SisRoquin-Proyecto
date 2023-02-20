@@ -28,10 +28,10 @@ Partial Class FProductores
         Dim NombreLabel As System.Windows.Forms.Label
         Dim TelefonoLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FProductores))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LabelPersonal = New System.Windows.Forms.Label()
         Me.ProductoresBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
@@ -238,9 +238,11 @@ Partial Class FProductores
         '
         Me.IdProductorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.IdProductorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductoresBindingSource, "IdProductor", True))
+        Me.IdProductorTextBox.Enabled = False
         Me.IdProductorTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.IdProductorTextBox.Location = New System.Drawing.Point(196, 253)
+        Me.IdProductorTextBox.Location = New System.Drawing.Point(198, 253)
         Me.IdProductorTextBox.Name = "IdProductorTextBox"
+        Me.IdProductorTextBox.ReadOnly = True
         Me.IdProductorTextBox.Size = New System.Drawing.Size(100, 34)
         Me.IdProductorTextBox.TabIndex = 17
         '
@@ -249,7 +251,8 @@ Partial Class FProductores
         Me.NumProductorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NumProductorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductoresBindingSource, "NumProductor", True))
         Me.NumProductorTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.NumProductorTextBox.Location = New System.Drawing.Point(196, 303)
+        Me.NumProductorTextBox.Location = New System.Drawing.Point(198, 303)
+        Me.NumProductorTextBox.MaxLength = 3
         Me.NumProductorTextBox.Name = "NumProductorTextBox"
         Me.NumProductorTextBox.Size = New System.Drawing.Size(100, 34)
         Me.NumProductorTextBox.TabIndex = 19
@@ -259,7 +262,8 @@ Partial Class FProductores
         Me.NombreTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductoresBindingSource, "Nombre", True))
         Me.NombreTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.NombreTextBox.Location = New System.Drawing.Point(196, 353)
+        Me.NombreTextBox.Location = New System.Drawing.Point(198, 353)
+        Me.NombreTextBox.MaxLength = 255
         Me.NombreTextBox.Name = "NombreTextBox"
         Me.NombreTextBox.Size = New System.Drawing.Size(195, 34)
         Me.NombreTextBox.TabIndex = 21
@@ -269,7 +273,8 @@ Partial Class FProductores
         Me.TelefonoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TelefonoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductoresBindingSource, "Telefono", True))
         Me.TelefonoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.TelefonoTextBox.Location = New System.Drawing.Point(196, 403)
+        Me.TelefonoTextBox.Location = New System.Drawing.Point(198, 403)
+        Me.TelefonoTextBox.MaxLength = 10
         Me.TelefonoTextBox.Name = "TelefonoTextBox"
         Me.TelefonoTextBox.Size = New System.Drawing.Size(138, 34)
         Me.TelefonoTextBox.TabIndex = 23
@@ -278,8 +283,8 @@ Partial Class FProductores
         '
         Me.ProductoresDataGridView.AllowUserToAddRows = False
         Me.ProductoresDataGridView.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.ProductoresDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.ProductoresDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle21
         Me.ProductoresDataGridView.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ProductoresDataGridView.AutoGenerateColumns = False
@@ -287,37 +292,37 @@ Partial Class FProductores
         Me.ProductoresDataGridView.BackgroundColor = System.Drawing.Color.LightGreen
         Me.ProductoresDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.ProductoresDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProductoresDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle22.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.SeaGreen
+        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProductoresDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
         Me.ProductoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ProductoresDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
         Me.ProductoresDataGridView.DataSource = Me.ProductoresBindingSource
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ProductoresDataGridView.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ProductoresDataGridView.DefaultCellStyle = DataGridViewCellStyle23
         Me.ProductoresDataGridView.GridColor = System.Drawing.Color.Black
         Me.ProductoresDataGridView.Location = New System.Drawing.Point(410, 208)
         Me.ProductoresDataGridView.Name = "ProductoresDataGridView"
         Me.ProductoresDataGridView.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProductoresDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProductoresDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle24
         Me.ProductoresDataGridView.RowHeadersVisible = False
         Me.ProductoresDataGridView.RowTemplate.Height = 24
         Me.ProductoresDataGridView.Size = New System.Drawing.Size(560, 314)

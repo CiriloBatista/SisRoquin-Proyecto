@@ -9,6 +9,7 @@
     Private Sub FUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Usuarios' Puede moverla o quitarla según sea necesario.
         Actualiza()
+        DesBlock()
     End Sub
 
     Private Sub Actualiza()
@@ -23,17 +24,23 @@
         UsuariosDataGridView.Enabled = False
         BNuevo.Visible = False
         BEliminar.Visible = False
-        IdUserTextBox.Enabled = True
+        UsuarioTextBox.Enabled = True
+        NombreUserTextBox.Enabled = True
+        ContrasenaTextBox.Enabled = True
+        NivelComboBox.Enabled = True
     End Sub
     Private Sub DesBlock()
         UsuariosDataGridView.Enabled = True
         BNuevo.Visible = True
         BEliminar.Visible = True
-        IdUserTextBox.Enabled = False
+        UsuarioTextBox.Enabled = False
+        NombreUserTextBox.Enabled = False
+        ContrasenaTextBox.Enabled = False
+        NivelComboBox.Enabled = False
     End Sub
 
     Function Completo() As Boolean 'Valida que no esté vacío'
-        If IdUserTextBox.Text = Nothing Then
+        If UsuarioTextBox.Text = Nothing Then
             Return False
         End If
         Return True
@@ -41,11 +48,13 @@
 
     Private Sub BNuevo_Click(sender As Object, e As EventArgs) Handles BNuevo.Click
         UsuariosBindingSource.AddNew() 'Se selecciona la tabla a la que haremos referencia y añadimos una nueva fila'
-        IdUserTextBox.Focus()     'Apuntaremos a la caja de texto de ID_Personal'
+        Block()
+        UsuarioTextBox.Focus()     'Apuntaremos a la caja de texto de ID_Personal'
     End Sub
 
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
         UsuariosBindingSource.CancelEdit() 'Se selecciona la tabla a la que haremos referencia y ponemos para cancelar'
+        DesBlock()
     End Sub
 
     Private Sub BGuardar_Click(sender As Object, e As EventArgs) Handles BGuardar.Click
@@ -54,6 +63,7 @@
                 UsuariosBindingSource.EndEdit()  'Termina de guardar los datos que se ingresaron en la tabla'
                 TableAdapterManager.UpdateAll(Me.RoquinDBDataSet) 'Actualiza los datos ingresados'
                 Actualiza()
+                DesBlock()
             Catch ex As Exception
                 MsgBox("Fallo al tratar de Guardar", vbCritical)
             End Try
@@ -75,4 +85,18 @@
             End Try
         End If
     End Sub
+
+    Private Sub UsuarioTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles UsuarioTextBox.KeyPress
+        e.Handled = Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
+    End Sub
+
+    Private Sub NombreUserTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles NombreUserTextBox.KeyPress
+        e.Handled = Not Char.IsLetter(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
+    End Sub
+
+
+    'Private Sub ContrasenaTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ContrasenaTextBox.KeyPress
+    '   e.Handled = Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
+    'End Sub
+
 End Class

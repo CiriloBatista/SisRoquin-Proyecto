@@ -19,3 +19,4 @@ C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FSectores.resour
 C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FAlertInfo.resources
 C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FAlertQuestion.resources
 C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FAlertErr.resources
+C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FError505.resources

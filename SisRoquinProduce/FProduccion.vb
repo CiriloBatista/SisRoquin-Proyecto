@@ -7,6 +7,13 @@
     End Sub
 
     Private Sub FProduccion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        NombreComboBox.Focus()
+        'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Sectores' Puede moverla o quitarla según sea necesario.
+        Me.SectoresTableAdapter.Fill(Me.RoquinDBDataSet.Sectores)
+        'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.ConsultDetallePersonal' Puede moverla o quitarla según sea necesario.
+        Me.ConsultDetallePersonalTableAdapter.Fill(Me.RoquinDBDataSet.ConsultDetallePersonal)
+        'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Productores' Puede moverla o quitarla según sea necesario.
+        Me.ProductoresTableAdapter.Fill(Me.RoquinDBDataSet.Productores)
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Produccion' Puede moverla o quitarla según sea necesario.
         Actualiza()
 
@@ -24,17 +31,17 @@
         ProduccionDataGridView.Enabled = False
         BNuevo.Visible = False
         BEliminar.Visible = False
-        IdProdTextBox.Enabled = True
+        FolioTextBox.Enabled = True
     End Sub
     Private Sub DesBlock()
         ProduccionDataGridView.Enabled = True
         BNuevo.Visible = True
         BEliminar.Visible = True
-        IdProdTextBox.Enabled = False
+        FolioTextBox.Enabled = False
     End Sub
 
     Function Completo() As Boolean 'Valida que no esté vacío'
-        If IdProdTextBox.Text = Nothing Then
+        If FolioTextBox.Text = Nothing Then
             Return False
         End If
         Return True
@@ -42,7 +49,7 @@
 
     Private Sub BNuevo_Click(sender As Object, e As EventArgs) Handles BNuevo.Click
         ProduccionBindingSource.AddNew() 'Se selecciona la tabla a la que haremos referencia y añadimos una nueva fila'
-        IdProdTextBox.Focus()     'Apuntaremos a la caja de texto de ID_Personal'
+        FolioTextBox.Focus()     'Apuntaremos a la caja de texto de ID_Personal'
     End Sub
 
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
@@ -76,4 +83,13 @@
             End Try
         End If
     End Sub
+
+    Private Sub NombreComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles NombreComboBox.SelectedIndexChanged
+        NumProdTextBox.Text = NombreComboBox.SelectedValue 'Indica que se haga el cambio al mismo tiempo en el otro textbox
+    End Sub
+
+    Private Sub NombreSecComboBox_SelectedIndexChanged(sender As Object, e As EventArgs)
+        NumSectorTextBox.Text = NombreSecComboBox.SelectedValue 'Indica que se haga el cambio al mismo tiempo en el otro textbox
+    End Sub
+
 End Class

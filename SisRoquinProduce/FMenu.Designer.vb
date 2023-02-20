@@ -60,8 +60,10 @@ Partial Class FMenu
         'CatalogoToolStripMenuItem
         '
         Me.CatalogoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PersonalToolStripMenuItem, Me.ProductoresToolStripMenuItem, Me.ProduccionToolStripMenuItem, Me.SectoresToolStripMenuItem, Me.UsuariosToolStripMenuItem})
+        Me.CatalogoToolStripMenuItem.Image = CType(resources.GetObject("CatalogoToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CatalogoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CatalogoToolStripMenuItem.Name = "CatalogoToolStripMenuItem"
-        Me.CatalogoToolStripMenuItem.Size = New System.Drawing.Size(154, 54)
+        Me.CatalogoToolStripMenuItem.Size = New System.Drawing.Size(204, 54)
         Me.CatalogoToolStripMenuItem.Text = "Catálogo"
         '
         'PersonalToolStripMenuItem
@@ -97,8 +99,10 @@ Partial Class FMenu
         'OperacionToolStripMenuItem
         '
         Me.OperacionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EntradasToolStripMenuItem, Me.SalidasToolStripMenuItem, Me.InventariosToolStripMenuItem})
+        Me.OperacionToolStripMenuItem.Image = CType(resources.GetObject("OperacionToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.OperacionToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.OperacionToolStripMenuItem.Name = "OperacionToolStripMenuItem"
-        Me.OperacionToolStripMenuItem.Size = New System.Drawing.Size(173, 54)
+        Me.OperacionToolStripMenuItem.Size = New System.Drawing.Size(223, 54)
         Me.OperacionToolStripMenuItem.Text = "Operación"
         '
         'EntradasToolStripMenuItem
@@ -122,8 +126,10 @@ Partial Class FMenu
         'UtiToolStripMenuItem
         '
         Me.UtiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExportarToolStripMenuItem, Me.CapturasToolStripMenuItem})
+        Me.UtiToolStripMenuItem.Image = CType(resources.GetObject("UtiToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.UtiToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.UtiToolStripMenuItem.Name = "UtiToolStripMenuItem"
-        Me.UtiToolStripMenuItem.Size = New System.Drawing.Size(144, 54)
+        Me.UtiToolStripMenuItem.Size = New System.Drawing.Size(194, 54)
         Me.UtiToolStripMenuItem.Text = "Utilerías"
         '
         'ExportarToolStripMenuItem
@@ -141,8 +147,10 @@ Partial Class FMenu
         'InformesToolStripMenuItem
         '
         Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.ProducciónToolStripMenuItem1})
+        Me.InformesToolStripMenuItem.Image = CType(resources.GetObject("InformesToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.InformesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(149, 54)
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(199, 54)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'ClientesToolStripMenuItem
@@ -181,11 +189,13 @@ Partial Class FMenu
         Me.ControlBox = False
         Me.Controls.Add(Me.MenuStrip1)
         Me.DoubleBuffered = True
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FMenu"
-        Me.Text = "Menú Principal"
+        Me.Text = "Roquin Produce"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()

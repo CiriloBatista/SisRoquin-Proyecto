@@ -94,6 +94,12 @@
     <Compile Include="FAlertQuestion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FError505.Designer.vb">
+      <DependentUpon>FError505.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FError505.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FMenu.Designer.vb">
       <DependentUpon>FMenu.vb</DependentUpon>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FAlertQuestion.resx">
       <DependentUpon>FAlertQuestion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FError505.resx">
+      <DependentUpon>FError505.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMenu.resx">
       <DependentUpon>FMenu.vb</DependentUpon>

@@ -9,7 +9,7 @@
     Private Sub FSectores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Sectores' Puede moverla o quitarla según sea necesario.
         Actualiza()
-
+        DesBlock()
     End Sub
 
     Private Sub Actualiza()
@@ -24,17 +24,19 @@
         SectoresDataGridView.Enabled = False
         BNuevo.Visible = False
         BEliminar.Visible = False
-        IdSectorTextBox.Enabled = True
+        NumSectorTextBox.Enabled = True
+        NombreSecTextBox.Enabled = True
     End Sub
     Private Sub DesBlock()
         SectoresDataGridView.Enabled = True
         BNuevo.Visible = True
         BEliminar.Visible = True
-        IdSectorTextBox.Enabled = False
+        NumSectorTextBox.Enabled = False
+        NombreSecTextBox.Enabled = False
     End Sub
 
     Function Completo() As Boolean 'Valida que no esté vacío'
-        If IdSectorTextBox.Text = Nothing Then
+        If NumSectorTextBox.Text = Nothing Then
             Return False
         End If
         Return True
@@ -42,11 +44,13 @@
 
     Private Sub BNuevo_Click(sender As Object, e As EventArgs) Handles BNuevo.Click
         SectoresBindingSource.AddNew() 'Se selecciona la tabla a la que haremos referencia y añadimos una nueva fila'
-        IdSectorTextBox.Focus()     'Apuntaremos a la caja de texto de ID_Personal'
+        Block()
+        NumSectorTextBox.Focus()     'Apuntaremos a la caja de texto de ID_Personal'
     End Sub
 
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
         SectoresBindingSource.CancelEdit() 'Se selecciona la tabla a la que haremos referencia y ponemos para cancelar'
+        DesBlock()
     End Sub
 
     Private Sub BGuardar_Click(sender As Object, e As EventArgs) Handles BGuardar.Click
@@ -55,6 +59,7 @@
                 SectoresBindingSource.EndEdit()  'Termina de guardar los datos que se ingresaron en la tabla'
                 TableAdapterManager.UpdateAll(Me.RoquinDBDataSet) 'Actualiza los datos ingresados'
                 Actualiza()
+                DesBlock()
             Catch ex As Exception
                 MsgBox("Fallo al tratar de Guardar", vbCritical)
             End Try
@@ -75,5 +80,13 @@
                 MsgBox("Fallo al tratar de Eliminar", vbCritical)
             End Try
         End If
+    End Sub
+
+    Private Sub NumSectorTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles NumSectorTextBox.KeyPress
+        e.Handled = Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
+    End Sub
+
+    Private Sub NombreSecTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles NombreSecTextBox.KeyPress
+        e.Handled = Not Char.IsLetter(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
     End Sub
 End Class

@@ -246,9 +246,11 @@ Partial Class FPersonal
         '
         Me.IdPersonalTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.IdPersonalTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "IdPersonal", True))
+        Me.IdPersonalTextBox.Enabled = False
         Me.IdPersonalTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.IdPersonalTextBox.Location = New System.Drawing.Point(227, 270)
         Me.IdPersonalTextBox.Name = "IdPersonalTextBox"
+        Me.IdPersonalTextBox.ReadOnly = True
         Me.IdPersonalTextBox.Size = New System.Drawing.Size(100, 34)
         Me.IdPersonalTextBox.TabIndex = 2
         '
@@ -258,6 +260,7 @@ Partial Class FPersonal
         Me.NumEmpleadoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "NumEmpleado", True))
         Me.NumEmpleadoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.NumEmpleadoTextBox.Location = New System.Drawing.Point(227, 320)
+        Me.NumEmpleadoTextBox.MaxLength = 20
         Me.NumEmpleadoTextBox.Name = "NumEmpleadoTextBox"
         Me.NumEmpleadoTextBox.Size = New System.Drawing.Size(100, 34)
         Me.NumEmpleadoTextBox.TabIndex = 4
@@ -268,6 +271,7 @@ Partial Class FPersonal
         Me.NombreEmpleadoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "NombreEmpleado", True))
         Me.NombreEmpleadoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.NombreEmpleadoTextBox.Location = New System.Drawing.Point(227, 370)
+        Me.NombreEmpleadoTextBox.MaxLength = 50
         Me.NombreEmpleadoTextBox.Name = "NombreEmpleadoTextBox"
         Me.NombreEmpleadoTextBox.Size = New System.Drawing.Size(150, 34)
         Me.NombreEmpleadoTextBox.TabIndex = 6
@@ -278,6 +282,7 @@ Partial Class FPersonal
         Me.ApellidosEmpTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "ApellidosEmp", True))
         Me.ApellidosEmpTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.ApellidosEmpTextBox.Location = New System.Drawing.Point(227, 420)
+        Me.ApellidosEmpTextBox.MaxLength = 100
         Me.ApellidosEmpTextBox.Name = "ApellidosEmpTextBox"
         Me.ApellidosEmpTextBox.Size = New System.Drawing.Size(150, 34)
         Me.ApellidosEmpTextBox.TabIndex = 8
@@ -288,6 +293,7 @@ Partial Class FPersonal
         Me.PuestoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "Puesto", True))
         Me.PuestoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.PuestoTextBox.Location = New System.Drawing.Point(227, 470)
+        Me.PuestoTextBox.MaxLength = 100
         Me.PuestoTextBox.Name = "PuestoTextBox"
         Me.PuestoTextBox.Size = New System.Drawing.Size(150, 34)
         Me.PuestoTextBox.TabIndex = 10

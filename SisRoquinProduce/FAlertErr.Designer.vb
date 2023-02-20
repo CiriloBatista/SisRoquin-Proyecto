@@ -28,7 +28,9 @@ Partial Class FAlertErr
         Me.BSi = New System.Windows.Forms.Button()
         Me.BNo = New System.Windows.Forms.Button()
         Me.LTitle = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -96,6 +98,16 @@ Partial Class FAlertErr
         Me.LTitle.Text = "texto"
         Me.LTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(-4, -15)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(409, 433)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 10
+        Me.PictureBox2.TabStop = False
+        '
         'FAlertErr
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -107,10 +119,12 @@ Partial Class FAlertErr
         Me.Controls.Add(Me.BSi)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.PictureBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FAlertErr"
         Me.Text = "FAlertError"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -121,4 +135,5 @@ Partial Class FAlertErr
     Friend WithEvents BSi As Button
     Friend WithEvents BNo As Button
     Friend WithEvents LTitle As Label
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

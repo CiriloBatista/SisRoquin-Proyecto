@@ -54,7 +54,6 @@ Partial Class FUsuarios
         Me.IdUserTextBox = New System.Windows.Forms.TextBox()
         Me.UsuarioTextBox = New System.Windows.Forms.TextBox()
         Me.NombreUserTextBox = New System.Windows.Forms.TextBox()
-        Me.NivelTextBox = New System.Windows.Forms.TextBox()
         Me.UsuariosDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -66,6 +65,7 @@ Partial Class FUsuarios
         Me.BCancelar = New System.Windows.Forms.Button()
         Me.BGuardar = New System.Windows.Forms.Button()
         Me.BNuevo = New System.Windows.Forms.Button()
+        Me.NivelComboBox = New System.Windows.Forms.ComboBox()
         IdUserLabel = New System.Windows.Forms.Label()
         UsuarioLabel = New System.Windows.Forms.Label()
         NombreUserLabel = New System.Windows.Forms.Label()
@@ -197,7 +197,7 @@ Partial Class FUsuarios
         Me.UsuariosBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.UsuariosBindingNavigator.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.UsuariosBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2})
-        Me.UsuariosBindingNavigator.Location = New System.Drawing.Point(0, 615)
+        Me.UsuariosBindingNavigator.Location = New System.Drawing.Point(0, 649)
         Me.UsuariosBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.UsuariosBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
         Me.UsuariosBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
@@ -280,6 +280,7 @@ Partial Class FUsuarios
         Me.IdUserTextBox.BackColor = System.Drawing.Color.White
         Me.IdUserTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.IdUserTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "IdUser", True))
+        Me.IdUserTextBox.Enabled = False
         Me.IdUserTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.IdUserTextBox.Location = New System.Drawing.Point(199, 255)
         Me.IdUserTextBox.Name = "IdUserTextBox"
@@ -308,17 +309,6 @@ Partial Class FUsuarios
         Me.NombreUserTextBox.Name = "NombreUserTextBox"
         Me.NombreUserTextBox.Size = New System.Drawing.Size(151, 34)
         Me.NombreUserTextBox.TabIndex = 20
-        '
-        'NivelTextBox
-        '
-        Me.NivelTextBox.BackColor = System.Drawing.Color.White
-        Me.NivelTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.NivelTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "Nivel", True))
-        Me.NivelTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.NivelTextBox.Location = New System.Drawing.Point(199, 455)
-        Me.NivelTextBox.Name = "NivelTextBox"
-        Me.NivelTextBox.Size = New System.Drawing.Size(151, 34)
-        Me.NivelTextBox.TabIndex = 24
         '
         'UsuariosDataGridView
         '
@@ -476,12 +466,24 @@ Partial Class FUsuarios
         Me.BNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BNuevo.UseVisualStyleBackColor = False
         '
+        'NivelComboBox
+        '
+        Me.NivelComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "Nivel", True))
+        Me.NivelComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.NivelComboBox.FormattingEnabled = True
+        Me.NivelComboBox.Items.AddRange(New Object() {"01", "02", "03", "04"})
+        Me.NivelComboBox.Location = New System.Drawing.Point(199, 455)
+        Me.NivelComboBox.Name = "NivelComboBox"
+        Me.NivelComboBox.Size = New System.Drawing.Size(121, 37)
+        Me.NivelComboBox.TabIndex = 30
+        '
         'FUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MintCream
-        Me.ClientSize = New System.Drawing.Size(1000, 642)
+        Me.ClientSize = New System.Drawing.Size(1000, 676)
+        Me.Controls.Add(Me.NivelComboBox)
         Me.Controls.Add(Me.BEliminar)
         Me.Controls.Add(Me.BCancelar)
         Me.Controls.Add(Me.BGuardar)
@@ -496,7 +498,6 @@ Partial Class FUsuarios
         Me.Controls.Add(NombreUserLabel)
         Me.Controls.Add(Me.NombreUserTextBox)
         Me.Controls.Add(NivelLabel)
-        Me.Controls.Add(Me.NivelTextBox)
         Me.Controls.Add(Me.UsuariosBindingNavigator)
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -536,7 +537,6 @@ Partial Class FUsuarios
     Friend WithEvents IdUserTextBox As TextBox
     Friend WithEvents UsuarioTextBox As TextBox
     Friend WithEvents NombreUserTextBox As TextBox
-    Friend WithEvents NivelTextBox As TextBox
     Friend WithEvents UsuariosDataGridView As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents ContrasenaTextBox As TextBox
@@ -549,4 +549,5 @@ Partial Class FUsuarios
     Friend WithEvents BCancelar As Button
     Friend WithEvents BGuardar As Button
     Friend WithEvents BNuevo As Button
+    Friend WithEvents NivelComboBox As ComboBox
 End Class
