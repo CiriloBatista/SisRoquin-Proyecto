@@ -60,6 +60,7 @@ Partial Class FSectores
         Me.BCancelar = New System.Windows.Forms.Button()
         Me.BGuardar = New System.Windows.Forms.Button()
         Me.BNuevo = New System.Windows.Forms.Button()
+        Me.BEditar = New System.Windows.Forms.Button()
         IdSectorLabel = New System.Windows.Forms.Label()
         NumSectorLabel = New System.Windows.Forms.Label()
         NombreSecLabel = New System.Windows.Forms.Label()
@@ -374,7 +375,7 @@ Partial Class FSectores
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BCancelar.Image = CType(resources.GetObject("BCancelar.Image"), System.Drawing.Image)
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelar.Location = New System.Drawing.Point(225, 435)
+        Me.BCancelar.Location = New System.Drawing.Point(155, 435)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BCancelar.Size = New System.Drawing.Size(150, 60)
@@ -412,12 +413,28 @@ Partial Class FSectores
         Me.BNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BNuevo.UseVisualStyleBackColor = False
         '
+        'BEditar
+        '
+        Me.BEditar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.BEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BEditar.Image = CType(resources.GetObject("BEditar.Image"), System.Drawing.Image)
+        Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BEditar.Location = New System.Drawing.Point(234, 435)
+        Me.BEditar.Name = "BEditar"
+        Me.BEditar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.BEditar.Size = New System.Drawing.Size(150, 60)
+        Me.BEditar.TabIndex = 26
+        Me.BEditar.Text = "Editar"
+        Me.BEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BEditar.UseVisualStyleBackColor = False
+        '
         'FSectores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MintCream
         Me.ClientSize = New System.Drawing.Size(1018, 603)
+        Me.Controls.Add(Me.BEditar)
         Me.Controls.Add(Me.BEliminar)
         Me.Controls.Add(Me.BCancelar)
         Me.Controls.Add(Me.BGuardar)
@@ -431,6 +448,7 @@ Partial Class FSectores
         Me.Controls.Add(Me.NombreSecTextBox)
         Me.Controls.Add(Me.SectoresBindingNavigator)
         Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FSectores"
         Me.Text = "Administración de Sectores"
@@ -476,4 +494,5 @@ Partial Class FSectores
     Friend WithEvents BCancelar As Button
     Friend WithEvents BGuardar As Button
     Friend WithEvents BNuevo As Button
+    Friend WithEvents BEditar As Button
 End Class

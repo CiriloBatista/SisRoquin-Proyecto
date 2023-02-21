@@ -48,7 +48,7 @@ Partial Class FAlertErr
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Comic Sans MS", 20.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(48, 174)
+        Me.Label2.Location = New System.Drawing.Point(38, 174)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(312, 48)
         Me.Label2.TabIndex = 3
@@ -89,7 +89,7 @@ Partial Class FAlertErr
         Me.LTitle.AutoSize = True
         Me.LTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
         Me.LTitle.ForeColor = System.Drawing.Color.White
-        Me.LTitle.Location = New System.Drawing.Point(51, 235)
+        Me.LTitle.Location = New System.Drawing.Point(36, 235)
         Me.LTitle.MaximumSize = New System.Drawing.Size(350, 100)
         Me.LTitle.MinimumSize = New System.Drawing.Size(300, 20)
         Me.LTitle.Name = "LTitle"
@@ -101,7 +101,7 @@ Partial Class FAlertErr
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(-4, -15)
+        Me.PictureBox2.Location = New System.Drawing.Point(-3, -13)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(409, 433)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -122,6 +122,7 @@ Partial Class FAlertErr
         Me.Controls.Add(Me.PictureBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FAlertErr"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FAlertError"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

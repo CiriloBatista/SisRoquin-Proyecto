@@ -12,18 +12,22 @@
         DesBlock()
     End Sub
 
-    Private Sub Actualiza()
+    Public Sub Actualiza()
         Try 'Es una funcion que nos ayuda a controlar que no caiga el sistema'
             Me.UsuariosTableAdapter.Fill(Me.RoquinDBDataSet.Usuarios) 'Actualiza el los datos de la tabla'
         Catch ex As Exception
-            MsgBox("Fallo la conexion", vbCritical)
+            GlobalVariables.accionForm = "falloConexion"
+            FAlertInfo.Show()
         End Try
     End Sub
 
     Private Sub Block()
         UsuariosDataGridView.Enabled = False
         BNuevo.Visible = False
+        BEditar.Visible = False
         BEliminar.Visible = False
+        BGuardar.Visible = True
+        BCancelar.Visible = True
         UsuarioTextBox.Enabled = True
         NombreUserTextBox.Enabled = True
         ContrasenaTextBox.Enabled = True
@@ -32,7 +36,10 @@
     Private Sub DesBlock()
         UsuariosDataGridView.Enabled = True
         BNuevo.Visible = True
+        BEditar.Visible = True
         BEliminar.Visible = True
+        BGuardar.Visible = False
+        BCancelar.Visible = False
         UsuarioTextBox.Enabled = False
         NombreUserTextBox.Enabled = False
         ContrasenaTextBox.Enabled = False
@@ -57,6 +64,11 @@
         DesBlock()
     End Sub
 
+    Private Sub BEditar_Click(sender As Object, e As EventArgs) Handles BEditar.Click
+        Block()
+        BCancelar.Visible = True
+    End Sub
+
     Private Sub BGuardar_Click(sender As Object, e As EventArgs) Handles BGuardar.Click
         If Completo() Then
             Try
@@ -65,25 +77,31 @@
                 Actualiza()
                 DesBlock()
             Catch ex As Exception
-                MsgBox("Fallo al tratar de Guardar", vbCritical)
+                GlobalVariables.accionForm = "falloGuardar"
+                FAlertInfo.Show()
+                Block()
             End Try
         Else
-            MsgBox("Aún hay campos vacíos!", vbCritical)
+            GlobalVariables.accionForm = "falloVacio"
+            FAlertInfo.Show()
+            Block()
         End If
     End Sub
 
     Private Sub BEliminar_Click(sender As Object, e As EventArgs) Handles BEliminar.Click
-        Dim OpBorra
-        OpBorra = MsgBox("¿Borrar el registro?", vbCritical + vbYesNo, "A T E N C I O N") 'Cuadro de texto de pregunta a usuario '
-        If OpBorra = vbYes Then
-            Try
-                UsuariosBindingSource.RemoveCurrent()  'Elimina los datos de la tabla de personal'
-                UsuariosTableAdapter.Update(RoquinDBDataSet.Usuarios) 'Actualiza los datos que se ingresaron en este caso se elimina'
-                Actualiza()
-            Catch ex As Exception
-                MsgBox("Fallo al tratar de Eliminar", vbCritical)
-            End Try
-        End If
+        GlobalVariables.accionForm = "borrarRegistroUsuario"
+        FAlertErr.Show()
+    End Sub
+
+    Public Sub EliminarRegistro()
+        Try
+            UsuariosBindingSource.RemoveCurrent()  'Elimina los datos de la tabla de personal'
+            UsuariosTableAdapter.Update(RoquinDBDataSet.Usuarios) 'Actualiza los datos que se ingresaron en este caso se elimina'
+            Actualiza()
+        Catch ex As Exception
+            GlobalVariables.accionForm = "falloEliminar"
+            FAlertInfo.Show()
+        End Try
     End Sub
 
     Private Sub UsuarioTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles UsuarioTextBox.KeyPress
@@ -93,7 +111,6 @@
     Private Sub NombreUserTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles NombreUserTextBox.KeyPress
         e.Handled = Not Char.IsLetter(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
     End Sub
-
 
     'Private Sub ContrasenaTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ContrasenaTextBox.KeyPress
     '   e.Handled = Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'

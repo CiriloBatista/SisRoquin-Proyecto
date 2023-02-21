@@ -11,9 +11,19 @@
     End Sub
 
     Private Sub BSi_Click(sender As Object, e As EventArgs) Handles BSi.Click
-        'PersonalBindingSource.RemoveCurrent()  'Elimina los datos de la tabla de personal'
-        'PersonalTableAdapter.Update(RoquinDBDataSet.Personal) 'Actualiza los datos que se ingresaron en este caso se elimina'
-        'Me.Close()
+        Dim accion = GlobalVariables.accionForm
+        If accion = "borrarRegistroPersonal" Then
+            FPersonal.EliminarRegistro()
+        ElseIf accion = "borrarRegistroProduccion" Then
+            FProduccion.EliminarRegistro()
+        ElseIf accion = "borrarRegistroProductor" Then
+            FProductores.EliminarRegistro()
+        ElseIf accion = "borrarRegistroSector" Then
+            FSectores.EliminarRegistro()
+        ElseIf accion = "borrarRegistroUsuario" Then
+            FUsuarios.EliminarRegistro()
+        End If
+        Me.Close()
         'FMenu.Close()
     End Sub
 

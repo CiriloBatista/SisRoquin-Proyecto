@@ -66,6 +66,7 @@ Partial Class FUsuarios
         Me.BGuardar = New System.Windows.Forms.Button()
         Me.BNuevo = New System.Windows.Forms.Button()
         Me.NivelComboBox = New System.Windows.Forms.ComboBox()
+        Me.BEditar = New System.Windows.Forms.Button()
         IdUserLabel = New System.Windows.Forms.Label()
         UsuarioLabel = New System.Windows.Forms.Label()
         NombreUserLabel = New System.Windows.Forms.Label()
@@ -84,7 +85,7 @@ Partial Class FUsuarios
         '
         IdUserLabel.AutoSize = True
         IdUserLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        IdUserLabel.Location = New System.Drawing.Point(52, 255)
+        IdUserLabel.Location = New System.Drawing.Point(40, 255)
         IdUserLabel.Name = "IdUserLabel"
         IdUserLabel.Size = New System.Drawing.Size(128, 29)
         IdUserLabel.TabIndex = 15
@@ -94,7 +95,7 @@ Partial Class FUsuarios
         '
         UsuarioLabel.AutoSize = True
         UsuarioLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        UsuarioLabel.Location = New System.Drawing.Point(78, 305)
+        UsuarioLabel.Location = New System.Drawing.Point(66, 305)
         UsuarioLabel.Name = "UsuarioLabel"
         UsuarioLabel.Size = New System.Drawing.Size(102, 29)
         UsuarioLabel.TabIndex = 17
@@ -104,7 +105,7 @@ Partial Class FUsuarios
         '
         NombreUserLabel.AutoSize = True
         NombreUserLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        NombreUserLabel.Location = New System.Drawing.Point(73, 355)
+        NombreUserLabel.Location = New System.Drawing.Point(61, 355)
         NombreUserLabel.Name = "NombreUserLabel"
         NombreUserLabel.Size = New System.Drawing.Size(107, 29)
         NombreUserLabel.TabIndex = 19
@@ -114,7 +115,7 @@ Partial Class FUsuarios
         '
         NivelLabel.AutoSize = True
         NivelLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        NivelLabel.Location = New System.Drawing.Point(106, 458)
+        NivelLabel.Location = New System.Drawing.Point(94, 458)
         NivelLabel.Name = "NivelLabel"
         NivelLabel.Size = New System.Drawing.Size(74, 29)
         NivelLabel.TabIndex = 23
@@ -124,7 +125,7 @@ Partial Class FUsuarios
         '
         ContrasenaLabel.AutoSize = True
         ContrasenaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        ContrasenaLabel.Location = New System.Drawing.Point(38, 405)
+        ContrasenaLabel.Location = New System.Drawing.Point(26, 405)
         ContrasenaLabel.Name = "ContrasenaLabel"
         ContrasenaLabel.Size = New System.Drawing.Size(142, 29)
         ContrasenaLabel.TabIndex = 24
@@ -282,7 +283,7 @@ Partial Class FUsuarios
         Me.IdUserTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "IdUser", True))
         Me.IdUserTextBox.Enabled = False
         Me.IdUserTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.IdUserTextBox.Location = New System.Drawing.Point(199, 255)
+        Me.IdUserTextBox.Location = New System.Drawing.Point(187, 255)
         Me.IdUserTextBox.Name = "IdUserTextBox"
         Me.IdUserTextBox.ReadOnly = True
         Me.IdUserTextBox.Size = New System.Drawing.Size(100, 34)
@@ -294,7 +295,7 @@ Partial Class FUsuarios
         Me.UsuarioTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.UsuarioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "Usuario", True))
         Me.UsuarioTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.UsuarioTextBox.Location = New System.Drawing.Point(199, 305)
+        Me.UsuarioTextBox.Location = New System.Drawing.Point(187, 305)
         Me.UsuarioTextBox.Name = "UsuarioTextBox"
         Me.UsuarioTextBox.Size = New System.Drawing.Size(117, 34)
         Me.UsuarioTextBox.TabIndex = 18
@@ -305,7 +306,7 @@ Partial Class FUsuarios
         Me.NombreUserTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NombreUserTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "NombreUser", True))
         Me.NombreUserTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.NombreUserTextBox.Location = New System.Drawing.Point(199, 355)
+        Me.NombreUserTextBox.Location = New System.Drawing.Point(187, 355)
         Me.NombreUserTextBox.Name = "NombreUserTextBox"
         Me.NombreUserTextBox.Size = New System.Drawing.Size(151, 34)
         Me.NombreUserTextBox.TabIndex = 20
@@ -403,7 +404,7 @@ Partial Class FUsuarios
         Me.ContrasenaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ContrasenaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "Contrasena", True))
         Me.ContrasenaTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.ContrasenaTextBox.Location = New System.Drawing.Point(199, 405)
+        Me.ContrasenaTextBox.Location = New System.Drawing.Point(187, 405)
         Me.ContrasenaTextBox.Name = "ContrasenaTextBox"
         Me.ContrasenaTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.ContrasenaTextBox.Size = New System.Drawing.Size(128, 34)
@@ -428,7 +429,7 @@ Partial Class FUsuarios
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BCancelar.Image = CType(resources.GetObject("BCancelar.Image"), System.Drawing.Image)
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelar.Location = New System.Drawing.Point(199, 525)
+        Me.BCancelar.Location = New System.Drawing.Point(126, 525)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BCancelar.Size = New System.Drawing.Size(150, 60)
@@ -472,10 +473,25 @@ Partial Class FUsuarios
         Me.NivelComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.NivelComboBox.FormattingEnabled = True
         Me.NivelComboBox.Items.AddRange(New Object() {"01", "02", "03", "04"})
-        Me.NivelComboBox.Location = New System.Drawing.Point(199, 455)
+        Me.NivelComboBox.Location = New System.Drawing.Point(187, 455)
         Me.NivelComboBox.Name = "NivelComboBox"
-        Me.NivelComboBox.Size = New System.Drawing.Size(121, 37)
+        Me.NivelComboBox.Size = New System.Drawing.Size(200, 37)
         Me.NivelComboBox.TabIndex = 30
+        '
+        'BEditar
+        '
+        Me.BEditar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.BEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BEditar.Image = CType(resources.GetObject("BEditar.Image"), System.Drawing.Image)
+        Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BEditar.Location = New System.Drawing.Point(199, 525)
+        Me.BEditar.Name = "BEditar"
+        Me.BEditar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.BEditar.Size = New System.Drawing.Size(150, 60)
+        Me.BEditar.TabIndex = 31
+        Me.BEditar.Text = "Editar"
+        Me.BEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BEditar.UseVisualStyleBackColor = False
         '
         'FUsuarios
         '
@@ -483,6 +499,7 @@ Partial Class FUsuarios
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MintCream
         Me.ClientSize = New System.Drawing.Size(1000, 676)
+        Me.Controls.Add(Me.BEditar)
         Me.Controls.Add(Me.NivelComboBox)
         Me.Controls.Add(Me.BEliminar)
         Me.Controls.Add(Me.BCancelar)
@@ -500,6 +517,7 @@ Partial Class FUsuarios
         Me.Controls.Add(NivelLabel)
         Me.Controls.Add(Me.UsuariosBindingNavigator)
         Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FUsuarios"
         Me.Text = "Administración de Usuarios"
@@ -550,4 +568,5 @@ Partial Class FUsuarios
     Friend WithEvents BGuardar As Button
     Friend WithEvents BNuevo As Button
     Friend WithEvents NivelComboBox As ComboBox
+    Friend WithEvents BEditar As Button
 End Class

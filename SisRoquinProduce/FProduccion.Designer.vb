@@ -124,6 +124,7 @@ Partial Class FProduccion
         Me.kilos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gramos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cubetas = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BEditar = New System.Windows.Forms.Button()
         FolioLabel = New System.Windows.Forms.Label()
         FechaProdLabel = New System.Windows.Forms.Label()
         NumProdLabel = New System.Windows.Forms.Label()
@@ -809,7 +810,7 @@ Partial Class FProduccion
         Me.BEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.BEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BEliminar.Image = CType(resources.GetObject("BEliminar.Image"), System.Drawing.Image)
-        Me.BEliminar.Location = New System.Drawing.Point(1708, 742)
+        Me.BEliminar.Location = New System.Drawing.Point(1714, 742)
         Me.BEliminar.Name = "BEliminar"
         Me.BEliminar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.BEliminar.Size = New System.Drawing.Size(60, 60)
@@ -823,7 +824,7 @@ Partial Class FProduccion
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BCancelar.Image = CType(resources.GetObject("BCancelar.Image"), System.Drawing.Image)
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelar.Location = New System.Drawing.Point(714, 728)
+        Me.BCancelar.Location = New System.Drawing.Point(669, 742)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BCancelar.Size = New System.Drawing.Size(150, 60)
@@ -838,7 +839,7 @@ Partial Class FProduccion
         Me.BGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BGuardar.Image = CType(resources.GetObject("BGuardar.Image"), System.Drawing.Image)
-        Me.BGuardar.Location = New System.Drawing.Point(1642, 742)
+        Me.BGuardar.Location = New System.Drawing.Point(1689, 742)
         Me.BGuardar.Name = "BGuardar"
         Me.BGuardar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.BGuardar.Size = New System.Drawing.Size(60, 60)
@@ -852,7 +853,7 @@ Partial Class FProduccion
         Me.BNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BNuevo.Image = CType(resources.GetObject("BNuevo.Image"), System.Drawing.Image)
         Me.BNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BNuevo.Location = New System.Drawing.Point(570, 728)
+        Me.BNuevo.Location = New System.Drawing.Point(592, 742)
         Me.BNuevo.Name = "BNuevo"
         Me.BNuevo.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BNuevo.Size = New System.Drawing.Size(140, 60)
@@ -914,7 +915,7 @@ Partial Class FProduccion
         Me.NombreComboBox.DisplayMember = "Nombre"
         Me.NombreComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.NombreComboBox.FormattingEnabled = True
-        Me.NombreComboBox.Location = New System.Drawing.Point(227, 324)
+        Me.NombreComboBox.Location = New System.Drawing.Point(227, 326)
         Me.NombreComboBox.Name = "NombreComboBox"
         Me.NombreComboBox.Size = New System.Drawing.Size(200, 37)
         Me.NombreComboBox.TabIndex = 63
@@ -1068,6 +1069,21 @@ Partial Class FProduccion
         Me.cubetas.HeaderText = "Cubetas"
         Me.cubetas.Name = "cubetas"
         '
+        'BEditar
+        '
+        Me.BEditar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.BEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BEditar.Image = CType(resources.GetObject("BEditar.Image"), System.Drawing.Image)
+        Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BEditar.Location = New System.Drawing.Point(761, 742)
+        Me.BEditar.Name = "BEditar"
+        Me.BEditar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.BEditar.Size = New System.Drawing.Size(150, 60)
+        Me.BEditar.TabIndex = 67
+        Me.BEditar.Text = "Editar"
+        Me.BEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BEditar.UseVisualStyleBackColor = False
+        '
         'FProduccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1075,6 +1091,7 @@ Partial Class FProduccion
         Me.AutoScroll = True
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1810, 853)
+        Me.Controls.Add(Me.BEditar)
         Me.Controls.Add(Me.DataGridDetalle)
         Me.Controls.Add(Me.NombreSecComboBox)
         Me.Controls.Add(Me.ConsultDetallePersonalDataGridView)
@@ -1126,7 +1143,9 @@ Partial Class FProduccion
         Me.Controls.Add(Me.EncargadoTextBox)
         Me.Controls.Add(Me.ProduccionBindingNavigator)
         Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.Name = "FProduccion"
         Me.Text = "Administración de Producción"
         Me.Panel1.ResumeLayout(False)
@@ -1225,4 +1244,5 @@ Partial Class FProduccion
     Friend WithEvents kilos As DataGridViewTextBoxColumn
     Friend WithEvents gramos As DataGridViewTextBoxColumn
     Friend WithEvents cubetas As DataGridViewTextBoxColumn
+    Friend WithEvents BEditar As Button
 End Class

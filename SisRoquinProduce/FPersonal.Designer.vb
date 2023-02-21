@@ -66,6 +66,7 @@ Partial Class FPersonal
         Me.BGuardar = New System.Windows.Forms.Button()
         Me.BNuevo = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BEditar = New System.Windows.Forms.Button()
         IdPersonalLabel = New System.Windows.Forms.Label()
         NumEmpleadoLabel = New System.Windows.Forms.Label()
         NombreEmpleadoLabel = New System.Windows.Forms.Label()
@@ -426,7 +427,7 @@ Partial Class FPersonal
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BCancelar.Image = CType(resources.GetObject("BCancelar.Image"), System.Drawing.Image)
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelar.Location = New System.Drawing.Point(212, 529)
+        Me.BCancelar.Location = New System.Drawing.Point(139, 529)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BCancelar.Size = New System.Drawing.Size(150, 60)
@@ -475,12 +476,28 @@ Partial Class FPersonal
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
         '
+        'BEditar
+        '
+        Me.BEditar.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.BEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BEditar.Image = CType(resources.GetObject("BEditar.Image"), System.Drawing.Image)
+        Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BEditar.Location = New System.Drawing.Point(225, 530)
+        Me.BEditar.Name = "BEditar"
+        Me.BEditar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.BEditar.Size = New System.Drawing.Size(150, 60)
+        Me.BEditar.TabIndex = 18
+        Me.BEditar.Text = "Editar"
+        Me.BEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BEditar.UseVisualStyleBackColor = False
+        '
         'FPersonal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MintCream
         Me.ClientSize = New System.Drawing.Size(982, 653)
+        Me.Controls.Add(Me.BEditar)
         Me.Controls.Add(Me.BEliminar)
         Me.Controls.Add(Me.BCancelar)
         Me.Controls.Add(Me.BGuardar)
@@ -499,6 +516,7 @@ Partial Class FPersonal
         Me.Controls.Add(Me.PuestoTextBox)
         Me.Controls.Add(Me.PersonalBindingNavigator)
         Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FPersonal"
         Me.Text = "Administración de Personal"
@@ -548,4 +566,5 @@ Partial Class FPersonal
     Friend WithEvents BGuardar As Button
     Friend WithEvents BCancelar As Button
     Friend WithEvents BEliminar As Button
+    Friend WithEvents BEditar As Button
 End Class
