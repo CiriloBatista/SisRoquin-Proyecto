@@ -20,3 +20,4 @@ C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FAlertInfo.resou
 C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FAlertQuestion.resources
 C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FAlertErr.resources
 C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FError505.resources
+C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FLogin.resources

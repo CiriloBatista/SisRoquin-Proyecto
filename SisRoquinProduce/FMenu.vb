@@ -1,11 +1,11 @@
 ﻿Public Class FMenu
 
-    'Private Sub FMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    'FLogin.Visible = False  ' Ocultará el formulario de login mientras está abierto el menu '
-    'End Sub
-    'Private Sub FMenu_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-    'FLogin.Visible = True   ' Abrirá el formulario de login mientras se cierra el menu '
-    'End Sub
+    Private Sub FMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FLogin.Visible = False  ' Ocultará el formulario de login mientras está abierto el menu '
+    End Sub
+    Private Sub FMenu_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        FLogin.Visible = True   ' Abrirá el formulario de login mientras se cierra el menu '
+    End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         GlobalVariables.accionForm = "salirMenu"
@@ -69,4 +69,5 @@
     Private Sub ProducciónToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProducciónToolStripMenuItem1.Click
         FError505.Show()
     End Sub
+
 End Class

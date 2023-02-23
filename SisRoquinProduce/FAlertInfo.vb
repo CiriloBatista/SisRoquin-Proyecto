@@ -1,21 +1,30 @@
 ﻿Public Class FAlertInfo
+
+    Dim opAccion
     Private Sub FAlertInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim opAccion
         opAccion = GlobalVariables.accionForm
         If opAccion = "falloConexion" Then
             LTitle.Text = GlobalVariables.falloConexion
-        ElseIf opAccion.Text = "falloGuardar" Then
+        ElseIf opAccion = "falloGuardar" Then
             LTitle.Text = GlobalVariables.falloGuardar
-        ElseIf opAccion.Text = "falloEliminar" Then
+        ElseIf opAccion = "falloEliminar" Then
             LTitle.Text = GlobalVariables.falloEliminar
-        ElseIf opAccion.Text = "falloVacio" Then
+        ElseIf opAccion = "falloVacio" Then
             LTitle.Text = GlobalVariables.falloVacio
-        ElseIf opAccion.Text = "bienvenido" Then
+        ElseIf opAccion = "bienvenido" Then
             LTitle.Text = GlobalVariables.bienvenido
+        ElseIf opAccion = "falloUsuarioVacio" Then
+            LTitle.Text = GlobalVariables.falloUsuarioVacio
+        ElseIf opAccion = "datosMal" Then
+            LTitle.Text = GlobalVariables.datosMal
         End If
 
     End Sub
     Private Sub BAceptar_Click(sender As Object, e As EventArgs) Handles BAceptar.Click
         Me.Close()
+        If opAccion = "bienvenido" Then
+            FMenu.Show()
+        End If
     End Sub
+
 End Class

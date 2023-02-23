@@ -76,11 +76,11 @@ Partial Class FAlertQuestion
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LTitle.AutoSize = True
         Me.LTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.LTitle.Location = New System.Drawing.Point(30, 210)
+        Me.LTitle.Location = New System.Drawing.Point(25, 210)
         Me.LTitle.MaximumSize = New System.Drawing.Size(350, 100)
-        Me.LTitle.MinimumSize = New System.Drawing.Size(300, 20)
+        Me.LTitle.MinimumSize = New System.Drawing.Size(350, 20)
         Me.LTitle.Name = "LTitle"
-        Me.LTitle.Size = New System.Drawing.Size(300, 29)
+        Me.LTitle.Size = New System.Drawing.Size(350, 29)
         Me.LTitle.TabIndex = 8
         Me.LTitle.Text = "texto"
         Me.LTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
