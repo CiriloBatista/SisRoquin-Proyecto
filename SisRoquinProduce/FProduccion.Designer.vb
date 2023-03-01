@@ -43,6 +43,10 @@ Partial Class FProduccion
         Dim EncargadoLabel As System.Windows.Forms.Label
         Dim EmbalajeLabel As System.Windows.Forms.Label
         Dim VariedadLabel As System.Windows.Forms.Label
+        Dim NumEmpleadoLabel As System.Windows.Forms.Label
+        Dim NombreEmpleadoLabel As System.Windows.Forms.Label
+        Dim ApellidosEmpLabel As System.Windows.Forms.Label
+        Dim FolioDetaLabel As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -110,9 +114,9 @@ Partial Class FProduccion
         Me.NumEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SectoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SectoresTableAdapter = New SisRoquinProduce.RoquinDBDataSetTableAdapters.SectoresTableAdapter()
         Me.SectoresBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
@@ -121,10 +125,19 @@ Partial Class FProduccion
         Me.Empleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nom = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cubetas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.kilos = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gramos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cubetas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BEditar = New System.Windows.Forms.Button()
+        Me.PersonalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PersonalTableAdapter = New SisRoquinProduce.RoquinDBDataSetTableAdapters.PersonalTableAdapter()
+        Me.NumEmpleadoTextBox = New System.Windows.Forms.TextBox()
+        Me.NombreEmpleadoTextBox = New System.Windows.Forms.TextBox()
+        Me.ApellidosEmpTextBox = New System.Windows.Forms.TextBox()
+        Me.DetalleFolioBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DetalleFolioTableAdapter = New SisRoquinProduce.RoquinDBDataSetTableAdapters.DetalleFolioTableAdapter()
+        Me.FolioDetaTextBox = New System.Windows.Forms.TextBox()
+        Me.BSave = New System.Windows.Forms.Button()
         FolioLabel = New System.Windows.Forms.Label()
         FechaProdLabel = New System.Windows.Forms.Label()
         NumProdLabel = New System.Windows.Forms.Label()
@@ -145,6 +158,10 @@ Partial Class FProduccion
         EncargadoLabel = New System.Windows.Forms.Label()
         EmbalajeLabel = New System.Windows.Forms.Label()
         VariedadLabel = New System.Windows.Forms.Label()
+        NumEmpleadoLabel = New System.Windows.Forms.Label()
+        NombreEmpleadoLabel = New System.Windows.Forms.Label()
+        ApellidosEmpLabel = New System.Windows.Forms.Label()
+        FolioDetaLabel = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProduccionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -159,6 +176,8 @@ Partial Class FProduccion
         CType(Me.SectoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SectoresBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PersonalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DetalleFolioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'FolioLabel
@@ -362,6 +381,42 @@ Partial Class FProduccion
         VariedadLabel.TabIndex = 61
         VariedadLabel.Text = "Variedad:"
         '
+        'NumEmpleadoLabel
+        '
+        NumEmpleadoLabel.AutoSize = True
+        NumEmpleadoLabel.Location = New System.Drawing.Point(1085, 730)
+        NumEmpleadoLabel.Name = "NumEmpleadoLabel"
+        NumEmpleadoLabel.Size = New System.Drawing.Size(108, 17)
+        NumEmpleadoLabel.TabIndex = 67
+        NumEmpleadoLabel.Text = "Num Empleado:"
+        '
+        'NombreEmpleadoLabel
+        '
+        NombreEmpleadoLabel.AutoSize = True
+        NombreEmpleadoLabel.Location = New System.Drawing.Point(1064, 765)
+        NombreEmpleadoLabel.Name = "NombreEmpleadoLabel"
+        NombreEmpleadoLabel.Size = New System.Drawing.Size(129, 17)
+        NombreEmpleadoLabel.TabIndex = 68
+        NombreEmpleadoLabel.Text = "Nombre Empleado:"
+        '
+        'ApellidosEmpLabel
+        '
+        ApellidosEmpLabel.AutoSize = True
+        ApellidosEmpLabel.Location = New System.Drawing.Point(1092, 801)
+        ApellidosEmpLabel.Name = "ApellidosEmpLabel"
+        ApellidosEmpLabel.Size = New System.Drawing.Size(101, 17)
+        ApellidosEmpLabel.TabIndex = 69
+        ApellidosEmpLabel.Text = "Apellidos Emp:"
+        '
+        'FolioDetaLabel
+        '
+        FolioDetaLabel.AutoSize = True
+        FolioDetaLabel.Location = New System.Drawing.Point(1331, 730)
+        FolioDetaLabel.Name = "FolioDetaLabel"
+        FolioDetaLabel.Size = New System.Drawing.Size(76, 17)
+        FolioDetaLabel.TabIndex = 70
+        FolioDetaLabel.Text = "Folio Deta:"
+        '
         'Panel1
         '
         Me.Panel1.AutoSize = True
@@ -371,16 +426,16 @@ Partial Class FProduccion
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Panel1.Size = New System.Drawing.Size(1790, 200)
+        Me.Panel1.Size = New System.Drawing.Size(1790, 1513)
         Me.Panel1.TabIndex = 14
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.SisRoquinProduce.My.Resources.Resources.back_roquin_icon
+        Me.PictureBox1.Image = Global.SisRoquinProduce.My.Resources.Resources.Roquin_logo6
         Me.PictureBox1.Location = New System.Drawing.Point(50, 10)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(150, 150)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 15
         Me.PictureBox1.TabStop = False
         '
@@ -794,14 +849,14 @@ Partial Class FProduccion
         Me.ProduccionBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ProduccionBindingNavigator.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ProduccionBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2})
-        Me.ProduccionBindingNavigator.Location = New System.Drawing.Point(0, 826)
+        Me.ProduccionBindingNavigator.Location = New System.Drawing.Point(0, 1513)
         Me.ProduccionBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.ProduccionBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
         Me.ProduccionBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
         Me.ProduccionBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.ProduccionBindingNavigator.Name = "ProduccionBindingNavigator"
         Me.ProduccionBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.ProduccionBindingNavigator.Size = New System.Drawing.Size(1810, 27)
+        Me.ProduccionBindingNavigator.Size = New System.Drawing.Size(1790, 27)
         Me.ProduccionBindingNavigator.TabIndex = 15
         Me.ProduccionBindingNavigator.Text = "BindingNavigator1"
         '
@@ -943,7 +998,7 @@ Partial Class FProduccion
         Me.ConsultDetallePersonalDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ConsultDetallePersonalDataGridView.BackgroundColor = System.Drawing.Color.LightGreen
         Me.ConsultDetallePersonalDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ConsultDetallePersonalDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumEmpleado, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13})
+        Me.ConsultDetallePersonalDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumEmpleado, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12})
         Me.ConsultDetallePersonalDataGridView.DataSource = Me.ConsultDetallePersonalBindingSource
         Me.ConsultDetallePersonalDataGridView.EnableHeadersVisualStyles = False
         Me.ConsultDetallePersonalDataGridView.Location = New System.Drawing.Point(933, 365)
@@ -957,7 +1012,7 @@ Partial Class FProduccion
         'NumEmpleado
         '
         Me.NumEmpleado.DataPropertyName = "NumEmpleado"
-        Me.NumEmpleado.FillWeight = 78.53723!
+        Me.NumEmpleado.FillWeight = 50.0!
         Me.NumEmpleado.HeaderText = "Empleado"
         Me.NumEmpleado.Name = "NumEmpleado"
         Me.NumEmpleado.ReadOnly = True
@@ -965,7 +1020,7 @@ Partial Class FProduccion
         'DataGridViewTextBoxColumn18
         '
         Me.DataGridViewTextBoxColumn18.DataPropertyName = "ApellidosEmp"
-        Me.DataGridViewTextBoxColumn18.FillWeight = 133.5668!
+        Me.DataGridViewTextBoxColumn18.FillWeight = 75.67144!
         Me.DataGridViewTextBoxColumn18.HeaderText = "Apellidos"
         Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
         Me.DataGridViewTextBoxColumn18.ReadOnly = True
@@ -973,15 +1028,23 @@ Partial Class FProduccion
         'DataGridViewTextBoxColumn17
         '
         Me.DataGridViewTextBoxColumn17.DataPropertyName = "NombreEmpleado"
-        Me.DataGridViewTextBoxColumn17.FillWeight = 152.2842!
+        Me.DataGridViewTextBoxColumn17.FillWeight = 86.27567!
         Me.DataGridViewTextBoxColumn17.HeaderText = "Nombre"
         Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
         Me.DataGridViewTextBoxColumn17.ReadOnly = True
         '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.DataPropertyName = "Cubetas"
+        Me.DataGridViewTextBoxColumn13.FillWeight = 44.49478!
+        Me.DataGridViewTextBoxColumn13.HeaderText = "Cubetas"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.ReadOnly = True
+        '
         'DataGridViewTextBoxColumn11
         '
         Me.DataGridViewTextBoxColumn11.DataPropertyName = "Kilos"
-        Me.DataGridViewTextBoxColumn11.FillWeight = 78.53723!
+        Me.DataGridViewTextBoxColumn11.FillWeight = 44.49478!
         Me.DataGridViewTextBoxColumn11.HeaderText = "Kilos"
         Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
         Me.DataGridViewTextBoxColumn11.ReadOnly = True
@@ -989,18 +1052,10 @@ Partial Class FProduccion
         'DataGridViewTextBoxColumn12
         '
         Me.DataGridViewTextBoxColumn12.DataPropertyName = "Gramos"
-        Me.DataGridViewTextBoxColumn12.FillWeight = 78.53723!
+        Me.DataGridViewTextBoxColumn12.FillWeight = 44.49478!
         Me.DataGridViewTextBoxColumn12.HeaderText = "Gramos"
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
         Me.DataGridViewTextBoxColumn12.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn13
-        '
-        Me.DataGridViewTextBoxColumn13.DataPropertyName = "Cubetas"
-        Me.DataGridViewTextBoxColumn13.FillWeight = 78.53723!
-        Me.DataGridViewTextBoxColumn13.HeaderText = "Cubetas"
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        Me.DataGridViewTextBoxColumn13.ReadOnly = True
         '
         'SectoresBindingSource
         '
@@ -1028,15 +1083,16 @@ Partial Class FProduccion
         '
         'DataGridDetalle
         '
+        Me.DataGridDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridDetalle.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.DataGridDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridDetalle.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Empleado, Me.Apellido, Me.Nom, Me.kilos, Me.gramos, Me.cubetas})
+        Me.DataGridDetalle.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Empleado, Me.Apellido, Me.Nom, Me.cubetas, Me.kilos, Me.gramos})
         Me.DataGridDetalle.GridColor = System.Drawing.SystemColors.ActiveCaption
         Me.DataGridDetalle.Location = New System.Drawing.Point(933, 555)
         Me.DataGridDetalle.Name = "DataGridDetalle"
         Me.DataGridDetalle.RowHeadersVisible = False
         Me.DataGridDetalle.RowTemplate.Height = 24
-        Me.DataGridDetalle.Size = New System.Drawing.Size(800, 150)
+        Me.DataGridDetalle.Size = New System.Drawing.Size(769, 150)
         Me.DataGridDetalle.TabIndex = 66
         '
         'Empleado
@@ -1054,6 +1110,11 @@ Partial Class FProduccion
         Me.Nom.HeaderText = "Nombre"
         Me.Nom.Name = "Nom"
         '
+        'cubetas
+        '
+        Me.cubetas.HeaderText = "Cubetas"
+        Me.cubetas.Name = "cubetas"
+        '
         'kilos
         '
         Me.kilos.HeaderText = "Kilos"
@@ -1063,11 +1124,6 @@ Partial Class FProduccion
         '
         Me.gramos.HeaderText = "Gramos"
         Me.gramos.Name = "gramos"
-        '
-        'cubetas
-        '
-        Me.cubetas.HeaderText = "Cubetas"
-        Me.cubetas.Name = "cubetas"
         '
         'BEditar
         '
@@ -1084,13 +1140,81 @@ Partial Class FProduccion
         Me.BEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BEditar.UseVisualStyleBackColor = False
         '
+        'PersonalBindingSource
+        '
+        Me.PersonalBindingSource.DataMember = "Personal"
+        Me.PersonalBindingSource.DataSource = Me.RoquinDBDataSet
+        '
+        'PersonalTableAdapter
+        '
+        Me.PersonalTableAdapter.ClearBeforeFill = True
+        '
+        'NumEmpleadoTextBox
+        '
+        Me.NumEmpleadoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "NumEmpleado", True))
+        Me.NumEmpleadoTextBox.Location = New System.Drawing.Point(1199, 727)
+        Me.NumEmpleadoTextBox.Name = "NumEmpleadoTextBox"
+        Me.NumEmpleadoTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.NumEmpleadoTextBox.TabIndex = 68
+        '
+        'NombreEmpleadoTextBox
+        '
+        Me.NombreEmpleadoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "NombreEmpleado", True))
+        Me.NombreEmpleadoTextBox.Location = New System.Drawing.Point(1199, 762)
+        Me.NombreEmpleadoTextBox.Name = "NombreEmpleadoTextBox"
+        Me.NombreEmpleadoTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.NombreEmpleadoTextBox.TabIndex = 69
+        '
+        'ApellidosEmpTextBox
+        '
+        Me.ApellidosEmpTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "ApellidosEmp", True))
+        Me.ApellidosEmpTextBox.Location = New System.Drawing.Point(1199, 798)
+        Me.ApellidosEmpTextBox.Name = "ApellidosEmpTextBox"
+        Me.ApellidosEmpTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.ApellidosEmpTextBox.TabIndex = 70
+        '
+        'DetalleFolioBindingSource
+        '
+        Me.DetalleFolioBindingSource.DataMember = "DetalleFolio"
+        Me.DetalleFolioBindingSource.DataSource = Me.RoquinDBDataSet
+        '
+        'DetalleFolioTableAdapter
+        '
+        Me.DetalleFolioTableAdapter.ClearBeforeFill = True
+        '
+        'FolioDetaTextBox
+        '
+        Me.FolioDetaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DetalleFolioBindingSource, "FolioDeta", True))
+        Me.FolioDetaTextBox.Location = New System.Drawing.Point(1413, 727)
+        Me.FolioDetaTextBox.Name = "FolioDetaTextBox"
+        Me.FolioDetaTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.FolioDetaTextBox.TabIndex = 71
+        '
+        'BSave
+        '
+        Me.BSave.Location = New System.Drawing.Point(1715, 577)
+        Me.BSave.Name = "BSave"
+        Me.BSave.Size = New System.Drawing.Size(75, 46)
+        Me.BSave.TabIndex = 72
+        Me.BSave.Text = "Guardar"
+        Me.BSave.UseVisualStyleBackColor = True
+        '
         'FProduccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1810, 853)
+        Me.ClientSize = New System.Drawing.Size(1810, 870)
+        Me.Controls.Add(Me.BSave)
+        Me.Controls.Add(FolioDetaLabel)
+        Me.Controls.Add(Me.FolioDetaTextBox)
+        Me.Controls.Add(ApellidosEmpLabel)
+        Me.Controls.Add(Me.ApellidosEmpTextBox)
+        Me.Controls.Add(NombreEmpleadoLabel)
+        Me.Controls.Add(Me.NombreEmpleadoTextBox)
+        Me.Controls.Add(NumEmpleadoLabel)
+        Me.Controls.Add(Me.NumEmpleadoTextBox)
         Me.Controls.Add(Me.BEditar)
         Me.Controls.Add(Me.DataGridDetalle)
         Me.Controls.Add(Me.NombreSecComboBox)
@@ -1164,6 +1288,8 @@ Partial Class FProduccion
         CType(Me.SectoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SectoresBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridDetalle, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PersonalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DetalleFolioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1231,18 +1357,27 @@ Partial Class FProduccion
     Friend WithEvents SectoresTableAdapter As RoquinDBDataSetTableAdapters.SectoresTableAdapter
     Friend WithEvents SectoresBindingSource1 As BindingSource
     Friend WithEvents NombreSecComboBox As ComboBox
+    Friend WithEvents DataGridDetalle As DataGridView
+    Friend WithEvents BEditar As Button
     Friend WithEvents NumEmpleado As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridDetalle As DataGridView
+    Friend WithEvents PersonalBindingSource As BindingSource
+    Friend WithEvents PersonalTableAdapter As RoquinDBDataSetTableAdapters.PersonalTableAdapter
+    Friend WithEvents NumEmpleadoTextBox As TextBox
+    Friend WithEvents NombreEmpleadoTextBox As TextBox
+    Friend WithEvents ApellidosEmpTextBox As TextBox
+    Friend WithEvents DetalleFolioBindingSource As BindingSource
+    Friend WithEvents DetalleFolioTableAdapter As RoquinDBDataSetTableAdapters.DetalleFolioTableAdapter
+    Friend WithEvents FolioDetaTextBox As TextBox
     Friend WithEvents Empleado As DataGridViewTextBoxColumn
     Friend WithEvents Apellido As DataGridViewTextBoxColumn
     Friend WithEvents Nom As DataGridViewTextBoxColumn
+    Friend WithEvents cubetas As DataGridViewTextBoxColumn
     Friend WithEvents kilos As DataGridViewTextBoxColumn
     Friend WithEvents gramos As DataGridViewTextBoxColumn
-    Friend WithEvents cubetas As DataGridViewTextBoxColumn
-    Friend WithEvents BEditar As Button
+    Friend WithEvents BSave As Button
 End Class

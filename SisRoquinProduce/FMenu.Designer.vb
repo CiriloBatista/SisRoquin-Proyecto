@@ -183,7 +183,7 @@ Partial Class FMenu
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = Global.SisRoquinProduce.My.Resources.Resources.back_roquin
+        Me.BackgroundImage = Global.SisRoquinProduce.My.Resources.Resources.Roquin_logo6
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(982, 603)
         Me.ControlBox = False

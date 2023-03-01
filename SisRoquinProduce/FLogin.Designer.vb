@@ -173,7 +173,7 @@ Partial Class FLogin
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.SisRoquinProduce.My.Resources.Resources.back_roquin_icon
+        Me.PictureBox1.Image = Global.SisRoquinProduce.My.Resources.Resources.Roquin_logo6
         Me.PictureBox1.Location = New System.Drawing.Point(191, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(220, 210)
@@ -274,6 +274,7 @@ Partial Class FLogin
         Me.Controls.Add(ContrasenaLabel)
         Me.Controls.Add(Me.ContrasenaTextBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FLogin"

@@ -37,6 +37,11 @@ SisRoquinProduce
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:SisRoquinProduce.My.Resources.Resources.Roquin_logo6">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="T:SisRoquinProduce.RoquinDBDataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.

@@ -640,7 +640,7 @@ Partial Public Class RoquinDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddDetalleFolioRow(ByVal FolioDeta As Integer, ByVal NEmpleado As String, ByVal Kilos As Decimal, ByVal Gramos As Short, ByVal Cubetas As Short) As DetalleFolioRow
+        Public Overloads Function AddDetalleFolioRow(ByVal FolioDeta As Integer, ByVal NEmpleado As String, ByVal Kilos As Short, ByVal Gramos As Short, ByVal Cubetas As Short) As DetalleFolioRow
             Dim rowDetalleFolioRow As DetalleFolioRow = CType(Me.NewRow,DetalleFolioRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, FolioDeta, NEmpleado, Kilos, Gramos, Cubetas}
             rowDetalleFolioRow.ItemArray = columnValuesArray
@@ -688,7 +688,7 @@ Partial Public Class RoquinDBDataSet
             MyBase.Columns.Add(Me.columnFolioDeta)
             Me.columnNEmpleado = New Global.System.Data.DataColumn("NEmpleado", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNEmpleado)
-            Me.columnKilos = New Global.System.Data.DataColumn("Kilos", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnKilos = New Global.System.Data.DataColumn("Kilos", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnKilos)
             Me.columnGramos = New Global.System.Data.DataColumn("Gramos", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnGramos)
@@ -3082,10 +3082,10 @@ Partial Public Class RoquinDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Kilos() As Decimal
+        Public Property Kilos() As Short
             Get
                 Try 
-                    Return CType(Me(Me.tableDetalleFolio.KilosColumn),Decimal)
+                    Return CType(Me(Me.tableDetalleFolio.KilosColumn),Short)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Kilos' de la tabla 'DetalleFolio' es DBNull.", e)
                 End Try
@@ -5050,11 +5050,21 @@ Namespace RoquinDBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
+            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT IdDetalle, FolioDeta, NEmpleado, Kilos, Gramos, Cubetas FROM DetalleFolio"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "INSERT INTO `DetalleFolio` (`FolioDeta`, `NEmpleado`, `Kilos`, `Gramos`, `Cubetas"& _ 
+                "`) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES (?, ?, ?, ?, ?)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("FolioDeta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FolioDeta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NEmpleado", Global.System.Data.OleDb.OleDbType.WChar, 20, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NEmpleado", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Kilos", Global.System.Data.OleDb.OleDbType.Numeric, 0, Global.System.Data.ParameterDirection.Input, CType(18,Byte), CType(0,Byte), "Kilos", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Gramos", Global.System.Data.OleDb.OleDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Gramos", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Cubetas", Global.System.Data.OleDb.OleDbType.SmallInt, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Cubetas", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5289,6 +5299,53 @@ Namespace RoquinDBDataSetTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function Nuevo(ByVal FolioDeta As Global.System.Nullable(Of Integer), ByVal NEmpleado As String, ByVal Kilos As Global.System.Nullable(Of Decimal), ByVal Gramos As Global.System.Nullable(Of Short), ByVal Cubetas As Global.System.Nullable(Of Short)) As Integer
+            Dim command As Global.System.Data.OleDb.OleDbCommand = Me.CommandCollection(1)
+            If (FolioDeta.HasValue = true) Then
+                command.Parameters(0).Value = CType(FolioDeta.Value,Integer)
+            Else
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (NEmpleado Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(NEmpleado,String)
+            End If
+            If (Kilos.HasValue = true) Then
+                command.Parameters(2).Value = CType(Kilos.Value,Decimal)
+            Else
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Gramos.HasValue = true) Then
+                command.Parameters(3).Value = CType(Gramos.Value,Short)
+            Else
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (Cubetas.HasValue = true) Then
+                command.Parameters(4).Value = CType(Cubetas.Value,Short)
+            Else
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     

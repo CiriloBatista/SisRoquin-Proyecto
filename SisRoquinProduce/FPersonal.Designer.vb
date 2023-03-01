@@ -468,11 +468,11 @@ Partial Class FPersonal
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.LightGreen
-        Me.PictureBox1.Image = Global.SisRoquinProduce.My.Resources.Resources.back_roquin_icon
+        Me.PictureBox1.Image = Global.SisRoquinProduce.My.Resources.Resources.Roquin_logo6
         Me.PictureBox1.Location = New System.Drawing.Point(50, 10)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(150, 150)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
         '

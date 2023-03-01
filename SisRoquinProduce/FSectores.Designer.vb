@@ -77,7 +77,7 @@ Partial Class FSectores
         '
         IdSectorLabel.AutoSize = True
         IdSectorLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        IdSectorLabel.Location = New System.Drawing.Point(113, 265)
+        IdSectorLabel.Location = New System.Drawing.Point(110, 265)
         IdSectorLabel.Name = "IdSectorLabel"
         IdSectorLabel.Size = New System.Drawing.Size(115, 29)
         IdSectorLabel.TabIndex = 16
@@ -87,7 +87,7 @@ Partial Class FSectores
         '
         NumSectorLabel.AutoSize = True
         NumSectorLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        NumSectorLabel.Location = New System.Drawing.Point(82, 315)
+        NumSectorLabel.Location = New System.Drawing.Point(79, 315)
         NumSectorLabel.Name = "NumSectorLabel"
         NumSectorLabel.Size = New System.Drawing.Size(146, 29)
         NumSectorLabel.TabIndex = 18
@@ -97,7 +97,7 @@ Partial Class FSectores
         '
         NombreSecLabel.AutoSize = True
         NombreSecLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        NombreSecLabel.Location = New System.Drawing.Point(45, 365)
+        NombreSecLabel.Location = New System.Drawing.Point(42, 365)
         NombreSecLabel.Name = "NombreSecLabel"
         NombreSecLabel.Size = New System.Drawing.Size(183, 29)
         NombreSecLabel.TabIndex = 20
@@ -118,11 +118,11 @@ Partial Class FSectores
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.SisRoquinProduce.My.Resources.Resources.back_roquin_icon
+        Me.PictureBox1.Image = Global.SisRoquinProduce.My.Resources.Resources.Roquin_logo6
         Me.PictureBox1.Location = New System.Drawing.Point(50, 10)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(150, 150)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 15
         Me.PictureBox1.TabStop = False
         '

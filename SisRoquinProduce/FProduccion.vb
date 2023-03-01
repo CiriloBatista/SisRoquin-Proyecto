@@ -1,4 +1,6 @@
 ﻿Public Class FProduccion
+
+    Dim Col, Ren
     Private Sub ProduccionBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
         Me.Validate()
         Me.ProduccionBindingSource.EndEdit()
@@ -7,7 +9,11 @@
     End Sub
 
     Private Sub FProduccion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.DetalleFolio' Puede moverla o quitarla según sea necesario.
+        Me.DetalleFolioTableAdapter.Fill(Me.RoquinDBDataSet.DetalleFolio)
         NombreComboBox.Focus()
+        'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Personal' Puede moverla o quitarla según sea necesario.
+        Me.PersonalTableAdapter.Fill(Me.RoquinDBDataSet.Personal)
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Sectores' Puede moverla o quitarla según sea necesario.
         Me.SectoresTableAdapter.Fill(Me.RoquinDBDataSet.Sectores)
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.ConsultDetallePersonal' Puede moverla o quitarla según sea necesario.
@@ -15,6 +21,7 @@
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Productores' Puede moverla o quitarla según sea necesario.
         Me.ProductoresTableAdapter.Fill(Me.RoquinDBDataSet.Productores)
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Produccion' Puede moverla o quitarla según sea necesario.
+
         DesBlock()
         Actualiza()
     End Sub
@@ -149,4 +156,49 @@
         NumSectorTextBox.Text = NombreSecComboBox.SelectedValue 'Indica que se haga el cambio al mismo tiempo en el otro textbox
     End Sub
 
+    Private Sub DataGridDetalle_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridDetalle.CellEndEdit
+        ' Para saber en donde ingreso el dato una vez termine de ingresar en la celda 
+
+        Dim NuEm
+
+        Col = e.ColumnIndex
+        Ren = e.RowIndex
+
+        NuEm = DataGridDetalle.Item(0, Ren).Value
+        If NuEm <> "" Then
+            If Col = 0 Then
+                Me.PersonalTableAdapter.FillByNumPersonal(Me.RoquinDBDataSet.Personal, NuEm) 'Hace la consulta para buscar el numero que se escribio
+                If NumEmpleadoTextBox.Text <> "" Then
+                    DataGridDetalle.Item(1, Ren).Value = ApellidosEmpTextBox.Text
+                    DataGridDetalle.Item(2, Ren).Value = NombreEmpleadoTextBox.Text
+                    'DataGridDetalle.CurrentCell = DataGridDetalle.Item(3, Ren) ' indicar la posicion para ir a la posicion
+                    'DataGridDetalle.BeginEdit(True)
+                End If
+            End If
+            If Col = 3 Then
+                If DataGridDetalle.Item(3, Ren).Value <> "" Then
+                    DataGridDetalle.Item(4, Ren).Value = DataGridDetalle.Item(3, Ren).Value * 2.5
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub BSave_Click(sender As Object, e As EventArgs) Handles BSave.Click
+        GrabaDetalle()
+    End Sub
+
+    Private Sub GrabaDetalle()
+        Dim Fol, NEmp As String
+        Dim Cub, Kil, Gra As Integer
+
+        For R = 0 To DataGridDetalle.RowCount - 2
+            Fol = FolioTextBox.Text
+            NEmp = DataGridDetalle.Item(0, R).Value
+            Cub = DataGridDetalle.Item(3, R).Value
+            Kil = DataGridDetalle.Item(4, R).Value
+            Gra = DataGridDetalle.Item(5, R).Value
+
+            Me.DetalleFolioTableAdapter.Nuevo(Fol, NEmp, Kil, Gra, Cub)
+        Next
+    End Sub
 End Class

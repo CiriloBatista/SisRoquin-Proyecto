@@ -234,6 +234,7 @@
     <None Include="Resources\roquin_Icon.jpeg" />
     <None Include="Resources\back_roquin.png" />
     <None Include="Resources\back_roquin_icon1.png" />
+    <None Include="Resources\Roquin_logo6.png" />
     <Content Include="RoquinDB.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
