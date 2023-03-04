@@ -48,7 +48,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>iconMini_Roquin.ico</ApplicationIcon>
+    <ApplicationIcon>Roquin_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -231,6 +231,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="iconMini_Roquin.ico" />
+    <Content Include="Roquin_icon.ico" />
     <None Include="Resources\roquin_Icon.jpeg" />
     <None Include="Resources\back_roquin.png" />
     <None Include="Resources\back_roquin_icon1.png" />

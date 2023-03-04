@@ -11,7 +11,7 @@
     Private Sub FProduccion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.DetalleFolio' Puede moverla o quitarla según sea necesario.
         Me.DetalleFolioTableAdapter.Fill(Me.RoquinDBDataSet.DetalleFolio)
-        NombreComboBox.Focus()
+        DataGridDetalle.Focus()
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Personal' Puede moverla o quitarla según sea necesario.
         Me.PersonalTableAdapter.Fill(Me.RoquinDBDataSet.Personal)
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Sectores' Puede moverla o quitarla según sea necesario.
@@ -21,7 +21,8 @@
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Productores' Puede moverla o quitarla según sea necesario.
         Me.ProductoresTableAdapter.Fill(Me.RoquinDBDataSet.Productores)
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Produccion' Puede moverla o quitarla según sea necesario.
-
+        ProduccionDataGridView.Enabled = False
+        ConsultDetallePersonalDataGridView.Enabled = False
         DesBlock()
         Actualiza()
     End Sub
@@ -35,7 +36,6 @@
     End Sub
 
     Private Sub Block()
-        ProduccionDataGridView.Enabled = False
         BNuevo.Visible = False
         BEditar.Visible = False
         BEliminar.Visible = False
@@ -65,7 +65,6 @@
         EncargadoTextBox.Enabled = True
     End Sub
     Private Sub DesBlock()
-        ProduccionDataGridView.Enabled = True
         BNuevo.Visible = True
         BEditar.Visible = True
         BEliminar.Visible = True
@@ -106,10 +105,12 @@
         ProduccionBindingSource.AddNew() 'Se selecciona la tabla a la que haremos referencia y añadimos una nueva fila'
         FolioTextBox.Focus()     'Apuntaremos a la caja de texto de ID_Personal'
         Block()
+        ProduccionDataGridView.Enabled = False
     End Sub
 
     Private Sub BEditar_Click(sender As Object, e As EventArgs) Handles BEditar.Click
         Block()
+        ProduccionDataGridView.Enabled = False
         BCancelar.Visible = True
     End Sub
 
@@ -183,7 +184,8 @@
         End If
     End Sub
 
-    Private Sub BSave_Click(sender As Object, e As EventArgs) Handles BSave.Click
+
+    Private Sub BSave_Click_1(sender As Object, e As EventArgs) Handles BSave.Click
         GrabaDetalle()
     End Sub
 
@@ -200,5 +202,14 @@
 
             Me.DetalleFolioTableAdapter.Nuevo(Fol, NEmp, Kil, Gra, Cub)
         Next
+    End Sub
+
+
+    Private Sub ConsultDetallePersonalDataGridView_Click(sender As Object, e As EventArgs) Handles ConsultDetallePersonalDataGridView.Click
+        ConsultDetallePersonalDataGridView.Enabled = True
+    End Sub
+
+    Private Sub ProduccionDataGridView_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles ProduccionDataGridView.CellMouseClick
+        ProduccionDataGridView.Enabled = True
     End Sub
 End Class

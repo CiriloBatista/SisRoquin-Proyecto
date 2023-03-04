@@ -47,11 +47,11 @@ Partial Class FProduccion
         Dim NombreEmpleadoLabel As System.Windows.Forms.Label
         Dim ApellidosEmpLabel As System.Windows.Forms.Label
         Dim FolioDetaLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FProduccion))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -138,6 +138,9 @@ Partial Class FProduccion
         Me.DetalleFolioTableAdapter = New SisRoquinProduce.RoquinDBDataSetTableAdapters.DetalleFolioTableAdapter()
         Me.FolioDetaTextBox = New System.Windows.Forms.TextBox()
         Me.BSave = New System.Windows.Forms.Button()
+        Me.LabelListadoFolios = New System.Windows.Forms.Label()
+        Me.LabelRegistroCosecha = New System.Windows.Forms.Label()
+        Me.LabelListadoCosechas = New System.Windows.Forms.Label()
         FolioLabel = New System.Windows.Forms.Label()
         FechaProdLabel = New System.Windows.Forms.Label()
         NumProdLabel = New System.Windows.Forms.Label()
@@ -184,7 +187,7 @@ Partial Class FProduccion
         '
         FolioLabel.AutoSize = True
         FolioLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        FolioLabel.Location = New System.Drawing.Point(138, 227)
+        FolioLabel.Location = New System.Drawing.Point(88, 225)
         FolioLabel.Name = "FolioLabel"
         FolioLabel.Size = New System.Drawing.Size(74, 29)
         FolioLabel.TabIndex = 17
@@ -194,7 +197,7 @@ Partial Class FProduccion
         '
         FechaProdLabel.AutoSize = True
         FechaProdLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        FechaProdLabel.Location = New System.Drawing.Point(126, 277)
+        FechaProdLabel.Location = New System.Drawing.Point(76, 275)
         FechaProdLabel.Name = "FechaProdLabel"
         FechaProdLabel.Size = New System.Drawing.Size(86, 29)
         FechaProdLabel.TabIndex = 19
@@ -204,7 +207,7 @@ Partial Class FProduccion
         '
         NumProdLabel.AutoSize = True
         NumProdLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        NumProdLabel.Location = New System.Drawing.Point(88, 326)
+        NumProdLabel.Location = New System.Drawing.Point(38, 324)
         NumProdLabel.Name = "NumProdLabel"
         NumProdLabel.Size = New System.Drawing.Size(124, 29)
         NumProdLabel.TabIndex = 21
@@ -214,7 +217,7 @@ Partial Class FProduccion
         '
         CodigoLabel.AutoSize = True
         CodigoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        CodigoLabel.Location = New System.Drawing.Point(114, 377)
+        CodigoLabel.Location = New System.Drawing.Point(64, 375)
         CodigoLabel.Name = "CodigoLabel"
         CodigoLabel.Size = New System.Drawing.Size(98, 29)
         CodigoLabel.TabIndex = 23
@@ -224,7 +227,7 @@ Partial Class FProduccion
         '
         HuertoLabel.AutoSize = True
         HuertoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        HuertoLabel.Location = New System.Drawing.Point(121, 427)
+        HuertoLabel.Location = New System.Drawing.Point(71, 425)
         HuertoLabel.Name = "HuertoLabel"
         HuertoLabel.Size = New System.Drawing.Size(91, 29)
         HuertoLabel.TabIndex = 25
@@ -234,7 +237,7 @@ Partial Class FProduccion
         '
         TemporadaLabel.AutoSize = True
         TemporadaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        TemporadaLabel.Location = New System.Drawing.Point(67, 477)
+        TemporadaLabel.Location = New System.Drawing.Point(17, 475)
         TemporadaLabel.Name = "TemporadaLabel"
         TemporadaLabel.Size = New System.Drawing.Size(145, 29)
         TemporadaLabel.TabIndex = 27
@@ -244,7 +247,7 @@ Partial Class FProduccion
         '
         CajasLabel.AutoSize = True
         CajasLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        CajasLabel.Location = New System.Drawing.Point(132, 527)
+        CajasLabel.Location = New System.Drawing.Point(82, 525)
         CajasLabel.Name = "CajasLabel"
         CajasLabel.Size = New System.Drawing.Size(80, 29)
         CajasLabel.TabIndex = 29
@@ -254,7 +257,7 @@ Partial Class FProduccion
         '
         KilosLabel.AutoSize = True
         KilosLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        KilosLabel.Location = New System.Drawing.Point(139, 577)
+        KilosLabel.Location = New System.Drawing.Point(89, 575)
         KilosLabel.Name = "KilosLabel"
         KilosLabel.Size = New System.Drawing.Size(73, 29)
         KilosLabel.TabIndex = 31
@@ -264,7 +267,7 @@ Partial Class FProduccion
         '
         NumSectorLabel.AutoSize = True
         NumSectorLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        NumSectorLabel.Location = New System.Drawing.Point(121, 627)
+        NumSectorLabel.Location = New System.Drawing.Point(71, 625)
         NumSectorLabel.Name = "NumSectorLabel"
         NumSectorLabel.Size = New System.Drawing.Size(89, 29)
         NumSectorLabel.TabIndex = 33
@@ -274,7 +277,7 @@ Partial Class FProduccion
         '
         KGCampoLabel.AutoSize = True
         KGCampoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        KGCampoLabel.Location = New System.Drawing.Point(553, 276)
+        KGCampoLabel.Location = New System.Drawing.Point(507, 275)
         KGCampoLabel.Name = "KGCampoLabel"
         KGCampoLabel.Size = New System.Drawing.Size(137, 29)
         KGCampoLabel.TabIndex = 39
@@ -284,7 +287,7 @@ Partial Class FProduccion
         '
         GaleraLabel.AutoSize = True
         GaleraLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        GaleraLabel.Location = New System.Drawing.Point(598, 326)
+        GaleraLabel.Location = New System.Drawing.Point(552, 325)
         GaleraLabel.Name = "GaleraLabel"
         GaleraLabel.Size = New System.Drawing.Size(91, 29)
         GaleraLabel.TabIndex = 41
@@ -294,7 +297,7 @@ Partial Class FProduccion
         '
         ClamshellLabel.AutoSize = True
         ClamshellLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        ClamshellLabel.Location = New System.Drawing.Point(563, 376)
+        ClamshellLabel.Location = New System.Drawing.Point(517, 375)
         ClamshellLabel.Name = "ClamshellLabel"
         ClamshellLabel.Size = New System.Drawing.Size(126, 29)
         ClamshellLabel.TabIndex = 43
@@ -304,7 +307,7 @@ Partial Class FProduccion
         '
         CubetasSinEmpLabel.AutoSize = True
         CubetasSinEmpLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        CubetasSinEmpLabel.Location = New System.Drawing.Point(440, 426)
+        CubetasSinEmpLabel.Location = New System.Drawing.Point(394, 425)
         CubetasSinEmpLabel.Name = "CubetasSinEmpLabel"
         CubetasSinEmpLabel.Size = New System.Drawing.Size(255, 33)
         CubetasSinEmpLabel.TabIndex = 45
@@ -315,7 +318,7 @@ Partial Class FProduccion
         '
         DiasCorteLabel.AutoSize = True
         DiasCorteLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        DiasCorteLabel.Location = New System.Drawing.Point(538, 476)
+        DiasCorteLabel.Location = New System.Drawing.Point(492, 475)
         DiasCorteLabel.Name = "DiasCorteLabel"
         DiasCorteLabel.Size = New System.Drawing.Size(151, 29)
         DiasCorteLabel.TabIndex = 47
@@ -325,7 +328,7 @@ Partial Class FProduccion
         '
         DefectoLabel.AutoSize = True
         DefectoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        DefectoLabel.Location = New System.Drawing.Point(587, 526)
+        DefectoLabel.Location = New System.Drawing.Point(541, 525)
         DefectoLabel.Name = "DefectoLabel"
         DefectoLabel.Size = New System.Drawing.Size(102, 29)
         DefectoLabel.TabIndex = 49
@@ -335,7 +338,7 @@ Partial Class FProduccion
         '
         TotCubetasLabel.AutoSize = True
         TotCubetasLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        TotCubetasLabel.Location = New System.Drawing.Point(520, 576)
+        TotCubetasLabel.Location = New System.Drawing.Point(474, 575)
         TotCubetasLabel.Name = "TotCubetasLabel"
         TotCubetasLabel.Size = New System.Drawing.Size(169, 29)
         TotCubetasLabel.TabIndex = 51
@@ -345,7 +348,7 @@ Partial Class FProduccion
         '
         CortesiasLabel.AutoSize = True
         CortesiasLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        CortesiasLabel.Location = New System.Drawing.Point(568, 626)
+        CortesiasLabel.Location = New System.Drawing.Point(522, 625)
         CortesiasLabel.Name = "CortesiasLabel"
         CortesiasLabel.Size = New System.Drawing.Size(121, 29)
         CortesiasLabel.TabIndex = 53
@@ -355,7 +358,7 @@ Partial Class FProduccion
         '
         EncargadoLabel.AutoSize = True
         EncargadoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        EncargadoLabel.Location = New System.Drawing.Point(553, 676)
+        EncargadoLabel.Location = New System.Drawing.Point(507, 675)
         EncargadoLabel.Name = "EncargadoLabel"
         EncargadoLabel.Size = New System.Drawing.Size(136, 29)
         EncargadoLabel.TabIndex = 55
@@ -365,7 +368,7 @@ Partial Class FProduccion
         '
         EmbalajeLabel.AutoSize = True
         EmbalajeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        EmbalajeLabel.Location = New System.Drawing.Point(92, 679)
+        EmbalajeLabel.Location = New System.Drawing.Point(42, 677)
         EmbalajeLabel.Name = "EmbalajeLabel"
         EmbalajeLabel.Size = New System.Drawing.Size(121, 29)
         EmbalajeLabel.TabIndex = 60
@@ -375,7 +378,7 @@ Partial Class FProduccion
         '
         VariedadLabel.AutoSize = True
         VariedadLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        VariedadLabel.Location = New System.Drawing.Point(574, 228)
+        VariedadLabel.Location = New System.Drawing.Point(528, 227)
         VariedadLabel.Name = "VariedadLabel"
         VariedadLabel.Size = New System.Drawing.Size(116, 29)
         VariedadLabel.TabIndex = 61
@@ -426,7 +429,7 @@ Partial Class FProduccion
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Panel1.Size = New System.Drawing.Size(1790, 1513)
+        Me.Panel1.Size = New System.Drawing.Size(1900, 200)
         Me.Panel1.TabIndex = 14
         '
         'PictureBox1
@@ -456,7 +459,7 @@ Partial Class FProduccion
         Me.FolioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Folio", True))
         Me.FolioTextBox.Enabled = False
         Me.FolioTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.FolioTextBox.Location = New System.Drawing.Point(227, 227)
+        Me.FolioTextBox.Location = New System.Drawing.Point(177, 225)
         Me.FolioTextBox.Name = "FolioTextBox"
         Me.FolioTextBox.ReadOnly = True
         Me.FolioTextBox.Size = New System.Drawing.Size(200, 34)
@@ -478,7 +481,7 @@ Partial Class FProduccion
         Me.FechaProdDateTimePicker.Enabled = False
         Me.FechaProdDateTimePicker.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.FechaProdDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.FechaProdDateTimePicker.Location = New System.Drawing.Point(227, 277)
+        Me.FechaProdDateTimePicker.Location = New System.Drawing.Point(177, 275)
         Me.FechaProdDateTimePicker.Name = "FechaProdDateTimePicker"
         Me.FechaProdDateTimePicker.Size = New System.Drawing.Size(200, 34)
         Me.FechaProdDateTimePicker.TabIndex = 20
@@ -490,7 +493,7 @@ Partial Class FProduccion
         Me.NumProdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "NumProd", True))
         Me.NumProdTextBox.Enabled = False
         Me.NumProdTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.NumProdTextBox.Location = New System.Drawing.Point(227, 327)
+        Me.NumProdTextBox.Location = New System.Drawing.Point(177, 325)
         Me.NumProdTextBox.Name = "NumProdTextBox"
         Me.NumProdTextBox.Size = New System.Drawing.Size(100, 34)
         Me.NumProdTextBox.TabIndex = 22
@@ -501,7 +504,7 @@ Partial Class FProduccion
         Me.CodigoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CodigoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Codigo", True))
         Me.CodigoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.CodigoTextBox.Location = New System.Drawing.Point(227, 377)
+        Me.CodigoTextBox.Location = New System.Drawing.Point(177, 375)
         Me.CodigoTextBox.Name = "CodigoTextBox"
         Me.CodigoTextBox.Size = New System.Drawing.Size(200, 34)
         Me.CodigoTextBox.TabIndex = 24
@@ -512,7 +515,7 @@ Partial Class FProduccion
         Me.HuertoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.HuertoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Huerto", True))
         Me.HuertoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.HuertoTextBox.Location = New System.Drawing.Point(227, 427)
+        Me.HuertoTextBox.Location = New System.Drawing.Point(177, 425)
         Me.HuertoTextBox.Name = "HuertoTextBox"
         Me.HuertoTextBox.Size = New System.Drawing.Size(200, 34)
         Me.HuertoTextBox.TabIndex = 26
@@ -523,7 +526,7 @@ Partial Class FProduccion
         Me.TemporadaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TemporadaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Temporada", True))
         Me.TemporadaTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.TemporadaTextBox.Location = New System.Drawing.Point(227, 477)
+        Me.TemporadaTextBox.Location = New System.Drawing.Point(177, 475)
         Me.TemporadaTextBox.Name = "TemporadaTextBox"
         Me.TemporadaTextBox.Size = New System.Drawing.Size(200, 34)
         Me.TemporadaTextBox.TabIndex = 28
@@ -534,7 +537,7 @@ Partial Class FProduccion
         Me.CajasTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CajasTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Cajas", True))
         Me.CajasTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.CajasTextBox.Location = New System.Drawing.Point(227, 527)
+        Me.CajasTextBox.Location = New System.Drawing.Point(177, 525)
         Me.CajasTextBox.Name = "CajasTextBox"
         Me.CajasTextBox.Size = New System.Drawing.Size(200, 34)
         Me.CajasTextBox.TabIndex = 30
@@ -545,7 +548,7 @@ Partial Class FProduccion
         Me.KilosTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.KilosTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Kilos", True))
         Me.KilosTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.KilosTextBox.Location = New System.Drawing.Point(227, 577)
+        Me.KilosTextBox.Location = New System.Drawing.Point(177, 575)
         Me.KilosTextBox.Name = "KilosTextBox"
         Me.KilosTextBox.Size = New System.Drawing.Size(200, 34)
         Me.KilosTextBox.TabIndex = 32
@@ -556,7 +559,7 @@ Partial Class FProduccion
         Me.NumSectorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NumSectorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "NumSector", True))
         Me.NumSectorTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.NumSectorTextBox.Location = New System.Drawing.Point(227, 627)
+        Me.NumSectorTextBox.Location = New System.Drawing.Point(177, 625)
         Me.NumSectorTextBox.Name = "NumSectorTextBox"
         Me.NumSectorTextBox.Size = New System.Drawing.Size(100, 34)
         Me.NumSectorTextBox.TabIndex = 34
@@ -567,7 +570,7 @@ Partial Class FProduccion
         Me.KGCampoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.KGCampoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "KGCampo", True))
         Me.KGCampoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.KGCampoTextBox.Location = New System.Drawing.Point(711, 276)
+        Me.KGCampoTextBox.Location = New System.Drawing.Point(665, 275)
         Me.KGCampoTextBox.Name = "KGCampoTextBox"
         Me.KGCampoTextBox.Size = New System.Drawing.Size(200, 34)
         Me.KGCampoTextBox.TabIndex = 40
@@ -578,7 +581,7 @@ Partial Class FProduccion
         Me.GaleraTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.GaleraTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Galera", True))
         Me.GaleraTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.GaleraTextBox.Location = New System.Drawing.Point(711, 326)
+        Me.GaleraTextBox.Location = New System.Drawing.Point(665, 325)
         Me.GaleraTextBox.Name = "GaleraTextBox"
         Me.GaleraTextBox.Size = New System.Drawing.Size(200, 34)
         Me.GaleraTextBox.TabIndex = 42
@@ -589,7 +592,7 @@ Partial Class FProduccion
         Me.ClamshellTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ClamshellTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Clamshell", True))
         Me.ClamshellTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.ClamshellTextBox.Location = New System.Drawing.Point(711, 376)
+        Me.ClamshellTextBox.Location = New System.Drawing.Point(665, 375)
         Me.ClamshellTextBox.Name = "ClamshellTextBox"
         Me.ClamshellTextBox.Size = New System.Drawing.Size(200, 34)
         Me.ClamshellTextBox.TabIndex = 44
@@ -600,7 +603,7 @@ Partial Class FProduccion
         Me.CubetasSinEmpTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CubetasSinEmpTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "CubetasSinEmp", True))
         Me.CubetasSinEmpTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.CubetasSinEmpTextBox.Location = New System.Drawing.Point(711, 426)
+        Me.CubetasSinEmpTextBox.Location = New System.Drawing.Point(665, 425)
         Me.CubetasSinEmpTextBox.Name = "CubetasSinEmpTextBox"
         Me.CubetasSinEmpTextBox.Size = New System.Drawing.Size(200, 34)
         Me.CubetasSinEmpTextBox.TabIndex = 46
@@ -611,7 +614,7 @@ Partial Class FProduccion
         Me.DiasCorteTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.DiasCorteTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "DiasCorte", True))
         Me.DiasCorteTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.DiasCorteTextBox.Location = New System.Drawing.Point(711, 476)
+        Me.DiasCorteTextBox.Location = New System.Drawing.Point(665, 475)
         Me.DiasCorteTextBox.Name = "DiasCorteTextBox"
         Me.DiasCorteTextBox.Size = New System.Drawing.Size(200, 34)
         Me.DiasCorteTextBox.TabIndex = 48
@@ -622,7 +625,7 @@ Partial Class FProduccion
         Me.DefectoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.DefectoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Defecto", True))
         Me.DefectoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.DefectoTextBox.Location = New System.Drawing.Point(711, 526)
+        Me.DefectoTextBox.Location = New System.Drawing.Point(665, 525)
         Me.DefectoTextBox.Name = "DefectoTextBox"
         Me.DefectoTextBox.Size = New System.Drawing.Size(200, 34)
         Me.DefectoTextBox.TabIndex = 50
@@ -633,7 +636,7 @@ Partial Class FProduccion
         Me.TotCubetasTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TotCubetasTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "TotCubetas", True))
         Me.TotCubetasTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.TotCubetasTextBox.Location = New System.Drawing.Point(711, 576)
+        Me.TotCubetasTextBox.Location = New System.Drawing.Point(665, 575)
         Me.TotCubetasTextBox.Name = "TotCubetasTextBox"
         Me.TotCubetasTextBox.Size = New System.Drawing.Size(200, 34)
         Me.TotCubetasTextBox.TabIndex = 52
@@ -644,7 +647,7 @@ Partial Class FProduccion
         Me.CortesiasTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CortesiasTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Cortesias", True))
         Me.CortesiasTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.CortesiasTextBox.Location = New System.Drawing.Point(711, 626)
+        Me.CortesiasTextBox.Location = New System.Drawing.Point(665, 625)
         Me.CortesiasTextBox.Name = "CortesiasTextBox"
         Me.CortesiasTextBox.Size = New System.Drawing.Size(200, 34)
         Me.CortesiasTextBox.TabIndex = 54
@@ -655,7 +658,7 @@ Partial Class FProduccion
         Me.EncargadoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.EncargadoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Encargado", True))
         Me.EncargadoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.EncargadoTextBox.Location = New System.Drawing.Point(711, 676)
+        Me.EncargadoTextBox.Location = New System.Drawing.Point(665, 675)
         Me.EncargadoTextBox.Name = "EncargadoTextBox"
         Me.EncargadoTextBox.Size = New System.Drawing.Size(200, 34)
         Me.EncargadoTextBox.TabIndex = 56
@@ -664,48 +667,49 @@ Partial Class FProduccion
         '
         Me.ProduccionDataGridView.AllowUserToAddRows = False
         Me.ProduccionDataGridView.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.ProduccionDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.ProduccionDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
         Me.ProduccionDataGridView.AutoGenerateColumns = False
         Me.ProduccionDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ProduccionDataGridView.BackgroundColor = System.Drawing.Color.LightGreen
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProduccionDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProduccionDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.ProduccionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ProduccionDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn21})
         Me.ProduccionDataGridView.DataSource = Me.ProduccionBindingSource
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ProduccionDataGridView.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ProduccionDataGridView.DefaultCellStyle = DataGridViewCellStyle18
+        Me.ProduccionDataGridView.Enabled = False
         Me.ProduccionDataGridView.GridColor = System.Drawing.Color.Black
-        Me.ProduccionDataGridView.Location = New System.Drawing.Point(933, 206)
+        Me.ProduccionDataGridView.Location = New System.Drawing.Point(933, 257)
         Me.ProduccionDataGridView.Name = "ProduccionDataGridView"
         Me.ProduccionDataGridView.ReadOnly = True
         Me.ProduccionDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.ProduccionDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProduccionDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProduccionDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle19
         Me.ProduccionDataGridView.RowHeadersVisible = False
         Me.ProduccionDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.ProduccionDataGridView.RowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.ProduccionDataGridView.RowsDefaultCellStyle = DataGridViewCellStyle20
         Me.ProduccionDataGridView.RowTemplate.Height = 24
         Me.ProduccionDataGridView.Size = New System.Drawing.Size(845, 149)
         Me.ProduccionDataGridView.TabIndex = 56
@@ -849,14 +853,14 @@ Partial Class FProduccion
         Me.ProduccionBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ProduccionBindingNavigator.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ProduccionBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2})
-        Me.ProduccionBindingNavigator.Location = New System.Drawing.Point(0, 1513)
+        Me.ProduccionBindingNavigator.Location = New System.Drawing.Point(0, 835)
         Me.ProduccionBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.ProduccionBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
         Me.ProduccionBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
         Me.ProduccionBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.ProduccionBindingNavigator.Name = "ProduccionBindingNavigator"
         Me.ProduccionBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.ProduccionBindingNavigator.Size = New System.Drawing.Size(1790, 27)
+        Me.ProduccionBindingNavigator.Size = New System.Drawing.Size(1900, 27)
         Me.ProduccionBindingNavigator.TabIndex = 15
         Me.ProduccionBindingNavigator.Text = "BindingNavigator1"
         '
@@ -865,7 +869,7 @@ Partial Class FProduccion
         Me.BEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.BEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BEliminar.Image = CType(resources.GetObject("BEliminar.Image"), System.Drawing.Image)
-        Me.BEliminar.Location = New System.Drawing.Point(1714, 742)
+        Me.BEliminar.Location = New System.Drawing.Point(804, 742)
         Me.BEliminar.Name = "BEliminar"
         Me.BEliminar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.BEliminar.Size = New System.Drawing.Size(60, 60)
@@ -879,7 +883,7 @@ Partial Class FProduccion
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BCancelar.Image = CType(resources.GetObject("BCancelar.Image"), System.Drawing.Image)
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelar.Location = New System.Drawing.Point(669, 742)
+        Me.BCancelar.Location = New System.Drawing.Point(513, 742)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BCancelar.Size = New System.Drawing.Size(150, 60)
@@ -894,7 +898,7 @@ Partial Class FProduccion
         Me.BGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BGuardar.Image = CType(resources.GetObject("BGuardar.Image"), System.Drawing.Image)
-        Me.BGuardar.Location = New System.Drawing.Point(1689, 742)
+        Me.BGuardar.Location = New System.Drawing.Point(779, 742)
         Me.BGuardar.Name = "BGuardar"
         Me.BGuardar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.BGuardar.Size = New System.Drawing.Size(60, 60)
@@ -908,12 +912,12 @@ Partial Class FProduccion
         Me.BNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BNuevo.Image = CType(resources.GetObject("BNuevo.Image"), System.Drawing.Image)
         Me.BNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BNuevo.Location = New System.Drawing.Point(592, 742)
+        Me.BNuevo.Location = New System.Drawing.Point(419, 742)
         Me.BNuevo.Name = "BNuevo"
         Me.BNuevo.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.BNuevo.Size = New System.Drawing.Size(140, 60)
+        Me.BNuevo.Size = New System.Drawing.Size(180, 60)
         Me.BNuevo.TabIndex = 57
-        Me.BNuevo.Text = "Nuevo"
+        Me.BNuevo.Text = "Nuevo Folio"
         Me.BNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BNuevo.UseVisualStyleBackColor = False
         '
@@ -923,7 +927,7 @@ Partial Class FProduccion
         Me.EmbalajeComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.EmbalajeComboBox.FormattingEnabled = True
         Me.EmbalajeComboBox.Items.AddRange(New Object() {"4x4", "18oz", "6oz", "pinta"})
-        Me.EmbalajeComboBox.Location = New System.Drawing.Point(227, 676)
+        Me.EmbalajeComboBox.Location = New System.Drawing.Point(177, 674)
         Me.EmbalajeComboBox.Name = "EmbalajeComboBox"
         Me.EmbalajeComboBox.Size = New System.Drawing.Size(200, 37)
         Me.EmbalajeComboBox.TabIndex = 61
@@ -934,7 +938,7 @@ Partial Class FProduccion
         Me.VariedadComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.VariedadComboBox.FormattingEnabled = True
         Me.VariedadComboBox.Items.AddRange(New Object() {"Jupiter", "Atlas", "Biloxi"})
-        Me.VariedadComboBox.Location = New System.Drawing.Point(711, 225)
+        Me.VariedadComboBox.Location = New System.Drawing.Point(665, 224)
         Me.VariedadComboBox.Name = "VariedadComboBox"
         Me.VariedadComboBox.Size = New System.Drawing.Size(200, 37)
         Me.VariedadComboBox.TabIndex = 62
@@ -970,7 +974,7 @@ Partial Class FProduccion
         Me.NombreComboBox.DisplayMember = "Nombre"
         Me.NombreComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.NombreComboBox.FormattingEnabled = True
-        Me.NombreComboBox.Location = New System.Drawing.Point(227, 326)
+        Me.NombreComboBox.Location = New System.Drawing.Point(177, 324)
         Me.NombreComboBox.Name = "NombreComboBox"
         Me.NombreComboBox.Size = New System.Drawing.Size(200, 37)
         Me.NombreComboBox.TabIndex = 63
@@ -1001,12 +1005,12 @@ Partial Class FProduccion
         Me.ConsultDetallePersonalDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumEmpleado, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12})
         Me.ConsultDetallePersonalDataGridView.DataSource = Me.ConsultDetallePersonalBindingSource
         Me.ConsultDetallePersonalDataGridView.EnableHeadersVisualStyles = False
-        Me.ConsultDetallePersonalDataGridView.Location = New System.Drawing.Point(933, 365)
+        Me.ConsultDetallePersonalDataGridView.Location = New System.Drawing.Point(933, 660)
         Me.ConsultDetallePersonalDataGridView.Name = "ConsultDetallePersonalDataGridView"
         Me.ConsultDetallePersonalDataGridView.ReadOnly = True
         Me.ConsultDetallePersonalDataGridView.RowHeadersVisible = False
         Me.ConsultDetallePersonalDataGridView.RowTemplate.Height = 24
-        Me.ConsultDetallePersonalDataGridView.Size = New System.Drawing.Size(800, 168)
+        Me.ConsultDetallePersonalDataGridView.Size = New System.Drawing.Size(845, 168)
         Me.ConsultDetallePersonalDataGridView.TabIndex = 63
         '
         'NumEmpleado
@@ -1076,7 +1080,7 @@ Partial Class FProduccion
         Me.NombreSecComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SectoresBindingSource1, "NombreSec", True))
         Me.NombreSecComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.NombreSecComboBox.FormattingEnabled = True
-        Me.NombreSecComboBox.Location = New System.Drawing.Point(227, 627)
+        Me.NombreSecComboBox.Location = New System.Drawing.Point(177, 625)
         Me.NombreSecComboBox.Name = "NombreSecComboBox"
         Me.NombreSecComboBox.Size = New System.Drawing.Size(200, 37)
         Me.NombreSecComboBox.TabIndex = 65
@@ -1088,12 +1092,12 @@ Partial Class FProduccion
         Me.DataGridDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridDetalle.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Empleado, Me.Apellido, Me.Nom, Me.cubetas, Me.kilos, Me.gramos})
         Me.DataGridDetalle.GridColor = System.Drawing.SystemColors.ActiveCaption
-        Me.DataGridDetalle.Location = New System.Drawing.Point(933, 555)
+        Me.DataGridDetalle.Location = New System.Drawing.Point(933, 476)
         Me.DataGridDetalle.Name = "DataGridDetalle"
         Me.DataGridDetalle.RowHeadersVisible = False
         Me.DataGridDetalle.RowTemplate.Height = 24
-        Me.DataGridDetalle.Size = New System.Drawing.Size(769, 150)
-        Me.DataGridDetalle.TabIndex = 66
+        Me.DataGridDetalle.Size = New System.Drawing.Size(769, 104)
+        Me.DataGridDetalle.TabIndex = 1
         '
         'Empleado
         '
@@ -1131,12 +1135,12 @@ Partial Class FProduccion
         Me.BEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BEditar.Image = CType(resources.GetObject("BEditar.Image"), System.Drawing.Image)
         Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BEditar.Location = New System.Drawing.Point(761, 742)
+        Me.BEditar.Location = New System.Drawing.Point(605, 742)
         Me.BEditar.Name = "BEditar"
         Me.BEditar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
-        Me.BEditar.Size = New System.Drawing.Size(150, 60)
+        Me.BEditar.Size = New System.Drawing.Size(180, 60)
         Me.BEditar.TabIndex = 67
-        Me.BEditar.Text = "Editar"
+        Me.BEditar.Text = "Editar Folio"
         Me.BEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BEditar.UseVisualStyleBackColor = False
         '
@@ -1192,12 +1196,47 @@ Partial Class FProduccion
         '
         'BSave
         '
-        Me.BSave.Location = New System.Drawing.Point(1715, 577)
+        Me.BSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(74, Byte), Integer))
+        Me.BSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.BSave.Image = CType(resources.GetObject("BSave.Image"), System.Drawing.Image)
+        Me.BSave.Location = New System.Drawing.Point(1718, 492)
         Me.BSave.Name = "BSave"
-        Me.BSave.Size = New System.Drawing.Size(75, 46)
-        Me.BSave.TabIndex = 72
-        Me.BSave.Text = "Guardar"
-        Me.BSave.UseVisualStyleBackColor = True
+        Me.BSave.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
+        Me.BSave.Size = New System.Drawing.Size(60, 60)
+        Me.BSave.TabIndex = 2
+        Me.BSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BSave.UseVisualStyleBackColor = False
+        '
+        'LabelListadoFolios
+        '
+        Me.LabelListadoFolios.AutoSize = True
+        Me.LabelListadoFolios.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.LabelListadoFolios.Location = New System.Drawing.Point(933, 216)
+        Me.LabelListadoFolios.Name = "LabelListadoFolios"
+        Me.LabelListadoFolios.Size = New System.Drawing.Size(391, 29)
+        Me.LabelListadoFolios.TabIndex = 74
+        Me.LabelListadoFolios.Text = "Listado de Folios de Producción"
+        '
+        'LabelRegistroCosecha
+        '
+        Me.LabelRegistroCosecha.AutoSize = True
+        Me.LabelRegistroCosecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.LabelRegistroCosecha.Location = New System.Drawing.Point(934, 431)
+        Me.LabelRegistroCosecha.Name = "LabelRegistroCosecha"
+        Me.LabelRegistroCosecha.Size = New System.Drawing.Size(392, 29)
+        Me.LabelRegistroCosecha.TabIndex = 75
+        Me.LabelRegistroCosecha.Text = "Registrar Cosecha de Empleado"
+        '
+        'LabelListadoCosechas
+        '
+        Me.LabelListadoCosechas.AutoSize = True
+        Me.LabelListadoCosechas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.LabelListadoCosechas.Location = New System.Drawing.Point(934, 620)
+        Me.LabelListadoCosechas.Name = "LabelListadoCosechas"
+        Me.LabelListadoCosechas.Size = New System.Drawing.Size(257, 29)
+        Me.LabelListadoCosechas.TabIndex = 76
+        Me.LabelListadoCosechas.Text = "Listado de Cosechas"
         '
         'FProduccion
         '
@@ -1205,8 +1244,13 @@ Partial Class FProduccion
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1810, 870)
+        Me.ClientSize = New System.Drawing.Size(1882, 883)
+        Me.Controls.Add(Me.LabelListadoCosechas)
+        Me.Controls.Add(Me.LabelRegistroCosecha)
+        Me.Controls.Add(Me.LabelListadoFolios)
         Me.Controls.Add(Me.BSave)
+        Me.Controls.Add(Me.ConsultDetallePersonalDataGridView)
+        Me.Controls.Add(Me.DataGridDetalle)
         Me.Controls.Add(FolioDetaLabel)
         Me.Controls.Add(Me.FolioDetaTextBox)
         Me.Controls.Add(ApellidosEmpLabel)
@@ -1216,9 +1260,7 @@ Partial Class FProduccion
         Me.Controls.Add(NumEmpleadoLabel)
         Me.Controls.Add(Me.NumEmpleadoTextBox)
         Me.Controls.Add(Me.BEditar)
-        Me.Controls.Add(Me.DataGridDetalle)
         Me.Controls.Add(Me.NombreSecComboBox)
-        Me.Controls.Add(Me.ConsultDetallePersonalDataGridView)
         Me.Controls.Add(Me.NombreComboBox)
         Me.Controls.Add(VariedadLabel)
         Me.Controls.Add(Me.VariedadComboBox)
@@ -1380,4 +1422,7 @@ Partial Class FProduccion
     Friend WithEvents kilos As DataGridViewTextBoxColumn
     Friend WithEvents gramos As DataGridViewTextBoxColumn
     Friend WithEvents BSave As Button
+    Friend WithEvents LabelListadoFolios As Label
+    Friend WithEvents LabelRegistroCosecha As Label
+    Friend WithEvents LabelListadoCosechas As Label
 End Class
