@@ -9,6 +9,8 @@
     End Sub
 
     Private Sub FProduccion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.ConsultDetallePersonal' Puede moverla o quitarla según sea necesario.
+        Me.ConsultDetallePersonalTableAdapter.Fill(Me.RoquinDBDataSet.ConsultDetallePersonal)
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.DetalleFolio' Puede moverla o quitarla según sea necesario.
         Me.DetalleFolioTableAdapter.Fill(Me.RoquinDBDataSet.DetalleFolio)
         DataGridDetalle.Focus()
@@ -277,7 +279,8 @@
 
     End Sub
 
-    Private Sub ProduccionDataGridView_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles ProduccionDataGridView.CellMouseClick
+
+    Private Sub ProduccionDataGridView_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs)
         ProduccionDataGridView.Enabled = True
     End Sub
 

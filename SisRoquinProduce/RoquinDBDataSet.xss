@@ -8,11 +8,11 @@
   <Shapes>
     <Shape ID="DesignTable:DetalleFolio" ZOrder="10" X="70" Y="70" Height="250" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="168" />
     <Shape ID="DesignTable:Personal" ZOrder="4" X="392" Y="70" Height="227" Width="274" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
-    <Shape ID="DesignTable:Produccion" ZOrder="3" X="674" Y="30" Height="388" Width="247" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
+    <Shape ID="DesignTable:Produccion" ZOrder="1" X="674" Y="30" Height="388" Width="247" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
     <Shape ID="DesignTable:Productores" ZOrder="9" X="1006" Y="70" Height="181" Width="253" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
     <Shape ID="DesignTable:Sectores" ZOrder="8" X="1007" Y="274" Height="158" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:Usuarios" ZOrder="7" X="1284" Y="69" Height="204" Width="227" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="28" SplitterPosition="145" />
-    <Shape ID="DesignTable:ConsultDetallePersonal" ZOrder="1" X="389" Y="342" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="283" />
+    <Shape ID="DesignTable:ConsultDetallePersonal" ZOrder="2" X="389" Y="342" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="283" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:Produccion_Productores" ZOrder="6" LineWidth="11">
@@ -39,7 +39,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Produccion_ConsultDetallePersonal" ZOrder="2" LineWidth="11">
+    <Connector ID="DesignRelation:Produccion_ConsultDetallePersonal" ZOrder="3" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>706</X>

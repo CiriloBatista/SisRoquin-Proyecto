@@ -47,12 +47,10 @@ Partial Class FProduccion
         Dim NombreEmpleadoLabel As System.Windows.Forms.Label
         Dim ApellidosEmpLabel As System.Windows.Forms.Label
         Dim FolioDetaLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FProduccion))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LabelPersonal = New System.Windows.Forms.Label()
@@ -76,16 +74,6 @@ Partial Class FProduccion
         Me.TotCubetasTextBox = New System.Windows.Forms.TextBox()
         Me.CortesiasTextBox = New System.Windows.Forms.TextBox()
         Me.EncargadoTextBox = New System.Windows.Forms.TextBox()
-        Me.ProduccionDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
@@ -107,7 +95,6 @@ Partial Class FProduccion
         Me.ProductoresBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProductoresTableAdapter = New SisRoquinProduce.RoquinDBDataSetTableAdapters.ProductoresTableAdapter()
         Me.NombreComboBox = New System.Windows.Forms.ComboBox()
-        Me.ProductoresBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ConsultDetallePersonalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ConsultDetallePersonalTableAdapter = New SisRoquinProduce.RoquinDBDataSetTableAdapters.ConsultDetallePersonalTableAdapter()
         Me.ConsultDetallePersonalDataGridView = New System.Windows.Forms.DataGridView()
@@ -144,6 +131,18 @@ Partial Class FProduccion
         Me.TextBoxBuscar = New System.Windows.Forms.TextBox()
         Me.BBuscar = New System.Windows.Forms.Button()
         Me.LabelRegFolio = New System.Windows.Forms.Label()
+        Me.ProduccionConsultDetallePersonalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ProduccionDataGridView = New System.Windows.Forms.DataGridView()
+        Me.FolioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaProdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HuertoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TemporadaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CajasDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KilosDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumSectorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClamshellDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EncargadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         FolioLabel = New System.Windows.Forms.Label()
         FechaProdLabel = New System.Windows.Forms.Label()
         NumProdLabel = New System.Windows.Forms.Label()
@@ -172,11 +171,9 @@ Partial Class FProduccion
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProduccionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RoquinDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProduccionDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProduccionBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ProduccionBindingNavigator.SuspendLayout()
         CType(Me.ProductoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductoresBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultDetallePersonalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConsultDetallePersonalDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SectoresBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -184,6 +181,8 @@ Partial Class FProduccion
         CType(Me.DataGridDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PersonalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DetalleFolioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProduccionConsultDetallePersonalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProduccionDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'FolioLabel
@@ -665,120 +664,6 @@ Partial Class FProduccion
         Me.EncargadoTextBox.Size = New System.Drawing.Size(200, 34)
         Me.EncargadoTextBox.TabIndex = 56
         '
-        'ProduccionDataGridView
-        '
-        Me.ProduccionDataGridView.AllowUserToAddRows = False
-        Me.ProduccionDataGridView.AllowUserToDeleteRows = False
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.ProduccionDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle21
-        Me.ProduccionDataGridView.AutoGenerateColumns = False
-        Me.ProduccionDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.ProduccionDataGridView.BackgroundColor = System.Drawing.Color.LightGreen
-        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle22.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProduccionDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
-        Me.ProduccionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ProduccionDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn21})
-        Me.ProduccionDataGridView.DataSource = Me.ProduccionBindingSource
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ProduccionDataGridView.DefaultCellStyle = DataGridViewCellStyle23
-        Me.ProduccionDataGridView.Enabled = False
-        Me.ProduccionDataGridView.GridColor = System.Drawing.Color.Black
-        Me.ProduccionDataGridView.Location = New System.Drawing.Point(22, 235)
-        Me.ProduccionDataGridView.Name = "ProduccionDataGridView"
-        Me.ProduccionDataGridView.ReadOnly = True
-        Me.ProduccionDataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.ProduccionDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle24.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProduccionDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle24
-        Me.ProduccionDataGridView.RowHeadersVisible = False
-        Me.ProduccionDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.ProduccionDataGridView.RowsDefaultCellStyle = DataGridViewCellStyle25
-        Me.ProduccionDataGridView.RowTemplate.Height = 24
-        Me.ProduccionDataGridView.Size = New System.Drawing.Size(845, 492)
-        Me.ProduccionDataGridView.TabIndex = 56
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Folio"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Folio"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "FechaProd"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Fecha Producción"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Huerto"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Huerto"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Temporada"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Temporada"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Cajas"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Cajas"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "Kilos"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Kilos"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "NumSector"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Número de Sector"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn15
-        '
-        Me.DataGridViewTextBoxColumn15.DataPropertyName = "Clamshell"
-        Me.DataGridViewTextBoxColumn15.HeaderText = "Clamshell"
-        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
-        Me.DataGridViewTextBoxColumn15.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn21
-        '
-        Me.DataGridViewTextBoxColumn21.DataPropertyName = "Encargado"
-        Me.DataGridViewTextBoxColumn21.HeaderText = "Encargado"
-        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
-        Me.DataGridViewTextBoxColumn21.ReadOnly = True
-        '
         'BindingNavigatorMoveFirstItem
         '
         Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -972,8 +857,6 @@ Partial Class FProduccion
         'NombreComboBox
         '
         Me.NombreComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductoresBindingSource, "Nombre", True))
-        Me.NombreComboBox.DataSource = Me.ProductoresBindingSource1
-        Me.NombreComboBox.DisplayMember = "Nombre"
         Me.NombreComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.NombreComboBox.FormattingEnabled = True
         Me.NombreComboBox.Location = New System.Drawing.Point(172, 340)
@@ -981,11 +864,6 @@ Partial Class FProduccion
         Me.NombreComboBox.Size = New System.Drawing.Size(200, 37)
         Me.NombreComboBox.TabIndex = 63
         Me.NombreComboBox.ValueMember = "NumProductor"
-        '
-        'ProductoresBindingSource1
-        '
-        Me.ProductoresBindingSource1.DataMember = "Productores"
-        Me.ProductoresBindingSource1.DataSource = Me.RoquinDBDataSet
         '
         'ConsultDetallePersonalBindingSource
         '
@@ -1012,7 +890,7 @@ Partial Class FProduccion
         Me.ConsultDetallePersonalDataGridView.ReadOnly = True
         Me.ConsultDetallePersonalDataGridView.RowHeadersVisible = False
         Me.ConsultDetallePersonalDataGridView.RowTemplate.Height = 24
-        Me.ConsultDetallePersonalDataGridView.Size = New System.Drawing.Size(839, 168)
+        Me.ConsultDetallePersonalDataGridView.Size = New System.Drawing.Size(839, 249)
         Me.ConsultDetallePersonalDataGridView.TabIndex = 63
         '
         'NumEmpleado
@@ -1269,6 +1147,125 @@ Partial Class FProduccion
         Me.LabelRegFolio.TabIndex = 79
         Me.LabelRegFolio.Text = "Registrar Folio de Producción"
         '
+        'ProduccionConsultDetallePersonalBindingSource
+        '
+        Me.ProduccionConsultDetallePersonalBindingSource.DataMember = "Produccion_ConsultDetallePersonal"
+        Me.ProduccionConsultDetallePersonalBindingSource.DataSource = Me.ProduccionBindingSource
+        '
+        'ProduccionDataGridView
+        '
+        Me.ProduccionDataGridView.AllowUserToAddRows = False
+        Me.ProduccionDataGridView.AllowUserToDeleteRows = False
+        Me.ProduccionDataGridView.AutoGenerateColumns = False
+        Me.ProduccionDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.ProduccionDataGridView.BackgroundColor = System.Drawing.Color.LightGreen
+        Me.ProduccionDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProduccionDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.ProduccionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ProduccionDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FolioDataGridViewTextBoxColumn, Me.FechaProdDataGridViewTextBoxColumn, Me.HuertoDataGridViewTextBoxColumn, Me.TemporadaDataGridViewTextBoxColumn, Me.CajasDataGridViewTextBoxColumn, Me.KilosDataGridViewTextBoxColumn, Me.NumSectorDataGridViewTextBoxColumn, Me.ClamshellDataGridViewTextBoxColumn, Me.EncargadoDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn})
+        Me.ProduccionDataGridView.DataSource = Me.ProduccionBindingSource
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ProduccionDataGridView.DefaultCellStyle = DataGridViewCellStyle2
+        Me.ProduccionDataGridView.GridColor = System.Drawing.Color.Black
+        Me.ProduccionDataGridView.Location = New System.Drawing.Point(12, 236)
+        Me.ProduccionDataGridView.Name = "ProduccionDataGridView"
+        Me.ProduccionDataGridView.ReadOnly = True
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProduccionDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.ProduccionDataGridView.RowHeadersVisible = False
+        Me.ProduccionDataGridView.RowTemplate.Height = 24
+        Me.ProduccionDataGridView.Size = New System.Drawing.Size(867, 491)
+        Me.ProduccionDataGridView.TabIndex = 79
+        '
+        'FolioDataGridViewTextBoxColumn
+        '
+        Me.FolioDataGridViewTextBoxColumn.DataPropertyName = "Folio"
+        Me.FolioDataGridViewTextBoxColumn.HeaderText = "Folio"
+        Me.FolioDataGridViewTextBoxColumn.Name = "FolioDataGridViewTextBoxColumn"
+        Me.FolioDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FechaProdDataGridViewTextBoxColumn
+        '
+        Me.FechaProdDataGridViewTextBoxColumn.DataPropertyName = "FechaProd"
+        Me.FechaProdDataGridViewTextBoxColumn.HeaderText = "Fecha de Producción"
+        Me.FechaProdDataGridViewTextBoxColumn.Name = "FechaProdDataGridViewTextBoxColumn"
+        Me.FechaProdDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'HuertoDataGridViewTextBoxColumn
+        '
+        Me.HuertoDataGridViewTextBoxColumn.DataPropertyName = "Huerto"
+        Me.HuertoDataGridViewTextBoxColumn.HeaderText = "Huerto"
+        Me.HuertoDataGridViewTextBoxColumn.Name = "HuertoDataGridViewTextBoxColumn"
+        Me.HuertoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TemporadaDataGridViewTextBoxColumn
+        '
+        Me.TemporadaDataGridViewTextBoxColumn.DataPropertyName = "Temporada"
+        Me.TemporadaDataGridViewTextBoxColumn.HeaderText = "Temporada"
+        Me.TemporadaDataGridViewTextBoxColumn.Name = "TemporadaDataGridViewTextBoxColumn"
+        Me.TemporadaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CajasDataGridViewTextBoxColumn
+        '
+        Me.CajasDataGridViewTextBoxColumn.DataPropertyName = "Cajas"
+        Me.CajasDataGridViewTextBoxColumn.HeaderText = "Cajas"
+        Me.CajasDataGridViewTextBoxColumn.Name = "CajasDataGridViewTextBoxColumn"
+        Me.CajasDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'KilosDataGridViewTextBoxColumn
+        '
+        Me.KilosDataGridViewTextBoxColumn.DataPropertyName = "Kilos"
+        Me.KilosDataGridViewTextBoxColumn.HeaderText = "Kilos"
+        Me.KilosDataGridViewTextBoxColumn.Name = "KilosDataGridViewTextBoxColumn"
+        Me.KilosDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NumSectorDataGridViewTextBoxColumn
+        '
+        Me.NumSectorDataGridViewTextBoxColumn.DataPropertyName = "NumSector"
+        Me.NumSectorDataGridViewTextBoxColumn.HeaderText = "Sector"
+        Me.NumSectorDataGridViewTextBoxColumn.Name = "NumSectorDataGridViewTextBoxColumn"
+        Me.NumSectorDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ClamshellDataGridViewTextBoxColumn
+        '
+        Me.ClamshellDataGridViewTextBoxColumn.DataPropertyName = "Clamshell"
+        Me.ClamshellDataGridViewTextBoxColumn.HeaderText = "Clamshell"
+        Me.ClamshellDataGridViewTextBoxColumn.Name = "ClamshellDataGridViewTextBoxColumn"
+        Me.ClamshellDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EncargadoDataGridViewTextBoxColumn
+        '
+        Me.EncargadoDataGridViewTextBoxColumn.DataPropertyName = "Encargado"
+        Me.EncargadoDataGridViewTextBoxColumn.HeaderText = "Encargado"
+        Me.EncargadoDataGridViewTextBoxColumn.Name = "EncargadoDataGridViewTextBoxColumn"
+        Me.EncargadoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EstadoDataGridViewTextBoxColumn
+        '
+        Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "Estado"
+        Me.EstadoDataGridViewTextBoxColumn.HeaderText = "Estado"
+        Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
+        Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'FProduccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1354,12 +1351,10 @@ Partial Class FProduccion
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProduccionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RoquinDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProduccionDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProduccionBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ProduccionBindingNavigator.ResumeLayout(False)
         Me.ProduccionBindingNavigator.PerformLayout()
         CType(Me.ProductoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductoresBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsultDetallePersonalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConsultDetallePersonalDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SectoresBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1367,6 +1362,8 @@ Partial Class FProduccion
         CType(Me.DataGridDetalle, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PersonalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DetalleFolioBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProduccionConsultDetallePersonalBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProduccionDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1397,16 +1394,6 @@ Partial Class FProduccion
     Friend WithEvents TotCubetasTextBox As TextBox
     Friend WithEvents CortesiasTextBox As TextBox
     Friend WithEvents EncargadoTextBox As TextBox
-    Friend WithEvents ProduccionDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn21 As DataGridViewTextBoxColumn
     Friend WithEvents BindingNavigatorMoveFirstItem As ToolStripButton
     Friend WithEvents BindingNavigatorMovePreviousItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator As ToolStripSeparator
@@ -1426,7 +1413,6 @@ Partial Class FProduccion
     Friend WithEvents ProductoresBindingSource As BindingSource
     Friend WithEvents ProductoresTableAdapter As RoquinDBDataSetTableAdapters.ProductoresTableAdapter
     Friend WithEvents NombreComboBox As ComboBox
-    Friend WithEvents ProductoresBindingSource1 As BindingSource
     Friend WithEvents ConsultDetallePersonalBindingSource As BindingSource
     Friend WithEvents ConsultDetallePersonalTableAdapter As RoquinDBDataSetTableAdapters.ConsultDetallePersonalTableAdapter
     Friend WithEvents ConsultDetallePersonalDataGridView As DataGridView
@@ -1463,4 +1449,16 @@ Partial Class FProduccion
     Friend WithEvents TextBoxBuscar As TextBox
     Friend WithEvents BBuscar As Button
     Friend WithEvents LabelRegFolio As Label
+    Friend WithEvents ProduccionConsultDetallePersonalBindingSource As BindingSource
+    Friend WithEvents ProduccionDataGridView As DataGridView
+    Friend WithEvents FolioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FechaProdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents HuertoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TemporadaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CajasDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents KilosDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NumSectorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ClamshellDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EncargadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EstadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

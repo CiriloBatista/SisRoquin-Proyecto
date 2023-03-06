@@ -1200,6 +1200,8 @@ Partial Public Class RoquinDBDataSet
         
         Private columnEncargado As Global.System.Data.DataColumn
         
+        Private columnEstado As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -1404,6 +1406,14 @@ Partial Public Class RoquinDBDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property EstadoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEstado
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1460,9 +1470,10 @@ Partial Public Class RoquinDBDataSet
                     ByVal Defecto As Integer,  _
                     ByVal TotCubetas As Integer,  _
                     ByVal Cortesias As Integer,  _
-                    ByVal Encargado As String) As ProduccionRow
+                    ByVal Encargado As String,  _
+                    ByVal Estado As String) As ProduccionRow
             Dim rowProduccionRow As ProduccionRow = CType(Me.NewRow,ProduccionRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Folio, FechaProd, NumProd, Codigo, Huerto, Temporada, Cajas, Kilos, NumSector, Embalaje, Variedad, KGCampo, Galera, Clamshell, CubetasSinEmp, DiasCorte, Defecto, TotCubetas, Cortesias, Encargado}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Folio, FechaProd, NumProd, Codigo, Huerto, Temporada, Cajas, Kilos, NumSector, Embalaje, Variedad, KGCampo, Galera, Clamshell, CubetasSinEmp, DiasCorte, Defecto, TotCubetas, Cortesias, Encargado, Estado}
             rowProduccionRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowProduccionRow)
             Return rowProduccionRow
@@ -1512,6 +1523,7 @@ Partial Public Class RoquinDBDataSet
             Me.columnTotCubetas = MyBase.Columns("TotCubetas")
             Me.columnCortesias = MyBase.Columns("Cortesias")
             Me.columnEncargado = MyBase.Columns("Encargado")
+            Me.columnEstado = MyBase.Columns("Estado")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1559,6 +1571,8 @@ Partial Public Class RoquinDBDataSet
             MyBase.Columns.Add(Me.columnCortesias)
             Me.columnEncargado = New Global.System.Data.DataColumn("Encargado", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEncargado)
+            Me.columnEstado = New Global.System.Data.DataColumn("Estado", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEstado)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnIdProd}, true))
             Me.columnIdProd.AutoIncrement = true
             Me.columnIdProd.AutoIncrementSeed = -1
@@ -1575,6 +1589,7 @@ Partial Public Class RoquinDBDataSet
             Me.columnGalera.MaxLength = 2
             Me.columnClamshell.MaxLength = 4
             Me.columnEncargado.MaxLength = 20
+            Me.columnEstado.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3649,6 +3664,21 @@ Partial Public Class RoquinDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Estado() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableProduccion.EstadoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Estado' de la tabla 'Produccion' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableProduccion.EstadoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsFolioNull() As Boolean
             Return Me.IsNull(Me.tableProduccion.FolioColumn)
         End Function
@@ -3885,6 +3915,18 @@ Partial Public Class RoquinDBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetEncargadoNull()
             Me(Me.tableProduccion.EncargadoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsEstadoNull() As Boolean
+            Return Me.IsNull(Me.tableProduccion.EstadoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetEstadoNull()
+            Me(Me.tableProduccion.EstadoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5945,6 +5987,7 @@ Namespace RoquinDBDataSetTableAdapters
             tableMapping.ColumnMappings.Add("TotCubetas", "TotCubetas")
             tableMapping.ColumnMappings.Add("Cortesias", "Cortesias")
             tableMapping.ColumnMappings.Add("Encargado", "Encargado")
+            tableMapping.ColumnMappings.Add("Estado", "Estado")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -5962,7 +6005,8 @@ Namespace RoquinDBDataSetTableAdapters
                 " = ?)) AND ((? = 1 AND `DiasCorte` IS NULL) OR (`DiasCorte` = ?)) AND ((? = 1 AN"& _ 
                 "D `Defecto` IS NULL) OR (`Defecto` = ?)) AND ((? = 1 AND `TotCubetas` IS NULL) O"& _ 
                 "R (`TotCubetas` = ?)) AND ((? = 1 AND `Cortesias` IS NULL) OR (`Cortesias` = ?))"& _ 
-                " AND ((? = 1 AND `Encargado` IS NULL) OR (`Encargado` = ?)))"
+                " AND ((? = 1 AND `Encargado` IS NULL) OR (`Encargado` = ?)) AND ((? = 1 AND `Est"& _ 
+                "ado` IS NULL) OR (`Estado` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_IdProd", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "IdProd", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Folio", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Folio", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -6005,13 +6049,15 @@ Namespace RoquinDBDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Cortesias", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Cortesias", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Encargado", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Encargado", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Encargado", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Encargado", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Estado", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Estado", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Estado", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Estado", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `Produccion` (`Folio`, `FechaProd`, `NumProd`, `Codigo`, `Huerto`, `T"& _ 
                 "emporada`, `Cajas`, `Kilos`, `NumSector`, `Emabalaje`, `Variedad`, `KGCampo`, `G"& _ 
                 "alera`, `Clamshell`, `CuebtasSinEmp`, `DiasCorte`, `Defecto`, `TotCubetas`, `Cor"& _ 
-                "tesias`, `Encargado`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"& _ 
-                " ?, ?, ?)"
+                "tesias`, `Encargado`, `Estado`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"& _ 
+                ", ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Folio", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Folio", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("FechaProd", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FechaProd", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -6033,27 +6079,29 @@ Namespace RoquinDBDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TotCubetas", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TotCubetas", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Cortesias", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Cortesias", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Encargado", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Encargado", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Estado", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Estado", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `Produccion` SET `Folio` = ?, `FechaProd` = ?, `NumProd` = ?, `Codigo` = ?"& _ 
                 ", `Huerto` = ?, `Temporada` = ?, `Cajas` = ?, `Kilos` = ?, `NumSector` = ?, `Ema"& _ 
                 "balaje` = ?, `Variedad` = ?, `KGCampo` = ?, `Galera` = ?, `Clamshell` = ?, `Cueb"& _ 
                 "tasSinEmp` = ?, `DiasCorte` = ?, `Defecto` = ?, `TotCubetas` = ?, `Cortesias` = "& _ 
-                "?, `Encargado` = ? WHERE ((`IdProd` = ?) AND ((? = 1 AND `Folio` IS NULL) OR (`F"& _ 
-                "olio` = ?)) AND ((? = 1 AND `FechaProd` IS NULL) OR (`FechaProd` = ?)) AND ((? ="& _ 
-                " 1 AND `NumProd` IS NULL) OR (`NumProd` = ?)) AND ((? = 1 AND `Codigo` IS NULL) "& _ 
-                "OR (`Codigo` = ?)) AND ((? = 1 AND `Huerto` IS NULL) OR (`Huerto` = ?)) AND ((? "& _ 
-                "= 1 AND `Temporada` IS NULL) OR (`Temporada` = ?)) AND ((? = 1 AND `Cajas` IS NU"& _ 
-                "LL) OR (`Cajas` = ?)) AND ((? = 1 AND `Kilos` IS NULL) OR (`Kilos` = ?)) AND ((?"& _ 
-                " = 1 AND `NumSector` IS NULL) OR (`NumSector` = ?)) AND ((? = 1 AND `Emabalaje` "& _ 
-                "IS NULL) OR (`Emabalaje` = ?)) AND ((? = 1 AND `Variedad` IS NULL) OR (`Variedad"& _ 
-                "` = ?)) AND ((? = 1 AND `KGCampo` IS NULL) OR (`KGCampo` = ?)) AND ((? = 1 AND `"& _ 
-                "Galera` IS NULL) OR (`Galera` = ?)) AND ((? = 1 AND `Clamshell` IS NULL) OR (`Cl"& _ 
-                "amshell` = ?)) AND ((? = 1 AND `CuebtasSinEmp` IS NULL) OR (`CuebtasSinEmp` = ?)"& _ 
-                ") AND ((? = 1 AND `DiasCorte` IS NULL) OR (`DiasCorte` = ?)) AND ((? = 1 AND `De"& _ 
-                "fecto` IS NULL) OR (`Defecto` = ?)) AND ((? = 1 AND `TotCubetas` IS NULL) OR (`T"& _ 
-                "otCubetas` = ?)) AND ((? = 1 AND `Cortesias` IS NULL) OR (`Cortesias` = ?)) AND "& _ 
-                "((? = 1 AND `Encargado` IS NULL) OR (`Encargado` = ?)))"
+                "?, `Encargado` = ?, `Estado` = ? WHERE ((`IdProd` = ?) AND ((? = 1 AND `Folio` I"& _ 
+                "S NULL) OR (`Folio` = ?)) AND ((? = 1 AND `FechaProd` IS NULL) OR (`FechaProd` ="& _ 
+                " ?)) AND ((? = 1 AND `NumProd` IS NULL) OR (`NumProd` = ?)) AND ((? = 1 AND `Cod"& _ 
+                "igo` IS NULL) OR (`Codigo` = ?)) AND ((? = 1 AND `Huerto` IS NULL) OR (`Huerto` "& _ 
+                "= ?)) AND ((? = 1 AND `Temporada` IS NULL) OR (`Temporada` = ?)) AND ((? = 1 AND"& _ 
+                " `Cajas` IS NULL) OR (`Cajas` = ?)) AND ((? = 1 AND `Kilos` IS NULL) OR (`Kilos`"& _ 
+                " = ?)) AND ((? = 1 AND `NumSector` IS NULL) OR (`NumSector` = ?)) AND ((? = 1 AN"& _ 
+                "D `Emabalaje` IS NULL) OR (`Emabalaje` = ?)) AND ((? = 1 AND `Variedad` IS NULL)"& _ 
+                " OR (`Variedad` = ?)) AND ((? = 1 AND `KGCampo` IS NULL) OR (`KGCampo` = ?)) AND"& _ 
+                " ((? = 1 AND `Galera` IS NULL) OR (`Galera` = ?)) AND ((? = 1 AND `Clamshell` IS"& _ 
+                " NULL) OR (`Clamshell` = ?)) AND ((? = 1 AND `CuebtasSinEmp` IS NULL) OR (`Cuebt"& _ 
+                "asSinEmp` = ?)) AND ((? = 1 AND `DiasCorte` IS NULL) OR (`DiasCorte` = ?)) AND ("& _ 
+                "(? = 1 AND `Defecto` IS NULL) OR (`Defecto` = ?)) AND ((? = 1 AND `TotCubetas` I"& _ 
+                "S NULL) OR (`TotCubetas` = ?)) AND ((? = 1 AND `Cortesias` IS NULL) OR (`Cortesi"& _ 
+                "as` = ?)) AND ((? = 1 AND `Encargado` IS NULL) OR (`Encargado` = ?)) AND ((? = 1"& _ 
+                " AND `Estado` IS NULL) OR (`Estado` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Folio", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Folio", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("FechaProd", Global.System.Data.OleDb.OleDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FechaProd", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -6075,6 +6123,7 @@ Namespace RoquinDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TotCubetas", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TotCubetas", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Cortesias", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Cortesias", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Encargado", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Encargado", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Estado", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Estado", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_IdProd", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "IdProd", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Folio", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Folio", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Folio", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Folio", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -6116,6 +6165,8 @@ Namespace RoquinDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Cortesias", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Cortesias", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Encargado", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Encargado", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Encargado", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Encargado", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Estado", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Estado", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Estado", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Estado", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6133,14 +6184,14 @@ Namespace RoquinDBDataSetTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT IdProd, Folio, FechaProd, NumProd, Codigo, Huerto, Temporada, Cajas, Kilos"& _ 
                 ", NumSector, Emabalaje, Variedad, KGCampo, Galera, Clamshell, CuebtasSinEmp, Dia"& _ 
-                "sCorte, Defecto, TotCubetas, Cortesias, Encargado FROM Produccion"
+                "sCorte, Defecto, TotCubetas, Cortesias, Encargado, Estado FROM Produccion"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT IdProd, Folio, FechaProd, NumProd, Codigo, Huerto, Temporada, Cajas, Kilos"& _ 
-                ", NumSector, Emabalaje, Variedad, KGCampo, Galera, Clamshell, CuebtasSinEmp, Dia"& _ 
-                "sCorte, Defecto, TotCubetas, Cortesias, Encargado FROM Produccion"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (Folio "& _ 
-                "Like ?)"
+            Me._commandCollection(1).CommandText = "SELECT Cajas, Clamshell, Codigo, Cortesias, CuebtasSinEmp, Defecto, DiasCorte, Em"& _ 
+                "abalaje, Encargado, Estado, FechaProd, Folio, Galera, Huerto, IdProd, KGCampo, K"& _ 
+                "ilos, NumProd, NumSector, Temporada, TotCubetas, Variedad FROM Produccion WHERE "& _ 
+                "(Folio LIKE ?)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Folio", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Folio", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
@@ -6173,9 +6224,13 @@ Namespace RoquinDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByFolio(ByVal dataTable As RoquinDBDataSet.ProduccionDataTable, ByVal Folio As Integer) As Integer
+        Public Overloads Overridable Function FillByFolio(ByVal dataTable As RoquinDBDataSet.ProduccionDataTable, ByVal Folio As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Folio,Integer)
+            If (Folio.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(Folio.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -6187,9 +6242,13 @@ Namespace RoquinDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataBy(ByVal Folio As Integer) As RoquinDBDataSet.ProduccionDataTable
+        Public Overloads Overridable Function GetDataBy(ByVal Folio As Global.System.Nullable(Of Integer)) As RoquinDBDataSet.ProduccionDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Folio,Integer)
+            If (Folio.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(Folio.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
             Dim dataTable As RoquinDBDataSet.ProduccionDataTable = New RoquinDBDataSet.ProduccionDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -6248,7 +6307,8 @@ Namespace RoquinDBDataSetTableAdapters
                     ByVal Original_Defecto As Global.System.Nullable(Of Integer),  _
                     ByVal Original_TotCubetas As Global.System.Nullable(Of Integer),  _
                     ByVal Original_Cortesias As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Encargado As String) As Integer
+                    ByVal Original_Encargado As String,  _
+                    ByVal Original_Estado As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_IdProd,Integer)
             Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
             Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Folio,Integer)
@@ -6385,6 +6445,12 @@ Namespace RoquinDBDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(39).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(40).Value = CType(Original_Encargado,String)
             End If
+            If (Original_Estado Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Estado")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(41).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(42).Value = CType(Original_Estado,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6424,7 +6490,8 @@ Namespace RoquinDBDataSetTableAdapters
                     ByVal Defecto As Global.System.Nullable(Of Integer),  _
                     ByVal TotCubetas As Global.System.Nullable(Of Integer),  _
                     ByVal Cortesias As Global.System.Nullable(Of Integer),  _
-                    ByVal Encargado As String) As Integer
+                    ByVal Encargado As String,  _
+                    ByVal Estado As String) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(Folio,Integer)
             If (FechaProd.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(FechaProd.Value,Date)
@@ -6521,6 +6588,11 @@ Namespace RoquinDBDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(19).Value = CType(Encargado,String)
             End If
+            If (Estado Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Estado")
+            Else
+                Me.Adapter.InsertCommand.Parameters(20).Value = CType(Estado,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6561,6 +6633,7 @@ Namespace RoquinDBDataSetTableAdapters
                     ByVal TotCubetas As Global.System.Nullable(Of Integer),  _
                     ByVal Cortesias As Global.System.Nullable(Of Integer),  _
                     ByVal Encargado As String,  _
+                    ByVal Estado As String,  _
                     ByVal Original_IdProd As Integer,  _
                     ByVal Original_Folio As Integer,  _
                     ByVal Original_FechaProd As Global.System.Nullable(Of Date),  _
@@ -6581,7 +6654,8 @@ Namespace RoquinDBDataSetTableAdapters
                     ByVal Original_Defecto As Global.System.Nullable(Of Integer),  _
                     ByVal Original_TotCubetas As Global.System.Nullable(Of Integer),  _
                     ByVal Original_Cortesias As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Encargado As String) As Integer
+                    ByVal Original_Encargado As String,  _
+                    ByVal Original_Estado As String) As Integer
             Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Folio,Integer)
             If (FechaProd.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(FechaProd.Value,Date)
@@ -6678,141 +6752,152 @@ Namespace RoquinDBDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Encargado,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_IdProd,Integer)
-            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_Folio,Integer)
-            If (Original_FechaProd.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_FechaProd.Value,Date)
+            If (Estado Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Estado")
             Else
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Estado,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_IdProd,Integer)
+            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_Folio,Integer)
+            If (Original_FechaProd.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_FechaProd.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
             End If
             If (Original_NumProd Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_NumProd,String)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_NumProd,String)
             End If
             If (Original_Codigo Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_Codigo,String)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_Codigo,String)
             End If
             If (Original_Huerto Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_Huerto,String)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_Huerto,String)
             End If
             If (Original_Temporada Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_Temporada,String)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_Temporada,String)
             End If
             If (Original_Cajas.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_Cajas.Value,Short)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(Original_Cajas.Value,Short)
             Else
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
             End If
             If (Original_Kilos.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Original_Kilos.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(Original_Kilos.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
             End If
             If (Original_NumSector Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_NumSector,String)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(Original_NumSector,String)
             End If
             If (Original_Emabalaje Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(41).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(Original_Emabalaje,String)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(Original_Emabalaje,String)
             End If
             If (Original_Variedad Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(43).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(Original_Variedad,String)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(Original_Variedad,String)
             End If
             If (Original_KGCampo.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(Original_KGCampo.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(Original_KGCampo.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(44).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(45).Value = Global.System.DBNull.Value
             End If
             If (Original_Galera Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(46).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(47).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(Original_Galera,String)
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(Original_Galera,String)
             End If
             If (Original_Clamshell Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(48).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(49).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(Original_Clamshell,String)
+                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(Original_Clamshell,String)
             End If
             If (Original_CuebtasSinEmp.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(Original_CuebtasSinEmp.Value,Short)
+                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(Original_CuebtasSinEmp.Value,Short)
             Else
-                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(50).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(51).Value = Global.System.DBNull.Value
             End If
             If (Original_DiasCorte.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(Original_DiasCorte.Value,Short)
+                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(Original_DiasCorte.Value,Short)
             Else
-                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(52).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(53).Value = Global.System.DBNull.Value
             End If
             If (Original_Defecto.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(Original_Defecto.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(Original_Defecto.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(54).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(55).Value = Global.System.DBNull.Value
             End If
             If (Original_TotCubetas.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(Original_TotCubetas.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(Original_TotCubetas.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(56).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(57).Value = Global.System.DBNull.Value
             End If
             If (Original_Cortesias.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(Original_Cortesias.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(Original_Cortesias.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(58).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(59).Value = Global.System.DBNull.Value
             End If
             If (Original_Encargado Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(60).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(61).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(Original_Encargado,String)
+                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(Original_Encargado,String)
+            End If
+            If (Original_Estado Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_Estado")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Original_Estado,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
