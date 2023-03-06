@@ -67,7 +67,7 @@
     End Sub
 
     Private Sub ProducciónToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProducciónToolStripMenuItem1.Click
-        FError505.Show()
+        FRProduccion.Show()
     End Sub
 
 End Class

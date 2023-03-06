@@ -41,9 +41,9 @@ Partial Public Class RoquinDBDataSet
     
     Private relationProduccion_Productores As Global.System.Data.DataRelation
     
-    Private relationProduccion_ConsultDetallePersonal As Global.System.Data.DataRelation
-    
     Private relationProduccion_Sectores As Global.System.Data.DataRelation
+    
+    Private relationProduccion_ConsultDetallePersonal As Global.System.Data.DataRelation
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -345,8 +345,8 @@ Partial Public Class RoquinDBDataSet
             End If
         End If
         Me.relationProduccion_Productores = Me.Relations("Produccion_Productores")
-        Me.relationProduccion_ConsultDetallePersonal = Me.Relations("Produccion_ConsultDetallePersonal")
         Me.relationProduccion_Sectores = Me.Relations("Produccion_Sectores")
+        Me.relationProduccion_ConsultDetallePersonal = Me.Relations("Produccion_ConsultDetallePersonal")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -373,10 +373,10 @@ Partial Public Class RoquinDBDataSet
         MyBase.Tables.Add(Me.tableConsultDetallePersonal)
         Me.relationProduccion_Productores = New Global.System.Data.DataRelation("Produccion_Productores", New Global.System.Data.DataColumn() {Me.tableProduccion.NumProdColumn}, New Global.System.Data.DataColumn() {Me.tableProductores.NumProductorColumn}, false)
         Me.Relations.Add(Me.relationProduccion_Productores)
-        Me.relationProduccion_ConsultDetallePersonal = New Global.System.Data.DataRelation("Produccion_ConsultDetallePersonal", New Global.System.Data.DataColumn() {Me.tableProduccion.FolioColumn}, New Global.System.Data.DataColumn() {Me.tableConsultDetallePersonal.FolioDetaColumn}, false)
-        Me.Relations.Add(Me.relationProduccion_ConsultDetallePersonal)
         Me.relationProduccion_Sectores = New Global.System.Data.DataRelation("Produccion_Sectores", New Global.System.Data.DataColumn() {Me.tableProduccion.NumSectorColumn}, New Global.System.Data.DataColumn() {Me.tableSectores.NumSectorColumn}, false)
         Me.Relations.Add(Me.relationProduccion_Sectores)
+        Me.relationProduccion_ConsultDetallePersonal = New Global.System.Data.DataRelation("Produccion_ConsultDetallePersonal", New Global.System.Data.DataColumn() {Me.tableProduccion.FolioColumn}, New Global.System.Data.DataColumn() {Me.tableConsultDetallePersonal.FolioDetaColumn}, false)
+        Me.Relations.Add(Me.relationProduccion_ConsultDetallePersonal)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3899,21 +3899,21 @@ Partial Public Class RoquinDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function GetConsultDetallePersonalRows() As ConsultDetallePersonalRow()
-            If (Me.Table.ChildRelations("Produccion_ConsultDetallePersonal") Is Nothing) Then
-                Return New ConsultDetallePersonalRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("Produccion_ConsultDetallePersonal")),ConsultDetallePersonalRow())
-            End If
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function GetSectoresRows() As SectoresRow()
             If (Me.Table.ChildRelations("Produccion_Sectores") Is Nothing) Then
                 Return New SectoresRow(-1) {}
             Else
                 Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("Produccion_Sectores")),SectoresRow())
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function GetConsultDetallePersonalRows() As ConsultDetallePersonalRow()
+            If (Me.Table.ChildRelations("Produccion_ConsultDetallePersonal") Is Nothing) Then
+                Return New ConsultDetallePersonalRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("Produccion_ConsultDetallePersonal")),ConsultDetallePersonalRow())
             End If
         End Function
     End Class
@@ -6128,13 +6128,21 @@ Namespace RoquinDBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
+            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT IdProd, Folio, FechaProd, NumProd, Codigo, Huerto, Temporada, Cajas, Kilos"& _ 
                 ", NumSector, Emabalaje, Variedad, KGCampo, Galera, Clamshell, CuebtasSinEmp, Dia"& _ 
                 "sCorte, Defecto, TotCubetas, Cortesias, Encargado FROM Produccion"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT IdProd, Folio, FechaProd, NumProd, Codigo, Huerto, Temporada, Cajas, Kilos"& _ 
+                ", NumSector, Emabalaje, Variedad, KGCampo, Galera, Clamshell, CuebtasSinEmp, Dia"& _ 
+                "sCorte, Defecto, TotCubetas, Cortesias, Encargado FROM Produccion"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (Folio "& _ 
+                "Like ?)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Folio", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Folio", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6156,6 +6164,32 @@ Namespace RoquinDBDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As RoquinDBDataSet.ProduccionDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As RoquinDBDataSet.ProduccionDataTable = New RoquinDBDataSet.ProduccionDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByFolio(ByVal dataTable As RoquinDBDataSet.ProduccionDataTable, ByVal Folio As Integer) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Folio,Integer)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataBy(ByVal Folio As Integer) As RoquinDBDataSet.ProduccionDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Folio,Integer)
             Dim dataTable As RoquinDBDataSet.ProduccionDataTable = New RoquinDBDataSet.ProduccionDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -8069,12 +8103,17 @@ Namespace RoquinDBDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
+            Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT IdDetalle, FolioDeta, NEmpleado, Kilos, Gramos, Cubetas, IdPersonal, NumEm"& _ 
                 "pleado, NombreEmpleado, ApellidosEmp, Puesto FROM ConsultDetallePersonal"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.OleDb.OleDbCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT ApellidosEmp, Cubetas, FolioDeta, Gramos, IdDetalle, IdPersonal, Kilos, NE"& _ 
+                "mpleado, NombreEmpleado, NumEmpleado, Puesto FROM ConsultDetallePersonal"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8099,6 +8138,19 @@ Namespace RoquinDBDataSetTableAdapters
             Dim dataTable As RoquinDBDataSet.ConsultDetallePersonalDataTable = New RoquinDBDataSet.ConsultDetallePersonalDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As RoquinDBDataSet.ConsultDetallePersonalDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
         End Function
     End Class
     
