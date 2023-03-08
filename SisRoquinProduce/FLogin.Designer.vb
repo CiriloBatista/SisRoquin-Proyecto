@@ -45,6 +45,8 @@ Partial Class FLogin
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBoxPass = New System.Windows.Forms.TextBox()
+        Me.BAutorizar = New System.Windows.Forms.Button()
+        Me.BCancelar = New System.Windows.Forms.Button()
         IdUserLabel = New System.Windows.Forms.Label()
         UsuarioLabel = New System.Windows.Forms.Label()
         NombreUserLabel = New System.Windows.Forms.Label()
@@ -250,12 +252,42 @@ Partial Class FLogin
         Me.TextBoxPass.Size = New System.Drawing.Size(150, 38)
         Me.TextBoxPass.TabIndex = 2
         '
+        'BAutorizar
+        '
+        Me.BAutorizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.BAutorizar.Image = CType(resources.GetObject("BAutorizar.Image"), System.Drawing.Image)
+        Me.BAutorizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BAutorizar.Location = New System.Drawing.Point(74, 363)
+        Me.BAutorizar.Name = "BAutorizar"
+        Me.BAutorizar.Padding = New System.Windows.Forms.Padding(10, 8, 8, 8)
+        Me.BAutorizar.Size = New System.Drawing.Size(220, 80)
+        Me.BAutorizar.TabIndex = 12
+        Me.BAutorizar.Text = "Autorizar"
+        Me.BAutorizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BAutorizar.UseVisualStyleBackColor = True
+        '
+        'BCancelar
+        '
+        Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.BCancelar.Image = CType(resources.GetObject("BCancelar.Image"), System.Drawing.Image)
+        Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BCancelar.Location = New System.Drawing.Point(336, 363)
+        Me.BCancelar.Name = "BCancelar"
+        Me.BCancelar.Padding = New System.Windows.Forms.Padding(10, 10, 8, 10)
+        Me.BCancelar.Size = New System.Drawing.Size(200, 80)
+        Me.BCancelar.TabIndex = 13
+        Me.BCancelar.Text = "Cancelar"
+        Me.BCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BCancelar.UseVisualStyleBackColor = True
+        '
         'FLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGreen
         Me.ClientSize = New System.Drawing.Size(600, 500)
+        Me.Controls.Add(Me.BCancelar)
+        Me.Controls.Add(Me.BAutorizar)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBoxPass)
         Me.Controls.Add(Me.Label1)
@@ -302,4 +334,6 @@ Partial Class FLogin
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents TextBoxPass As TextBox
+    Friend WithEvents BAutorizar As Button
+    Friend WithEvents BCancelar As Button
 End Class

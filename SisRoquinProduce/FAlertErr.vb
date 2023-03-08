@@ -11,20 +11,9 @@
     End Sub
 
     Private Sub BSi_Click(sender As Object, e As EventArgs) Handles BSi.Click
-        Dim accion = GlobalVariables.accionForm
-        If accion = "borrarRegistroPersonal" Then
-            FPersonal.EliminarRegistro()
-        ElseIf accion = "borrarRegistroProduccion" Then
-            FProduccion.EliminarRegistro()
-        ElseIf accion = "borrarRegistroProductor" Then
-            FProductores.EliminarRegistro()
-        ElseIf accion = "borrarRegistroSector" Then
-            FSectores.EliminarRegistro()
-        ElseIf accion = "borrarRegistroUsuario" Then
-            FUsuarios.EliminarRegistro()
-        End If
+        GlobalVariables.autorizar = "autorizacion"
+        FLogin.Show()
         Me.Close()
-        'FMenu.Close()
     End Sub
 
     Private Sub BNo_Click(sender As Object, e As EventArgs) Handles BNo.Click

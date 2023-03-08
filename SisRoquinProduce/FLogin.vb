@@ -11,6 +11,15 @@
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Usuarios' Puede moverla o quitarla según sea necesario.
         Me.UsuariosTableAdapter.Fill(Me.RoquinDBDataSet.Usuarios)
         TextBoxUsuario.Focus()
+        If GlobalVariables.autorizar = "autorizacion" Then
+            BIngresar.Visible = False
+            BSalir.Visible = False
+            BAutorizar.Visible = True
+        Else
+            BIngresar.Visible = True
+            BSalir.Visible = True
+            BAutorizar.visible = False
+        End If
         Actualiza()
     End Sub
 
@@ -76,5 +85,31 @@
         If e.KeyData = Keys.Enter Then
             Busca()
         End If
+    End Sub
+
+    Private Sub BAutorizar_Click(sender As Object, e As EventArgs) Handles BAutorizar.Click
+        If NivelComboBox.Text = "01" Then
+            Dim accion = GlobalVariables.accionForm
+            If accion = "borrarRegistroPersonal" Then
+                FPersonal.EliminarRegistro()
+            ElseIf accion = "borrarRegistroProduccion" Then
+                FProduccion.EliminarRegistro()
+            ElseIf accion = "borrarRegistroProductor" Then
+                FProductores.EliminarRegistro()
+            ElseIf accion = "borrarRegistroSector" Then
+                FSectores.EliminarRegistro()
+            ElseIf accion = "borrarRegistroUsuario" Then
+                FUsuarios.EliminarRegistro()
+            End If
+            Me.Close()
+        Else
+            GlobalVariables.accionForm = "sinpermiso"
+            FAlertInfo.Show()
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
+        Me.Close()
     End Sub
 End Class

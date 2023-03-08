@@ -13,9 +13,11 @@
         Public Shared falloVacio As String = "¡Aún hay campos vacíos!"          'Info
         Public Shared datosMal As String = "¡Usuario o Contraseña no validos!"  'Info
         Public Shared falloUsuarioVacio As String = "¡No existe el Usuario!"    'Info
+        Public Shared sinpermiso As String = "¡Usuario sin permisos!"    'Info
         Public Shared questSalir As String = "¿Desea cerrar sesión?"            'Question
         Public Shared salirMenu As String = "¿Desea cerrar el sistema?" 'Question
 
         Public Shared accionForm As String = ""
+        Public Shared autorizar As String = ""
     End Class
 End Module
