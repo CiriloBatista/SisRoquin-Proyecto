@@ -47,11 +47,13 @@ Partial Class FProduccion
         Dim NombreEmpleadoLabel As System.Windows.Forms.Label
         Dim ApellidosEmpLabel As System.Windows.Forms.Label
         Dim FolioDetaLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FProduccion))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim Label1 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FProduccion))
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LabelPersonal = New System.Windows.Forms.Label()
@@ -134,6 +136,8 @@ Partial Class FProduccion
         Me.LabelRegFolio = New System.Windows.Forms.Label()
         Me.ProduccionConsultDetallePersonalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProduccionDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DateTimeFolio = New System.Windows.Forms.DateTimePicker()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.FolioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaProdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HuertoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -141,11 +145,8 @@ Partial Class FProduccion
         Me.CajasDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.KilosDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NumSectorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ClamshellDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EncargadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateTimeFolio = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         FolioLabel = New System.Windows.Forms.Label()
         FechaProdLabel = New System.Windows.Forms.Label()
         NumProdLabel = New System.Windows.Forms.Label()
@@ -393,7 +394,7 @@ Partial Class FProduccion
         'NumEmpleadoLabel
         '
         NumEmpleadoLabel.AutoSize = True
-        NumEmpleadoLabel.Location = New System.Drawing.Point(1112, 582)
+        NumEmpleadoLabel.Location = New System.Drawing.Point(1173, 575)
         NumEmpleadoLabel.Name = "NumEmpleadoLabel"
         NumEmpleadoLabel.Size = New System.Drawing.Size(108, 17)
         NumEmpleadoLabel.TabIndex = 67
@@ -402,7 +403,7 @@ Partial Class FProduccion
         'NombreEmpleadoLabel
         '
         NombreEmpleadoLabel.AutoSize = True
-        NombreEmpleadoLabel.Location = New System.Drawing.Point(1091, 617)
+        NombreEmpleadoLabel.Location = New System.Drawing.Point(1152, 610)
         NombreEmpleadoLabel.Name = "NombreEmpleadoLabel"
         NombreEmpleadoLabel.Size = New System.Drawing.Size(129, 17)
         NombreEmpleadoLabel.TabIndex = 68
@@ -411,7 +412,7 @@ Partial Class FProduccion
         'ApellidosEmpLabel
         '
         ApellidosEmpLabel.AutoSize = True
-        ApellidosEmpLabel.Location = New System.Drawing.Point(1119, 653)
+        ApellidosEmpLabel.Location = New System.Drawing.Point(1180, 646)
         ApellidosEmpLabel.Name = "ApellidosEmpLabel"
         ApellidosEmpLabel.Size = New System.Drawing.Size(101, 17)
         ApellidosEmpLabel.TabIndex = 69
@@ -420,11 +421,21 @@ Partial Class FProduccion
         'FolioDetaLabel
         '
         FolioDetaLabel.AutoSize = True
-        FolioDetaLabel.Location = New System.Drawing.Point(1358, 582)
+        FolioDetaLabel.Location = New System.Drawing.Point(1419, 575)
         FolioDetaLabel.Name = "FolioDetaLabel"
         FolioDetaLabel.Size = New System.Drawing.Size(76, 17)
         FolioDetaLabel.TabIndex = 70
         FolioDetaLabel.Text = "Folio Deta:"
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
+        Label1.Location = New System.Drawing.Point(1620, 311)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(80, 29)
+        Label1.TabIndex = 82
+        Label1.Text = "Folio:"
         '
         'Panel1
         '
@@ -760,11 +771,12 @@ Partial Class FProduccion
         Me.BEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.BEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BEliminar.Image = CType(resources.GetObject("BEliminar.Image"), System.Drawing.Image)
-        Me.BEliminar.Location = New System.Drawing.Point(807, 733)
+        Me.BEliminar.Location = New System.Drawing.Point(867, 733)
         Me.BEliminar.Name = "BEliminar"
         Me.BEliminar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.BEliminar.Size = New System.Drawing.Size(60, 60)
         Me.BEliminar.TabIndex = 60
+        Me.BEliminar.Text = "  "
         Me.BEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BEliminar.UseVisualStyleBackColor = False
         '
@@ -774,7 +786,7 @@ Partial Class FProduccion
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BCancelar.Image = CType(resources.GetObject("BCancelar.Image"), System.Drawing.Image)
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelar.Location = New System.Drawing.Point(516, 733)
+        Me.BCancelar.Location = New System.Drawing.Point(576, 733)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BCancelar.Size = New System.Drawing.Size(150, 60)
@@ -789,7 +801,7 @@ Partial Class FProduccion
         Me.BGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BGuardar.Image = CType(resources.GetObject("BGuardar.Image"), System.Drawing.Image)
-        Me.BGuardar.Location = New System.Drawing.Point(782, 733)
+        Me.BGuardar.Location = New System.Drawing.Point(842, 733)
         Me.BGuardar.Name = "BGuardar"
         Me.BGuardar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.BGuardar.Size = New System.Drawing.Size(60, 60)
@@ -803,7 +815,7 @@ Partial Class FProduccion
         Me.BNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BNuevo.Image = CType(resources.GetObject("BNuevo.Image"), System.Drawing.Image)
         Me.BNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BNuevo.Location = New System.Drawing.Point(422, 733)
+        Me.BNuevo.Location = New System.Drawing.Point(482, 733)
         Me.BNuevo.Name = "BNuevo"
         Me.BNuevo.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BNuevo.Size = New System.Drawing.Size(180, 60)
@@ -886,11 +898,19 @@ Partial Class FProduccion
         Me.ConsultDetallePersonalDataGridView.AutoGenerateColumns = False
         Me.ConsultDetallePersonalDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ConsultDetallePersonalDataGridView.BackgroundColor = System.Drawing.Color.LightGreen
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ConsultDetallePersonalDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.ConsultDetallePersonalDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ConsultDetallePersonalDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumEmpleado, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12})
         Me.ConsultDetallePersonalDataGridView.DataSource = Me.ConsultDetallePersonalBindingSource
         Me.ConsultDetallePersonalDataGridView.EnableHeadersVisualStyles = False
-        Me.ConsultDetallePersonalDataGridView.Location = New System.Drawing.Point(939, 541)
+        Me.ConsultDetallePersonalDataGridView.Location = New System.Drawing.Point(1000, 534)
         Me.ConsultDetallePersonalDataGridView.Name = "ConsultDetallePersonalDataGridView"
         Me.ConsultDetallePersonalDataGridView.ReadOnly = True
         Me.ConsultDetallePersonalDataGridView.RowHeadersVisible = False
@@ -974,10 +994,18 @@ Partial Class FProduccion
         '
         Me.DataGridDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridDetalle.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridDetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridDetalle.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Empleado, Me.Apellido, Me.Nom, Me.cubetas, Me.kilos, Me.gramos})
         Me.DataGridDetalle.GridColor = System.Drawing.SystemColors.ActiveCaption
-        Me.DataGridDetalle.Location = New System.Drawing.Point(939, 366)
+        Me.DataGridDetalle.Location = New System.Drawing.Point(1000, 359)
         Me.DataGridDetalle.Name = "DataGridDetalle"
         Me.DataGridDetalle.RowHeadersVisible = False
         Me.DataGridDetalle.RowTemplate.Height = 24
@@ -1020,7 +1048,7 @@ Partial Class FProduccion
         Me.BEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BEditar.Image = CType(resources.GetObject("BEditar.Image"), System.Drawing.Image)
         Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BEditar.Location = New System.Drawing.Point(608, 733)
+        Me.BEditar.Location = New System.Drawing.Point(668, 733)
         Me.BEditar.Name = "BEditar"
         Me.BEditar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BEditar.Size = New System.Drawing.Size(180, 60)
@@ -1041,7 +1069,7 @@ Partial Class FProduccion
         'NumEmpleadoTextBox
         '
         Me.NumEmpleadoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "NumEmpleado", True))
-        Me.NumEmpleadoTextBox.Location = New System.Drawing.Point(1226, 579)
+        Me.NumEmpleadoTextBox.Location = New System.Drawing.Point(1287, 572)
         Me.NumEmpleadoTextBox.Name = "NumEmpleadoTextBox"
         Me.NumEmpleadoTextBox.Size = New System.Drawing.Size(100, 22)
         Me.NumEmpleadoTextBox.TabIndex = 68
@@ -1049,7 +1077,7 @@ Partial Class FProduccion
         'NombreEmpleadoTextBox
         '
         Me.NombreEmpleadoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "NombreEmpleado", True))
-        Me.NombreEmpleadoTextBox.Location = New System.Drawing.Point(1226, 614)
+        Me.NombreEmpleadoTextBox.Location = New System.Drawing.Point(1287, 607)
         Me.NombreEmpleadoTextBox.Name = "NombreEmpleadoTextBox"
         Me.NombreEmpleadoTextBox.Size = New System.Drawing.Size(100, 22)
         Me.NombreEmpleadoTextBox.TabIndex = 69
@@ -1057,7 +1085,7 @@ Partial Class FProduccion
         'ApellidosEmpTextBox
         '
         Me.ApellidosEmpTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "ApellidosEmp", True))
-        Me.ApellidosEmpTextBox.Location = New System.Drawing.Point(1226, 650)
+        Me.ApellidosEmpTextBox.Location = New System.Drawing.Point(1287, 643)
         Me.ApellidosEmpTextBox.Name = "ApellidosEmpTextBox"
         Me.ApellidosEmpTextBox.Size = New System.Drawing.Size(100, 22)
         Me.ApellidosEmpTextBox.TabIndex = 70
@@ -1074,7 +1102,7 @@ Partial Class FProduccion
         'FolioDetaTextBox
         '
         Me.FolioDetaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DetalleFolioBindingSource, "FolioDeta", True))
-        Me.FolioDetaTextBox.Location = New System.Drawing.Point(1440, 579)
+        Me.FolioDetaTextBox.Location = New System.Drawing.Point(1501, 572)
         Me.FolioDetaTextBox.Name = "FolioDetaTextBox"
         Me.FolioDetaTextBox.Size = New System.Drawing.Size(100, 22)
         Me.FolioDetaTextBox.TabIndex = 71
@@ -1085,7 +1113,7 @@ Partial Class FProduccion
         Me.BSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BSave.Image = CType(resources.GetObject("BSave.Image"), System.Drawing.Image)
-        Me.BSave.Location = New System.Drawing.Point(1718, 391)
+        Me.BSave.Location = New System.Drawing.Point(1779, 384)
         Me.BSave.Name = "BSave"
         Me.BSave.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.BSave.Size = New System.Drawing.Size(60, 60)
@@ -1107,7 +1135,7 @@ Partial Class FProduccion
         '
         Me.LabelRegistroCosecha.AutoSize = True
         Me.LabelRegistroCosecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.LabelRegistroCosecha.Location = New System.Drawing.Point(934, 318)
+        Me.LabelRegistroCosecha.Location = New System.Drawing.Point(995, 311)
         Me.LabelRegistroCosecha.Name = "LabelRegistroCosecha"
         Me.LabelRegistroCosecha.Size = New System.Drawing.Size(392, 29)
         Me.LabelRegistroCosecha.TabIndex = 75
@@ -1117,7 +1145,7 @@ Partial Class FProduccion
         '
         Me.LabelListadoCosechas.AutoSize = True
         Me.LabelListadoCosechas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.LabelListadoCosechas.Location = New System.Drawing.Point(934, 496)
+        Me.LabelListadoCosechas.Location = New System.Drawing.Point(995, 489)
         Me.LabelListadoCosechas.Name = "LabelListadoCosechas"
         Me.LabelListadoCosechas.Size = New System.Drawing.Size(257, 29)
         Me.LabelListadoCosechas.TabIndex = 76
@@ -1165,41 +1193,64 @@ Partial Class FProduccion
         Me.ProduccionDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ProduccionDataGridView.BackgroundColor = System.Drawing.Color.LightGreen
         Me.ProduccionDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProduccionDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.LightGreen
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SpringGreen
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProduccionDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.ProduccionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ProduccionDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FolioDataGridViewTextBoxColumn, Me.FechaProdDataGridViewTextBoxColumn, Me.HuertoDataGridViewTextBoxColumn, Me.TemporadaDataGridViewTextBoxColumn, Me.CajasDataGridViewTextBoxColumn, Me.KilosDataGridViewTextBoxColumn, Me.NumSectorDataGridViewTextBoxColumn, Me.ClamshellDataGridViewTextBoxColumn, Me.EncargadoDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn})
+        Me.ProduccionDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FolioDataGridViewTextBoxColumn, Me.FechaProdDataGridViewTextBoxColumn, Me.HuertoDataGridViewTextBoxColumn, Me.TemporadaDataGridViewTextBoxColumn, Me.CajasDataGridViewTextBoxColumn, Me.KilosDataGridViewTextBoxColumn, Me.NumSectorDataGridViewTextBoxColumn, Me.EncargadoDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn})
         Me.ProduccionDataGridView.DataSource = Me.ProduccionBindingSource
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ProduccionDataGridView.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ProduccionDataGridView.DefaultCellStyle = DataGridViewCellStyle9
         Me.ProduccionDataGridView.GridColor = System.Drawing.Color.Black
-        Me.ProduccionDataGridView.Location = New System.Drawing.Point(12, 236)
+        Me.ProduccionDataGridView.Location = New System.Drawing.Point(11, 236)
         Me.ProduccionDataGridView.Name = "ProduccionDataGridView"
         Me.ProduccionDataGridView.ReadOnly = True
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProduccionDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProduccionDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.ProduccionDataGridView.RowHeadersVisible = False
         Me.ProduccionDataGridView.RowTemplate.Height = 24
-        Me.ProduccionDataGridView.Size = New System.Drawing.Size(867, 491)
+        Me.ProduccionDataGridView.Size = New System.Drawing.Size(916, 491)
         Me.ProduccionDataGridView.TabIndex = 79
+        '
+        'DateTimeFolio
+        '
+        Me.DateTimeFolio.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProduccionBindingSource, "FechaProd", True))
+        Me.DateTimeFolio.Enabled = False
+        Me.DateTimeFolio.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.DateTimeFolio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimeFolio.Location = New System.Drawing.Point(1688, 271)
+        Me.DateTimeFolio.Name = "DateTimeFolio"
+        Me.DateTimeFolio.Size = New System.Drawing.Size(151, 34)
+        Me.DateTimeFolio.TabIndex = 81
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.White
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Folio", True))
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.TextBox1.Location = New System.Drawing.Point(1709, 311)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(130, 34)
+        Me.TextBox1.TabIndex = 83
         '
         'FolioDataGridViewTextBoxColumn
         '
@@ -1250,13 +1301,6 @@ Partial Class FProduccion
         Me.NumSectorDataGridViewTextBoxColumn.Name = "NumSectorDataGridViewTextBoxColumn"
         Me.NumSectorDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'ClamshellDataGridViewTextBoxColumn
-        '
-        Me.ClamshellDataGridViewTextBoxColumn.DataPropertyName = "Clamshell"
-        Me.ClamshellDataGridViewTextBoxColumn.HeaderText = "Clamshell"
-        Me.ClamshellDataGridViewTextBoxColumn.Name = "ClamshellDataGridViewTextBoxColumn"
-        Me.ClamshellDataGridViewTextBoxColumn.ReadOnly = True
-        '
         'EncargadoDataGridViewTextBoxColumn
         '
         Me.EncargadoDataGridViewTextBoxColumn.DataPropertyName = "Encargado"
@@ -1270,39 +1314,6 @@ Partial Class FProduccion
         Me.EstadoDataGridViewTextBoxColumn.HeaderText = "Estado"
         Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
         Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DateTimeFolio
-        '
-        Me.DateTimeFolio.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.ProduccionBindingSource, "FechaProd", True))
-        Me.DateTimeFolio.Enabled = False
-        Me.DateTimeFolio.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.DateTimeFolio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimeFolio.Location = New System.Drawing.Point(1627, 278)
-        Me.DateTimeFolio.Name = "DateTimeFolio"
-        Me.DateTimeFolio.Size = New System.Drawing.Size(151, 34)
-        Me.DateTimeFolio.TabIndex = 81
-        '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
-        Label1.Location = New System.Drawing.Point(1559, 318)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(80, 29)
-        Label1.TabIndex = 82
-        Label1.Text = "Folio:"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProduccionBindingSource, "Folio", True))
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox1.Location = New System.Drawing.Point(1648, 318)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(130, 34)
-        Me.TextBox1.TabIndex = 83
         '
         'FProduccion
         '
@@ -1321,7 +1332,6 @@ Partial Class FProduccion
         Me.Controls.Add(Me.TextBoxBuscar)
         Me.Controls.Add(Me.LabelListadoCosechas)
         Me.Controls.Add(Me.LabelRegistroCosecha)
-        Me.Controls.Add(Me.LabelListadoFolios)
         Me.Controls.Add(Me.BSave)
         Me.Controls.Add(Me.DataGridDetalle)
         Me.Controls.Add(Me.BEditar)
@@ -1382,6 +1392,7 @@ Partial Class FProduccion
         Me.Controls.Add(Me.NombreEmpleadoTextBox)
         Me.Controls.Add(NumEmpleadoLabel)
         Me.Controls.Add(Me.NumEmpleadoTextBox)
+        Me.Controls.Add(Me.LabelListadoFolios)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
@@ -1492,6 +1503,8 @@ Partial Class FProduccion
     Friend WithEvents LabelRegFolio As Label
     Friend WithEvents ProduccionConsultDetallePersonalBindingSource As BindingSource
     Friend WithEvents ProduccionDataGridView As DataGridView
+    Friend WithEvents DateTimeFolio As DateTimePicker
+    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents FolioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FechaProdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents HuertoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -1499,9 +1512,6 @@ Partial Class FProduccion
     Friend WithEvents CajasDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents KilosDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NumSectorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ClamshellDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EncargadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EstadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DateTimeFolio As DateTimePicker
-    Friend WithEvents TextBox1 As TextBox
 End Class

@@ -42,28 +42,8 @@
         NewMdiChild.Show()
     End Sub
 
-    Private Sub EntradasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EntradasToolStripMenuItem.Click
-        FError505.Show()
-    End Sub
-
-    Private Sub SalidasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidasToolStripMenuItem.Click
-        FError505.Show()
-    End Sub
-
-    Private Sub InventariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InventariosToolStripMenuItem.Click
-        FError505.Show()
-    End Sub
-
-    Private Sub ExportarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportarToolStripMenuItem.Click
-        FError505.Show()
-    End Sub
-
-    Private Sub CapturasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CapturasToolStripMenuItem.Click
-        FError505.Show()
-    End Sub
-
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
-        FError505.Show()
+        FRCosecha.Show()
     End Sub
 
     Private Sub ProducciónToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProducciónToolStripMenuItem1.Click

@@ -149,6 +149,12 @@
     <Compile Include="FProductores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FRCosecha.Designer.vb">
+      <DependentUpon>FRCosecha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRCosecha.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FRProduccion.Designer.vb">
       <DependentUpon>FRProduccion.vb</DependentUpon>
     </Compile>
@@ -220,6 +226,9 @@
     <EmbeddedResource Include="FProductores.resx">
       <DependentUpon>FProductores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRCosecha.resx">
+      <DependentUpon>FRCosecha.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRProduccion.resx">
       <DependentUpon>FRProduccion.vb</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +244,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportCose.rdlc" />
     <EmbeddedResource Include="ReportProd.rdlc" />
   </ItemGroup>
   <ItemGroup>

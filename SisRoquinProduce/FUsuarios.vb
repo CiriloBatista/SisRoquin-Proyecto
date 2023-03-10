@@ -105,15 +105,27 @@
     End Sub
 
     Private Sub UsuarioTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles UsuarioTextBox.KeyPress
-        e.Handled = Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
+        e.Handled = Not Char.IsLetter(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
     End Sub
 
     Private Sub NombreUserTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles NombreUserTextBox.KeyPress
         e.Handled = Not Char.IsLetter(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
     End Sub
 
-    'Private Sub ContrasenaTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ContrasenaTextBox.KeyPress
-    '   e.Handled = Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
+    Private Sub ContrasenaTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ContrasenaTextBox.KeyPress
+        e.Handled = Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
+    End Sub
+
+    'Private Sub TextBoxBuscar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxBuscar.KeyPress
+    '   e.Handled = Not Char.IsLetter(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
     'End Sub
+
+    Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click 'Boton de busqueda por folio'
+        If TextBoxBuscar.Text <> "" Then
+            Me.UsuariosTableAdapter.FillByUser(Me.RoquinDBDataSet.Usuarios, TextBoxBuscar.Text)
+        Else
+            Me.UsuariosTableAdapter.Fill(Me.RoquinDBDataSet.Usuarios)
+        End If
+    End Sub
 
 End Class

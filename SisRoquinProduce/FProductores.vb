@@ -116,5 +116,19 @@
         e.Handled = Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
     End Sub
 
+    Private Sub TextBoxBuscar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxBuscar.KeyPress
+        e.Handled = Not Char.IsLetter(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
+    End Sub
 
+    Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click 'Boton de busqueda por nombre productor'
+        If TextBoxBuscar.Text <> "" Then
+            Me.ProductoresTableAdapter.FillByNomProd(Me.RoquinDBDataSet.Productores, Val(TextBoxBuscar.Text))
+        Else
+            Me.ProductoresTableAdapter.Fill(Me.RoquinDBDataSet.Productores)
+        End If
+    End Sub
+
+    Private Sub TextBoxBuscar_TextChanged(sender As Object, e As EventArgs) Handles TextBoxBuscar.TextChanged
+
+    End Sub
 End Class

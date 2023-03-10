@@ -67,6 +67,9 @@ Partial Class FPersonal
         Me.BNuevo = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BEditar = New System.Windows.Forms.Button()
+        Me.BBuscar = New System.Windows.Forms.Button()
+        Me.TextBoxBuscar = New System.Windows.Forms.TextBox()
+        Me.LabelListado = New System.Windows.Forms.Label()
         IdPersonalLabel = New System.Windows.Forms.Label()
         NumEmpleadoLabel = New System.Windows.Forms.Label()
         NombreEmpleadoLabel = New System.Windows.Forms.Label()
@@ -333,7 +336,7 @@ Partial Class FPersonal
         Me.PersonalDataGridView.DefaultCellStyle = DataGridViewCellStyle3
         Me.PersonalDataGridView.GridColor = System.Drawing.Color.Black
         Me.PersonalDataGridView.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PersonalDataGridView.Location = New System.Drawing.Point(410, 208)
+        Me.PersonalDataGridView.Location = New System.Drawing.Point(410, 253)
         Me.PersonalDataGridView.Name = "PersonalDataGridView"
         Me.PersonalDataGridView.ReadOnly = True
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -348,7 +351,7 @@ Partial Class FPersonal
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.PersonalDataGridView.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.PersonalDataGridView.RowTemplate.Height = 24
-        Me.PersonalDataGridView.Size = New System.Drawing.Size(560, 359)
+        Me.PersonalDataGridView.Size = New System.Drawing.Size(560, 314)
         Me.PersonalDataGridView.TabIndex = 11
         '
         'DataGridViewTextBoxColumn1
@@ -491,12 +494,44 @@ Partial Class FPersonal
         Me.BEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BEditar.UseVisualStyleBackColor = False
         '
+        'BBuscar
+        '
+        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.BBuscar.Location = New System.Drawing.Point(860, 208)
+        Me.BBuscar.Name = "BBuscar"
+        Me.BBuscar.Size = New System.Drawing.Size(110, 40)
+        Me.BBuscar.TabIndex = 81
+        Me.BBuscar.Text = "Buscar"
+        Me.BBuscar.UseVisualStyleBackColor = True
+        '
+        'TextBoxBuscar
+        '
+        Me.TextBoxBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.TextBoxBuscar.Location = New System.Drawing.Point(696, 210)
+        Me.TextBoxBuscar.Name = "TextBoxBuscar"
+        Me.TextBoxBuscar.Size = New System.Drawing.Size(160, 34)
+        Me.TextBoxBuscar.TabIndex = 80
+        '
+        'LabelListado
+        '
+        Me.LabelListado.AutoSize = True
+        Me.LabelListado.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.LabelListado.Location = New System.Drawing.Point(405, 212)
+        Me.LabelListado.Name = "LabelListado"
+        Me.LabelListado.Size = New System.Drawing.Size(246, 29)
+        Me.LabelListado.TabIndex = 79
+        Me.LabelListado.Text = "Listado de Personal"
+        '
         'FPersonal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MintCream
         Me.ClientSize = New System.Drawing.Size(982, 653)
+        Me.Controls.Add(Me.BBuscar)
+        Me.Controls.Add(Me.TextBoxBuscar)
+        Me.Controls.Add(Me.LabelListado)
         Me.Controls.Add(Me.BEditar)
         Me.Controls.Add(Me.BEliminar)
         Me.Controls.Add(Me.BCancelar)
@@ -567,4 +602,7 @@ Partial Class FPersonal
     Friend WithEvents BCancelar As Button
     Friend WithEvents BEliminar As Button
     Friend WithEvents BEditar As Button
+    Friend WithEvents BBuscar As Button
+    Friend WithEvents TextBoxBuscar As TextBox
+    Friend WithEvents LabelListado As Label
 End Class

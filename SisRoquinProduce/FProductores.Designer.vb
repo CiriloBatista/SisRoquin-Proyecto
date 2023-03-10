@@ -63,6 +63,9 @@ Partial Class FProductores
         Me.BGuardar = New System.Windows.Forms.Button()
         Me.BNuevo = New System.Windows.Forms.Button()
         Me.BEditar = New System.Windows.Forms.Button()
+        Me.BBuscar = New System.Windows.Forms.Button()
+        Me.TextBoxBuscar = New System.Windows.Forms.TextBox()
+        Me.LabelListado = New System.Windows.Forms.Label()
         IdProductorLabel = New System.Windows.Forms.Label()
         NumProductorLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
@@ -313,7 +316,7 @@ Partial Class FProductores
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.ProductoresDataGridView.DefaultCellStyle = DataGridViewCellStyle3
         Me.ProductoresDataGridView.GridColor = System.Drawing.Color.Black
-        Me.ProductoresDataGridView.Location = New System.Drawing.Point(410, 208)
+        Me.ProductoresDataGridView.Location = New System.Drawing.Point(410, 246)
         Me.ProductoresDataGridView.Name = "ProductoresDataGridView"
         Me.ProductoresDataGridView.ReadOnly = True
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
@@ -326,7 +329,7 @@ Partial Class FProductores
         Me.ProductoresDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.ProductoresDataGridView.RowHeadersVisible = False
         Me.ProductoresDataGridView.RowTemplate.Height = 24
-        Me.ProductoresDataGridView.Size = New System.Drawing.Size(560, 314)
+        Me.ProductoresDataGridView.Size = New System.Drawing.Size(560, 276)
         Me.ProductoresDataGridView.TabIndex = 23
         '
         'DataGridViewTextBoxColumn1
@@ -455,12 +458,44 @@ Partial Class FProductores
         Me.BEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BEditar.UseVisualStyleBackColor = False
         '
+        'BBuscar
+        '
+        Me.BBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.BBuscar.Location = New System.Drawing.Point(861, 204)
+        Me.BBuscar.Name = "BBuscar"
+        Me.BBuscar.Size = New System.Drawing.Size(110, 40)
+        Me.BBuscar.TabIndex = 84
+        Me.BBuscar.Text = "Buscar"
+        Me.BBuscar.UseVisualStyleBackColor = True
+        '
+        'TextBoxBuscar
+        '
+        Me.TextBoxBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBoxBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
+        Me.TextBoxBuscar.Location = New System.Drawing.Point(694, 206)
+        Me.TextBoxBuscar.Name = "TextBoxBuscar"
+        Me.TextBoxBuscar.Size = New System.Drawing.Size(160, 34)
+        Me.TextBoxBuscar.TabIndex = 83
+        '
+        'LabelListado
+        '
+        Me.LabelListado.AutoSize = True
+        Me.LabelListado.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.LabelListado.Location = New System.Drawing.Point(398, 208)
+        Me.LabelListado.Name = "LabelListado"
+        Me.LabelListado.Size = New System.Drawing.Size(284, 29)
+        Me.LabelListado.TabIndex = 82
+        Me.LabelListado.Text = "Listado de Productores"
+        '
         'FProductores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MintCream
         Me.ClientSize = New System.Drawing.Size(982, 603)
+        Me.Controls.Add(Me.BBuscar)
+        Me.Controls.Add(Me.TextBoxBuscar)
+        Me.Controls.Add(Me.LabelListado)
         Me.Controls.Add(Me.BEditar)
         Me.Controls.Add(Me.BEliminar)
         Me.Controls.Add(Me.BCancelar)
@@ -528,4 +563,7 @@ Partial Class FProductores
     Friend WithEvents BGuardar As Button
     Friend WithEvents BNuevo As Button
     Friend WithEvents BEditar As Button
+    Friend WithEvents BBuscar As Button
+    Friend WithEvents TextBoxBuscar As TextBox
+    Friend WithEvents LabelListado As Label
 End Class

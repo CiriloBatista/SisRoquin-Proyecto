@@ -30,13 +30,6 @@ Partial Class FMenu
         Me.ProduccionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SectoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OperacionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EntradasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalidasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InventariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UtiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExportarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CapturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProducciónToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -49,7 +42,7 @@ Partial Class FMenu
         Me.MenuStrip1.BackColor = System.Drawing.Color.LightGreen
         Me.MenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatalogoToolStripMenuItem, Me.OperacionToolStripMenuItem, Me.UtiToolStripMenuItem, Me.InformesToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatalogoToolStripMenuItem, Me.InformesToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(6, 10, 6, 10)
@@ -96,54 +89,6 @@ Partial Class FMenu
         Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(269, 40)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
-        'OperacionToolStripMenuItem
-        '
-        Me.OperacionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EntradasToolStripMenuItem, Me.SalidasToolStripMenuItem, Me.InventariosToolStripMenuItem})
-        Me.OperacionToolStripMenuItem.Image = CType(resources.GetObject("OperacionToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.OperacionToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.OperacionToolStripMenuItem.Name = "OperacionToolStripMenuItem"
-        Me.OperacionToolStripMenuItem.Size = New System.Drawing.Size(223, 54)
-        Me.OperacionToolStripMenuItem.Text = "Operación"
-        '
-        'EntradasToolStripMenuItem
-        '
-        Me.EntradasToolStripMenuItem.Name = "EntradasToolStripMenuItem"
-        Me.EntradasToolStripMenuItem.Size = New System.Drawing.Size(253, 40)
-        Me.EntradasToolStripMenuItem.Text = "Entradas"
-        '
-        'SalidasToolStripMenuItem
-        '
-        Me.SalidasToolStripMenuItem.Name = "SalidasToolStripMenuItem"
-        Me.SalidasToolStripMenuItem.Size = New System.Drawing.Size(253, 40)
-        Me.SalidasToolStripMenuItem.Text = "Salidas"
-        '
-        'InventariosToolStripMenuItem
-        '
-        Me.InventariosToolStripMenuItem.Name = "InventariosToolStripMenuItem"
-        Me.InventariosToolStripMenuItem.Size = New System.Drawing.Size(253, 40)
-        Me.InventariosToolStripMenuItem.Text = "Inventarios"
-        '
-        'UtiToolStripMenuItem
-        '
-        Me.UtiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExportarToolStripMenuItem, Me.CapturasToolStripMenuItem})
-        Me.UtiToolStripMenuItem.Image = CType(resources.GetObject("UtiToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.UtiToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.UtiToolStripMenuItem.Name = "UtiToolStripMenuItem"
-        Me.UtiToolStripMenuItem.Size = New System.Drawing.Size(194, 54)
-        Me.UtiToolStripMenuItem.Text = "Utilerías"
-        '
-        'ExportarToolStripMenuItem
-        '
-        Me.ExportarToolStripMenuItem.Name = "ExportarToolStripMenuItem"
-        Me.ExportarToolStripMenuItem.Size = New System.Drawing.Size(224, 40)
-        Me.ExportarToolStripMenuItem.Text = "Exportar"
-        '
-        'CapturasToolStripMenuItem
-        '
-        Me.CapturasToolStripMenuItem.Name = "CapturasToolStripMenuItem"
-        Me.CapturasToolStripMenuItem.Size = New System.Drawing.Size(224, 40)
-        Me.CapturasToolStripMenuItem.Text = "Capturas"
-        '
         'InformesToolStripMenuItem
         '
         Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.ProducciónToolStripMenuItem1})
@@ -157,7 +102,7 @@ Partial Class FMenu
         '
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
         Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(258, 40)
-        Me.ClientesToolStripMenuItem.Text = "Clientes"
+        Me.ClientesToolStripMenuItem.Text = "Cosechas"
         '
         'ProducciónToolStripMenuItem1
         '
@@ -206,8 +151,6 @@ Partial Class FMenu
 
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents CatalogoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents OperacionToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents UtiToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PersonalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProductoresToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProduccionToolStripMenuItem As ToolStripMenuItem
@@ -215,11 +158,6 @@ Partial Class FMenu
     Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InformesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents EntradasToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SalidasToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents InventariosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ExportarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CapturasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProducciónToolStripMenuItem1 As ToolStripMenuItem
 End Class
