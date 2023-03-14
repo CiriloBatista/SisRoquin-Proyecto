@@ -188,7 +188,7 @@
         NumProdTextBox.Text = NombreComboBox.SelectedValue 'Indica que se haga el cambio al mismo tiempo en el otro textbox
     End Sub
 
-    Private Sub NombreSecComboBox_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub NombreSecComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles NombreSecComboBox.SelectedIndexChanged
         NumSectorTextBox.Text = NombreSecComboBox.SelectedValue 'Indica que se haga el cambio al mismo tiempo en el otro textbox
     End Sub
 
@@ -209,8 +209,6 @@
                 If NumEmpleadoTextBox.Text <> "" Then
                     DataGridDetalle.Item(1, Ren).Value = ApellidosEmpTextBox.Text
                     DataGridDetalle.Item(2, Ren).Value = NombreEmpleadoTextBox.Text
-                    DataGridDetalle.CurrentCell = DataGridDetalle.Item(3, Ren) ' indicar la posicion para ir a la posicion
-                    DataGridDetalle.BeginEdit(True)
                 End If
             End If
             If Col = 3 Then
