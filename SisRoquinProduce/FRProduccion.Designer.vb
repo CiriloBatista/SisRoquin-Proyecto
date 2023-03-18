@@ -92,7 +92,7 @@ Partial Class FRProduccion
         '
         Me.TextBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
-        Me.TextBuscar.Location = New System.Drawing.Point(290, 9)
+        Me.TextBuscar.Location = New System.Drawing.Point(297, 9)
         Me.TextBuscar.Name = "TextBuscar"
         Me.TextBuscar.Size = New System.Drawing.Size(157, 41)
         Me.TextBuscar.TabIndex = 2

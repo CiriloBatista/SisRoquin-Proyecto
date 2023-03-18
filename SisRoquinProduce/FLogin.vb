@@ -88,7 +88,7 @@
     End Sub
 
     Private Sub BAutorizar_Click(sender As Object, e As EventArgs) Handles BAutorizar.Click
-        If NivelComboBox.Text = "01" Then
+        If NivelComboBox.Text = "ADMINISTRADOR" Then
             Dim accion = GlobalVariables.accionForm
             If accion = "borrarRegistroPersonal" Then
                 FPersonal.EliminarRegistro()

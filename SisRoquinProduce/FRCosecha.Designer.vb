@@ -58,7 +58,7 @@ Partial Class FRCosecha
         Me.ReportViewer1.Location = New System.Drawing.Point(-1, 59)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(1485, 692)
+        Me.ReportViewer1.Size = New System.Drawing.Size(1285, 692)
         Me.ReportViewer1.TabIndex = 0
         '
         'ConsultDetallePersonalTableAdapter
@@ -68,7 +68,7 @@ Partial Class FRCosecha
         'BtnBuscar
         '
         Me.BtnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.BtnBuscar.Location = New System.Drawing.Point(583, 6)
+        Me.BtnBuscar.Location = New System.Drawing.Point(588, 6)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(135, 42)
         Me.BtnBuscar.TabIndex = 1
@@ -79,7 +79,7 @@ Partial Class FRCosecha
         '
         Me.TextBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
-        Me.TextBuscar.Location = New System.Drawing.Point(348, 7)
+        Me.TextBuscar.Location = New System.Drawing.Point(356, 7)
         Me.TextBuscar.Name = "TextBuscar"
         Me.TextBuscar.Size = New System.Drawing.Size(209, 41)
         Me.TextBuscar.TabIndex = 2
@@ -99,7 +99,7 @@ Partial Class FRCosecha
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGreen
-        Me.ClientSize = New System.Drawing.Size(1482, 753)
+        Me.ClientSize = New System.Drawing.Size(1282, 753)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBuscar)
         Me.Controls.Add(Me.BtnBuscar)

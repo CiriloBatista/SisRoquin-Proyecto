@@ -82,11 +82,6 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:SisRoquinProduce.RoquinDBDataSet.ConProdDataTable">
-<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member>
 <member name="T:SisRoquinProduce.RoquinDBDataSet.DetalleFolioRow">
 <summary>
 Represents strongly named DataRow class.
@@ -118,11 +113,6 @@ Represents strongly named DataRow class.
 </summary>
 </member>
 <member name="T:SisRoquinProduce.RoquinDBDataSet.ConsultDetallePersonalRow">
-<summary>
-Represents strongly named DataRow class.
-</summary>
-</member>
-<member name="T:SisRoquinProduce.RoquinDBDataSet.ConProdRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -162,11 +152,6 @@ Row event argument class
 Row event argument class
 </summary>
 </member>
-<member name="T:SisRoquinProduce.RoquinDBDataSet.ConProdRowChangeEvent">
-<summary>
-Row event argument class
-</summary>
-</member>
 <member name="T:SisRoquinProduce.RoquinDBDataSetTableAdapters.DetalleFolioTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
@@ -198,11 +183,6 @@ Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
 <member name="T:SisRoquinProduce.RoquinDBDataSetTableAdapters.ConsultDetallePersonalTableAdapter">
-<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member>
-<member name="T:SisRoquinProduce.RoquinDBDataSetTableAdapters.ConProdTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
