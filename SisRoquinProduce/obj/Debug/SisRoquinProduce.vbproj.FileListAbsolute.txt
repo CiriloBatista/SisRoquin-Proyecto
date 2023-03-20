@@ -84,3 +84,4 @@ C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\RdlCompile.cache
 C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\RdlCompile.compiled
 C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.vbproj.CopyComplete
 C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FRCosecha.resources
+C:\SisRoquinProduce\SisRoquinProduce\obj\Debug\SisRoquinProduce.FAbout.resources

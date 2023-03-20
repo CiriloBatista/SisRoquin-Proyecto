@@ -8322,9 +8322,9 @@ Namespace RoquinDBDataSetTableAdapters
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT IdDetalle, FolioDeta, NEmpleado, Kilos, Gramos, Cubetas, IdPersonal, NumEm"& _ 
                 "pleado, NombreEmpleado, ApellidosEmp, Puesto "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM ConsultDetallePersonal"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHER"& _ 
-                "E FolioDeta = ?"
+                "E NumEmpleado = ?"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("FolioDeta", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "FolioDeta", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("NumEmpleado", Global.System.Data.OleDb.OleDbType.WChar, 20, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "NumEmpleado", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8368,34 +8368,18 @@ Namespace RoquinDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByFolioDeta(ByVal dataTable As RoquinDBDataSet.ConsultDetallePersonalDataTable, ByVal FolioDeta As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function FillByNumEmp(ByVal dataTable As RoquinDBDataSet.ConsultDetallePersonalDataTable, ByVal NumEmpleado As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            If (FolioDeta.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(FolioDeta.Value,Integer)
-            Else
+            If (NumEmpleado Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(NumEmpleado,String)
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
             Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
             Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataBy1(ByVal FolioDeta As Global.System.Nullable(Of Integer)) As RoquinDBDataSet.ConsultDetallePersonalDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
-            If (FolioDeta.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(FolioDeta.Value,Integer)
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            Dim dataTable As RoquinDBDataSet.ConsultDetallePersonalDataTable = New RoquinDBDataSet.ConsultDetallePersonalDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
         End Function
     End Class
     

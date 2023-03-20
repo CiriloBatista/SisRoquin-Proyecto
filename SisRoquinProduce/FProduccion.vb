@@ -20,9 +20,8 @@
         Me.SectoresTableAdapter.Fill(Me.RoquinDBDataSet.Sectores)
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.ConsultDetallePersonal' Puede moverla o quitarla según sea necesario.
         Me.ConsultDetallePersonalTableAdapter.Fill(Me.RoquinDBDataSet.ConsultDetallePersonal)
-        'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Productores' Puede moverla o quitarla según sea necesario.
-        Me.ProductoresTableAdapter.Fill(Me.RoquinDBDataSet.Productores)
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Produccion' Puede moverla o quitarla según sea necesario.
+        Me.ProductoresTableAdapter.Fill(Me.RoquinDBDataSet.Productores)
         ProduccionDataGridView.Enabled = True
         ConsultDetallePersonalDataGridView.Enabled = True
         DesBlock()
@@ -48,7 +47,7 @@
         FolioTextBox.Enabled = True
         FechaProdDateTimePicker.Enabled = True
         NumProdTextBox.Enabled = True
-        NombreComboBox.Enabled = True
+        NomProdCombo.Enabled = True
         CodigoTextBox.Enabled = True
         HuertoTextBox.Enabled = True
         TemporadaTextBox.Enabled = True
@@ -67,6 +66,8 @@
         TotCubetasTextBox.Enabled = True
         CortesiasTextBox.Enabled = True
         EncargadoTextBox.Enabled = True
+        TextBoxBuscar.Enabled = False
+        BBuscar.Enabled = False
     End Sub
     Private Sub DesBlock()
         BNuevo.Visible = True
@@ -78,7 +79,7 @@
         FolioTextBox.Enabled = False
         FechaProdDateTimePicker.Enabled = False
         NumProdTextBox.Enabled = False
-        NombreComboBox.Enabled = False
+        NomProdCombo.Enabled = False
         CodigoTextBox.Enabled = False
         HuertoTextBox.Enabled = False
         TemporadaTextBox.Enabled = False
@@ -97,6 +98,8 @@
         TotCubetasTextBox.Enabled = False
         CortesiasTextBox.Enabled = False
         EncargadoTextBox.Enabled = False
+        TextBoxBuscar.Enabled = True
+        BBuscar.Enabled = True
     End Sub
 
     Function Completo() As Boolean 'Valida que no esté vacío'
@@ -123,6 +126,9 @@
         ProduccionDataGridView.Location = New Point(700, 200)
         TextBoxBuscar.Location = New Point(1135, 158)
         BBuscar.Location = New Point(1260, 156)
+        FolioTextBox.Enabled = True
+        NomProdCombo.Visible = False
+        NombreSecComboBox.Visible = False
     End Sub
 
     Private Sub BEditar_Click(sender As Object, e As EventArgs) Handles BEditar.Click
@@ -137,6 +143,8 @@
         ProduccionDataGridView.Location = New Point(700, 200)
         TextBoxBuscar.Location = New Point(1135, 158)
         BBuscar.Location = New Point(1260, 156)
+        FolioTextBox.Enabled = False
+        FechaProdDateTimePicker.Focus()
     End Sub
 
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
@@ -147,6 +155,8 @@
         ProduccionDataGridView.Location = ValProdDGV
         TextBoxBuscar.Location = ValTxBus
         BBuscar.Location = ValBtnBus
+        NomProdCombo.Visible = True
+        NumSectorTextBox.Visible = True
     End Sub
 
     Private Sub BGuardar_Click(sender As Object, e As EventArgs) Handles BGuardar.Click
@@ -160,6 +170,9 @@
                 ProduccionDataGridView.Location = ValProdDGV
                 TextBoxBuscar.Location = ValTxBus
                 BBuscar.Location = ValBtnBus
+                NomProdCombo.Visible = True
+                NumSectorTextBox.Visible = True
+
             Catch ex As Exception
                 MsgBox("Fallo al tratar de Guardar", vbCritical)
             End Try
@@ -182,14 +195,6 @@
             GlobalVariables.accionForm = "falloEliminar"
             FAlertInfo.Show()
         End Try
-    End Sub
-
-    Private Sub NombreComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles NombreComboBox.SelectedIndexChanged
-        NumProdTextBox.Text = NombreComboBox.SelectedValue 'Indica que se haga el cambio al mismo tiempo en el otro textbox
-    End Sub
-
-    Private Sub NombreSecComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles NombreSecComboBox.SelectedIndexChanged
-        NumSectorTextBox.Text = NombreSecComboBox.SelectedValue 'Indica que se haga el cambio al mismo tiempo en el otro textbox
     End Sub
 
     Private Sub DataGridDetalle_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridDetalle.CellEndEdit
@@ -233,6 +238,7 @@
         GrabaDetalle()
         ProduccionDataGridView.Enabled = False
         ConsultDetallePersonalDataGridView.Enabled = False
+        Me.ConsultDetallePersonalTableAdapter.Fill(Me.RoquinDBDataSet.ConsultDetallePersonal)
     End Sub
 
     Private Sub GrabaDetalle()
@@ -277,9 +283,24 @@
 
     End Sub
 
+    Private Sub NombreComboBox_SelectedIndexChanged(sender As Object, e As EventArgs)
+        NumProdTextBox.Text = NombreComboBox.SelectedValue 'Indica que se haga el cambio al mismo tiempo en el otro textbox
+    End Sub
+
+    Private Sub NombreSecComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles NombreSecComboBox.SelectedIndexChanged
+        NumSectorTextBox.Text = NombreSecComboBox.SelectedValue 'Indica que se haga el cambio al mismo tiempo en el otro textbox
+    End Sub
+
 
     Private Sub ProduccionDataGridView_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs)
         ProduccionDataGridView.Enabled = True
     End Sub
 
+    Private Sub NumProdTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles NumProdTextBox.KeyPress
+        e.Handled = Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
+
+    Private Sub NumSectorTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles NumSectorTextBox.KeyPress
+        e.Handled = Not Char.IsNumber(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
 End Class

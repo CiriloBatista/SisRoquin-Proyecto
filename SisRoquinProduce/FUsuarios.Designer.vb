@@ -23,17 +23,16 @@ Partial Class FUsuarios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim IdUserLabel As System.Windows.Forms.Label
         Dim UsuarioLabel As System.Windows.Forms.Label
         Dim NombreUserLabel As System.Windows.Forms.Label
         Dim NivelLabel As System.Windows.Forms.Label
         Dim ContrasenaLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FUsuarios))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LabelPersonal = New System.Windows.Forms.Label()
@@ -51,15 +50,9 @@ Partial Class FUsuarios
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.IdUserTextBox = New System.Windows.Forms.TextBox()
         Me.UsuarioTextBox = New System.Windows.Forms.TextBox()
         Me.NombreUserTextBox = New System.Windows.Forms.TextBox()
         Me.UsuariosDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Contrasena = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContrasenaTextBox = New System.Windows.Forms.TextBox()
         Me.BEliminar = New System.Windows.Forms.Button()
         Me.BCancelar = New System.Windows.Forms.Button()
@@ -70,7 +63,9 @@ Partial Class FUsuarios
         Me.BBuscar = New System.Windows.Forms.Button()
         Me.TextBoxBuscar = New System.Windows.Forms.TextBox()
         Me.LabelListado = New System.Windows.Forms.Label()
-        IdUserLabel = New System.Windows.Forms.Label()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         UsuarioLabel = New System.Windows.Forms.Label()
         NombreUserLabel = New System.Windows.Forms.Label()
         NivelLabel = New System.Windows.Forms.Label()
@@ -84,21 +79,11 @@ Partial Class FUsuarios
         CType(Me.UsuariosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'IdUserLabel
-        '
-        IdUserLabel.AutoSize = True
-        IdUserLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        IdUserLabel.Location = New System.Drawing.Point(40, 255)
-        IdUserLabel.Name = "IdUserLabel"
-        IdUserLabel.Size = New System.Drawing.Size(128, 29)
-        IdUserLabel.TabIndex = 15
-        IdUserLabel.Text = "Id Usuario:"
-        '
         'UsuarioLabel
         '
         UsuarioLabel.AutoSize = True
         UsuarioLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        UsuarioLabel.Location = New System.Drawing.Point(66, 305)
+        UsuarioLabel.Location = New System.Drawing.Point(50, 291)
         UsuarioLabel.Name = "UsuarioLabel"
         UsuarioLabel.Size = New System.Drawing.Size(102, 29)
         UsuarioLabel.TabIndex = 17
@@ -108,7 +93,7 @@ Partial Class FUsuarios
         '
         NombreUserLabel.AutoSize = True
         NombreUserLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        NombreUserLabel.Location = New System.Drawing.Point(61, 355)
+        NombreUserLabel.Location = New System.Drawing.Point(45, 341)
         NombreUserLabel.Name = "NombreUserLabel"
         NombreUserLabel.Size = New System.Drawing.Size(107, 29)
         NombreUserLabel.TabIndex = 19
@@ -118,7 +103,7 @@ Partial Class FUsuarios
         '
         NivelLabel.AutoSize = True
         NivelLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        NivelLabel.Location = New System.Drawing.Point(94, 458)
+        NivelLabel.Location = New System.Drawing.Point(50, 444)
         NivelLabel.Name = "NivelLabel"
         NivelLabel.Size = New System.Drawing.Size(74, 29)
         NivelLabel.TabIndex = 23
@@ -128,7 +113,7 @@ Partial Class FUsuarios
         '
         ContrasenaLabel.AutoSize = True
         ContrasenaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        ContrasenaLabel.Location = New System.Drawing.Point(26, 405)
+        ContrasenaLabel.Location = New System.Drawing.Point(45, 391)
         ContrasenaLabel.Name = "ContrasenaLabel"
         ContrasenaLabel.Size = New System.Drawing.Size(142, 29)
         ContrasenaLabel.TabIndex = 24
@@ -279,28 +264,15 @@ Partial Class FUsuarios
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
         '
-        'IdUserTextBox
-        '
-        Me.IdUserTextBox.BackColor = System.Drawing.Color.White
-        Me.IdUserTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.IdUserTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "IdUser", True))
-        Me.IdUserTextBox.Enabled = False
-        Me.IdUserTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.IdUserTextBox.Location = New System.Drawing.Point(187, 255)
-        Me.IdUserTextBox.Name = "IdUserTextBox"
-        Me.IdUserTextBox.ReadOnly = True
-        Me.IdUserTextBox.Size = New System.Drawing.Size(100, 34)
-        Me.IdUserTextBox.TabIndex = 16
-        '
         'UsuarioTextBox
         '
         Me.UsuarioTextBox.BackColor = System.Drawing.Color.White
         Me.UsuarioTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.UsuarioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "Usuario", True))
         Me.UsuarioTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.UsuarioTextBox.Location = New System.Drawing.Point(187, 305)
+        Me.UsuarioTextBox.Location = New System.Drawing.Point(173, 291)
         Me.UsuarioTextBox.Name = "UsuarioTextBox"
-        Me.UsuarioTextBox.Size = New System.Drawing.Size(117, 34)
+        Me.UsuarioTextBox.Size = New System.Drawing.Size(198, 34)
         Me.UsuarioTextBox.TabIndex = 18
         '
         'NombreUserTextBox
@@ -309,17 +281,17 @@ Partial Class FUsuarios
         Me.NombreUserTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NombreUserTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "NombreUser", True))
         Me.NombreUserTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.NombreUserTextBox.Location = New System.Drawing.Point(187, 355)
+        Me.NombreUserTextBox.Location = New System.Drawing.Point(173, 341)
         Me.NombreUserTextBox.Name = "NombreUserTextBox"
-        Me.NombreUserTextBox.Size = New System.Drawing.Size(151, 34)
+        Me.NombreUserTextBox.Size = New System.Drawing.Size(198, 34)
         Me.NombreUserTextBox.TabIndex = 20
         '
         'UsuariosDataGridView
         '
         Me.UsuariosDataGridView.AllowUserToAddRows = False
         Me.UsuariosDataGridView.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.UsuariosDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.UsuariosDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.UsuariosDataGridView.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.UsuariosDataGridView.AutoGenerateColumns = False
@@ -327,79 +299,44 @@ Partial Class FUsuarios
         Me.UsuariosDataGridView.BackgroundColor = System.Drawing.Color.LightGreen
         Me.UsuariosDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.UsuariosDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.UsuariosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.UsuariosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.UsuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.UsuariosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.Contrasena, Me.DataGridViewTextBoxColumn5})
+        Me.UsuariosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn5})
         Me.UsuariosDataGridView.DataSource = Me.UsuariosBindingSource
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.UsuariosDataGridView.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.UsuariosDataGridView.DefaultCellStyle = DataGridViewCellStyle8
         Me.UsuariosDataGridView.EnableHeadersVisualStyles = False
         Me.UsuariosDataGridView.GridColor = System.Drawing.Color.Black
         Me.UsuariosDataGridView.Location = New System.Drawing.Point(410, 255)
         Me.UsuariosDataGridView.Name = "UsuariosDataGridView"
         Me.UsuariosDataGridView.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.UsuariosDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.UsuariosDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.UsuariosDataGridView.RowHeadersVisible = False
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.UsuariosDataGridView.RowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.UsuariosDataGridView.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.UsuariosDataGridView.RowTemplate.Height = 24
         Me.UsuariosDataGridView.Size = New System.Drawing.Size(560, 308)
         Me.UsuariosDataGridView.TabIndex = 24
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "IdUser"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Id Usuario"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Usuario"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Usuario"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "NombreUser"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Nombre"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'Contrasena
-        '
-        Me.Contrasena.DataPropertyName = "Contrasena"
-        Me.Contrasena.HeaderText = "Contraseña"
-        Me.Contrasena.Name = "Contrasena"
-        Me.Contrasena.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Nivel"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Nivel"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
         '
         'ContrasenaTextBox
         '
@@ -407,10 +344,10 @@ Partial Class FUsuarios
         Me.ContrasenaTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ContrasenaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "Contrasena", True))
         Me.ContrasenaTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.ContrasenaTextBox.Location = New System.Drawing.Point(187, 405)
+        Me.ContrasenaTextBox.Location = New System.Drawing.Point(196, 391)
         Me.ContrasenaTextBox.Name = "ContrasenaTextBox"
         Me.ContrasenaTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.ContrasenaTextBox.Size = New System.Drawing.Size(128, 34)
+        Me.ContrasenaTextBox.Size = New System.Drawing.Size(175, 34)
         Me.ContrasenaTextBox.TabIndex = 25
         '
         'BEliminar
@@ -418,7 +355,7 @@ Partial Class FUsuarios
         Me.BEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.BEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BEliminar.Image = CType(resources.GetObject("BEliminar.Image"), System.Drawing.Image)
-        Me.BEliminar.Location = New System.Drawing.Point(897, 569)
+        Me.BEliminar.Location = New System.Drawing.Point(909, 569)
         Me.BEliminar.Name = "BEliminar"
         Me.BEliminar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.BEliminar.Size = New System.Drawing.Size(60, 60)
@@ -432,7 +369,7 @@ Partial Class FUsuarios
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BCancelar.Image = CType(resources.GetObject("BCancelar.Image"), System.Drawing.Image)
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelar.Location = New System.Drawing.Point(126, 525)
+        Me.BCancelar.Location = New System.Drawing.Point(201, 525)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BCancelar.Size = New System.Drawing.Size(150, 60)
@@ -447,7 +384,7 @@ Partial Class FUsuarios
         Me.BGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BGuardar.Image = CType(resources.GetObject("BGuardar.Image"), System.Drawing.Image)
-        Me.BGuardar.Location = New System.Drawing.Point(831, 569)
+        Me.BGuardar.Location = New System.Drawing.Point(133, 525)
         Me.BGuardar.Name = "BGuardar"
         Me.BGuardar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.BGuardar.Size = New System.Drawing.Size(60, 60)
@@ -476,9 +413,9 @@ Partial Class FUsuarios
         Me.NivelComboBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.NivelComboBox.FormattingEnabled = True
         Me.NivelComboBox.Items.AddRange(New Object() {"ADMINISTRADOR", "PRODUCCION", "COSECHA", "SUPERVISION"})
-        Me.NivelComboBox.Location = New System.Drawing.Point(187, 455)
+        Me.NivelComboBox.Location = New System.Drawing.Point(130, 441)
         Me.NivelComboBox.Name = "NivelComboBox"
-        Me.NivelComboBox.Size = New System.Drawing.Size(200, 37)
+        Me.NivelComboBox.Size = New System.Drawing.Size(241, 37)
         Me.NivelComboBox.TabIndex = 30
         '
         'BEditar
@@ -525,6 +462,28 @@ Partial Class FUsuarios
         Me.LabelListado.TabIndex = 88
         Me.LabelListado.Text = "Listado de Usuarios"
         '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Usuario"
+        Me.DataGridViewTextBoxColumn2.FillWeight = 80.0!
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Usuario"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "NombreUser"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Nivel"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Nivel"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        '
         'FUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -543,8 +502,6 @@ Partial Class FUsuarios
         Me.Controls.Add(ContrasenaLabel)
         Me.Controls.Add(Me.ContrasenaTextBox)
         Me.Controls.Add(Me.UsuariosDataGridView)
-        Me.Controls.Add(IdUserLabel)
-        Me.Controls.Add(Me.IdUserTextBox)
         Me.Controls.Add(UsuarioLabel)
         Me.Controls.Add(Me.UsuarioTextBox)
         Me.Controls.Add(NombreUserLabel)
@@ -587,17 +544,11 @@ Partial Class FUsuarios
     Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
-    Friend WithEvents IdUserTextBox As TextBox
     Friend WithEvents UsuarioTextBox As TextBox
     Friend WithEvents NombreUserTextBox As TextBox
     Friend WithEvents UsuariosDataGridView As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents ContrasenaTextBox As TextBox
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents Contrasena As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents BEliminar As Button
     Friend WithEvents BCancelar As Button
     Friend WithEvents BGuardar As Button
@@ -607,4 +558,7 @@ Partial Class FUsuarios
     Friend WithEvents BBuscar As Button
     Friend WithEvents TextBoxBuscar As TextBox
     Friend WithEvents LabelListado As Label
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
 End Class

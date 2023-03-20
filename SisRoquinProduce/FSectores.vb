@@ -30,6 +30,8 @@
         BCancelar.Visible = True
         NumSectorTextBox.Enabled = True
         NombreSecTextBox.Enabled = True
+        TextBoxBuscar.Enabled = False
+        BBuscar.Enabled = False
     End Sub
     Private Sub DesBlock()
         SectoresDataGridView.Enabled = True
@@ -40,6 +42,8 @@
         BCancelar.Visible = False
         NumSectorTextBox.Enabled = False
         NombreSecTextBox.Enabled = False
+        TextBoxBuscar.Enabled = True
+        BBuscar.Enabled = True
     End Sub
 
     Function Completo() As Boolean 'Valida que no esté vacío'
@@ -52,6 +56,7 @@
     Private Sub BNuevo_Click(sender As Object, e As EventArgs) Handles BNuevo.Click
         SectoresBindingSource.AddNew() 'Se selecciona la tabla a la que haremos referencia y añadimos una nueva fila'
         Block()
+        NumSectorTextBox.Enabled = True
         NumSectorTextBox.Focus()     'Apuntaremos a la caja de texto de ID_Personal'
     End Sub
 
@@ -63,6 +68,8 @@
     Private Sub BEditar_Click(sender As Object, e As EventArgs) Handles BEditar.Click
         Block()
         BCancelar.Visible = True
+        NumSectorTextBox.Enabled = False
+        NombreSecTextBox.Focus()
     End Sub
 
     Private Sub BGuardar_Click(sender As Object, e As EventArgs) Handles BGuardar.Click

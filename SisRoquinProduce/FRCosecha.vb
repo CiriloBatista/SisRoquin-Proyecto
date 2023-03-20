@@ -11,7 +11,7 @@
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click 'Boton de busqueda por folio'
         If TextBuscar.Text <> "" Then
-            Me.ConsultDetallePersonalTableAdapter.FillByFolioDeta(Me.RoquinDBDataSet.ConsultDetallePersonal, Val(TextBuscar.Text))
+            Me.ConsultDetallePersonalTableAdapter.FillByNumEmp(Me.RoquinDBDataSet.ConsultDetallePersonal, Val(TextBuscar.Text))
             Me.ReportViewer1.RefreshReport()
         Else
             Me.ConsultDetallePersonalTableAdapter.Fill(Me.RoquinDBDataSet.ConsultDetallePersonal)

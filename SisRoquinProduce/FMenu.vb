@@ -24,12 +24,6 @@
         NewMdiChild.Show()
     End Sub
 
-    Private Sub ProduccionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProduccionToolStripMenuItem.Click
-        Dim NewMdiChild As New FProduccion 'Se crea una instancia en donde se abrira el form dentro de la ventana del menu'
-        NewMdiChild.MdiParent = Me       '
-        NewMdiChild.Show()
-    End Sub
-
     Private Sub SectoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SectoresToolStripMenuItem.Click
         Dim NewMdiChild As New FSectores 'Se crea una instancia en donde se abrira el form dentro de la ventana del menu'
         NewMdiChild.MdiParent = Me       '
@@ -50,4 +44,15 @@
         FRProduccion.Show()
     End Sub
 
+    Private Sub CosechaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CosechaToolStripMenuItem.Click
+        Dim NewMdiChild As New FProduccion 'Se crea una instancia en donde se abrira el form dentro de la ventana del menu'
+        NewMdiChild.MdiParent = Me       '
+        NewMdiChild.Show()
+    End Sub
+
+    Private Sub AcercaDeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AcercaDeToolStripMenuItem.Click
+        Dim NewMdiChild As New FAbout 'Se crea una instancia en donde se abrira el form dentro de la ventana del menu'
+        NewMdiChild.MdiParent = Me       '
+        NewMdiChild.Show()
+    End Sub
 End Class

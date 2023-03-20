@@ -23,7 +23,6 @@ Partial Class FSectores
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim IdSectorLabel As System.Windows.Forms.Label
         Dim NumSectorLabel As System.Windows.Forms.Label
         Dim NombreSecLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FSectores))
@@ -49,13 +48,9 @@ Partial Class FSectores
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.IdSectorTextBox = New System.Windows.Forms.TextBox()
         Me.NumSectorTextBox = New System.Windows.Forms.TextBox()
         Me.NombreSecTextBox = New System.Windows.Forms.TextBox()
         Me.SectoresDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BEliminar = New System.Windows.Forms.Button()
         Me.BCancelar = New System.Windows.Forms.Button()
         Me.BGuardar = New System.Windows.Forms.Button()
@@ -64,7 +59,8 @@ Partial Class FSectores
         Me.BBuscar = New System.Windows.Forms.Button()
         Me.TextBoxBuscar = New System.Windows.Forms.TextBox()
         Me.LabelListado = New System.Windows.Forms.Label()
-        IdSectorLabel = New System.Windows.Forms.Label()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         NumSectorLabel = New System.Windows.Forms.Label()
         NombreSecLabel = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -76,35 +72,25 @@ Partial Class FSectores
         CType(Me.SectoresDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'IdSectorLabel
-        '
-        IdSectorLabel.AutoSize = True
-        IdSectorLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        IdSectorLabel.Location = New System.Drawing.Point(110, 265)
-        IdSectorLabel.Name = "IdSectorLabel"
-        IdSectorLabel.Size = New System.Drawing.Size(115, 29)
-        IdSectorLabel.TabIndex = 16
-        IdSectorLabel.Text = "Id Sector:"
-        '
         'NumSectorLabel
         '
         NumSectorLabel.AutoSize = True
         NumSectorLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        NumSectorLabel.Location = New System.Drawing.Point(79, 315)
+        NumSectorLabel.Location = New System.Drawing.Point(118, 298)
         NumSectorLabel.Name = "NumSectorLabel"
-        NumSectorLabel.Size = New System.Drawing.Size(146, 29)
+        NumSectorLabel.Size = New System.Drawing.Size(89, 29)
         NumSectorLabel.TabIndex = 18
-        NumSectorLabel.Text = "Num Sector:"
+        NumSectorLabel.Text = "Sector:"
         '
         'NombreSecLabel
         '
         NombreSecLabel.AutoSize = True
         NombreSecLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        NombreSecLabel.Location = New System.Drawing.Point(42, 365)
+        NombreSecLabel.Location = New System.Drawing.Point(100, 345)
         NombreSecLabel.Name = "NombreSecLabel"
-        NombreSecLabel.Size = New System.Drawing.Size(183, 29)
+        NombreSecLabel.Size = New System.Drawing.Size(107, 29)
         NombreSecLabel.TabIndex = 20
-        NombreSecLabel.Text = "Nombre Sector:"
+        NombreSecLabel.Text = "Nombre:"
         '
         'Panel1
         '
@@ -251,29 +237,16 @@ Partial Class FSectores
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
         '
-        'IdSectorTextBox
-        '
-        Me.IdSectorTextBox.BackColor = System.Drawing.Color.White
-        Me.IdSectorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.IdSectorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SectoresBindingSource, "IdSector", True))
-        Me.IdSectorTextBox.Enabled = False
-        Me.IdSectorTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.IdSectorTextBox.Location = New System.Drawing.Point(234, 265)
-        Me.IdSectorTextBox.Name = "IdSectorTextBox"
-        Me.IdSectorTextBox.ReadOnly = True
-        Me.IdSectorTextBox.Size = New System.Drawing.Size(100, 34)
-        Me.IdSectorTextBox.TabIndex = 17
-        '
         'NumSectorTextBox
         '
         Me.NumSectorTextBox.BackColor = System.Drawing.Color.White
         Me.NumSectorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NumSectorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SectoresBindingSource, "NumSector", True))
         Me.NumSectorTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.NumSectorTextBox.Location = New System.Drawing.Point(234, 315)
+        Me.NumSectorTextBox.Location = New System.Drawing.Point(216, 293)
         Me.NumSectorTextBox.MaxLength = 2
         Me.NumSectorTextBox.Name = "NumSectorTextBox"
-        Me.NumSectorTextBox.Size = New System.Drawing.Size(100, 34)
+        Me.NumSectorTextBox.Size = New System.Drawing.Size(150, 34)
         Me.NumSectorTextBox.TabIndex = 19
         '
         'NombreSecTextBox
@@ -282,7 +255,7 @@ Partial Class FSectores
         Me.NombreSecTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NombreSecTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SectoresBindingSource, "NombreSec", True))
         Me.NombreSecTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.NombreSecTextBox.Location = New System.Drawing.Point(234, 365)
+        Me.NombreSecTextBox.Location = New System.Drawing.Point(216, 343)
         Me.NombreSecTextBox.MaxLength = 255
         Me.NombreSecTextBox.Name = "NombreSecTextBox"
         Me.NombreSecTextBox.Size = New System.Drawing.Size(150, 34)
@@ -308,7 +281,7 @@ Partial Class FSectores
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.SectoresDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.SectoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SectoresDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
+        Me.SectoresDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
         Me.SectoresDataGridView.DataSource = Me.SectoresBindingSource
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
@@ -338,27 +311,6 @@ Partial Class FSectores
         Me.SectoresDataGridView.Size = New System.Drawing.Size(560, 273)
         Me.SectoresDataGridView.TabIndex = 21
         '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "IdSector"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Id Sector"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "NumSector"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Num Sector"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "NombreSec"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Nombre"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
         'BEliminar
         '
         Me.BEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer))
@@ -378,7 +330,7 @@ Partial Class FSectores
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BCancelar.Image = CType(resources.GetObject("BCancelar.Image"), System.Drawing.Image)
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelar.Location = New System.Drawing.Point(155, 435)
+        Me.BCancelar.Location = New System.Drawing.Point(234, 435)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BCancelar.Size = New System.Drawing.Size(150, 60)
@@ -393,7 +345,7 @@ Partial Class FSectores
         Me.BGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BGuardar.Image = CType(resources.GetObject("BGuardar.Image"), System.Drawing.Image)
-        Me.BGuardar.Location = New System.Drawing.Point(871, 531)
+        Me.BGuardar.Location = New System.Drawing.Point(161, 435)
         Me.BGuardar.Name = "BGuardar"
         Me.BGuardar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.BGuardar.Size = New System.Drawing.Size(60, 60)
@@ -460,6 +412,20 @@ Partial Class FSectores
         Me.LabelListado.TabIndex = 85
         Me.LabelListado.Text = "Listado de Sectores"
         '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "NumSector"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Num Sector"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "NombreSec"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Nombre"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
         'FSectores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -475,8 +441,6 @@ Partial Class FSectores
         Me.Controls.Add(Me.BGuardar)
         Me.Controls.Add(Me.BNuevo)
         Me.Controls.Add(Me.SectoresDataGridView)
-        Me.Controls.Add(IdSectorLabel)
-        Me.Controls.Add(Me.IdSectorTextBox)
         Me.Controls.Add(NumSectorLabel)
         Me.Controls.Add(Me.NumSectorTextBox)
         Me.Controls.Add(NombreSecLabel)
@@ -518,13 +482,9 @@ Partial Class FSectores
     Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
-    Friend WithEvents IdSectorTextBox As TextBox
     Friend WithEvents NumSectorTextBox As TextBox
     Friend WithEvents NombreSecTextBox As TextBox
     Friend WithEvents SectoresDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents BEliminar As Button
     Friend WithEvents BCancelar As Button
     Friend WithEvents BGuardar As Button
@@ -533,4 +493,6 @@ Partial Class FSectores
     Friend WithEvents BBuscar As Button
     Friend WithEvents TextBoxBuscar As TextBox
     Friend WithEvents LabelListado As Label
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
 End Class

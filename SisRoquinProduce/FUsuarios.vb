@@ -32,6 +32,8 @@
         NombreUserTextBox.Enabled = True
         ContrasenaTextBox.Enabled = True
         NivelComboBox.Enabled = True
+        TextBoxBuscar.Enabled = False
+        BBuscar.Enabled = False
     End Sub
     Private Sub DesBlock()
         UsuariosDataGridView.Enabled = True
@@ -44,6 +46,8 @@
         NombreUserTextBox.Enabled = False
         ContrasenaTextBox.Enabled = False
         NivelComboBox.Enabled = False
+        TextBoxBuscar.Enabled = True
+        BBuscar.Enabled = True
     End Sub
 
     Function Completo() As Boolean 'Valida que no esté vacío'
@@ -56,7 +60,9 @@
     Private Sub BNuevo_Click(sender As Object, e As EventArgs) Handles BNuevo.Click
         UsuariosBindingSource.AddNew() 'Se selecciona la tabla a la que haremos referencia y añadimos una nueva fila'
         Block()
-        UsuarioTextBox.Focus()     'Apuntaremos a la caja de texto de ID_Personal'
+        UsuarioTextBox.Enabled = True
+        UsuarioTextBox.Focus()     'Apuntaremos a la caja de texto de usuario'
+
     End Sub
 
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
@@ -67,6 +73,8 @@
     Private Sub BEditar_Click(sender As Object, e As EventArgs) Handles BEditar.Click
         Block()
         BCancelar.Visible = True
+        UsuarioTextBox.Enabled = False
+        NombreUserTextBox.Focus()
     End Sub
 
     Private Sub BGuardar_Click(sender As Object, e As EventArgs) Handles BGuardar.Click

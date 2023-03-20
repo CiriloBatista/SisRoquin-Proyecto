@@ -42,6 +42,8 @@
         NombreEmpleadoTextBox.Enabled = True
         ApellidosEmpTextBox.Enabled = True
         PuestoTextBox.Enabled = True
+        TextBoxBuscar.Enabled = False
+        BBuscar.Enabled = False
     End Sub
     Private Sub DesBlock() 'Desbloquea el DataGrid para consultar y navegar dentro
         PersonalDataGridView.Enabled = True
@@ -54,6 +56,8 @@
         NombreEmpleadoTextBox.Enabled = False
         ApellidosEmpTextBox.Enabled = False
         PuestoTextBox.Enabled = False
+        TextBoxBuscar.Enabled = True
+        BBuscar.Enabled = True
     End Sub
 
     Function Completo() As Boolean 'Valida que no esté vacío'
@@ -68,17 +72,21 @@
         Block()
         BEditar.Visible = False
         BCancelar.Visible = True
+        NumEmpleadoTextBox.Enabled = True
         NumEmpleadoTextBox.Focus()     'Apuntaremos a la caja de texto de ID_Personal'
     End Sub
 
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
         PersonalBindingSource.CancelEdit() 'Se selecciona la tabla a la que haremos referencia y ponemos para cancelar'
         DesBlock()
+        NumEmpleadoTextBox.Enabled = True
     End Sub
 
     Private Sub BEditar_Click(sender As Object, e As EventArgs) Handles BEditar.Click
         Block()
         BCancelar.Visible = True
+        NumEmpleadoTextBox.Enabled = False
+        NombreEmpleadoTextBox.Focus()
     End Sub
 
     Private Sub BGuardar_Click(sender As Object, e As EventArgs) Handles BGuardar.Click
@@ -143,5 +151,9 @@
         Else
             Me.PersonalTableAdapter.Fill(Me.RoquinDBDataSet.Personal)
         End If
+    End Sub
+
+    Private Sub NumEmpleadoTextBox_TextChanged(sender As Object, e As EventArgs) Handles NumEmpleadoTextBox.TextChanged
+
     End Sub
 End Class

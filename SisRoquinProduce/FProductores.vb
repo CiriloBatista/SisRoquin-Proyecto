@@ -28,10 +28,11 @@
         BEliminar.Visible = False
         BGuardar.Visible = True
         BCancelar.Visible = True
-        IdProductorTextBox.Enabled = True
         NumProductorTextBox.Enabled = True
         NombreTextBox.Enabled = True
         TelefonoTextBox.Enabled = True
+        TextBoxBuscar.Enabled = False
+        BBuscar.Enabled = False
     End Sub
     Private Sub DesBlock()
         ProductoresDataGridView.Enabled = True
@@ -40,10 +41,11 @@
         BEliminar.Visible = True
         BGuardar.Visible = False
         BCancelar.Visible = False
-        IdProductorTextBox.Enabled = False
         NumProductorTextBox.Enabled = False
         NombreTextBox.Enabled = False
         TelefonoTextBox.Enabled = False
+        TextBoxBuscar.Enabled = True
+        BBuscar.Enabled = True
     End Sub
 
     Function Completo() As Boolean 'Valida que no esté vacío'
@@ -56,17 +58,21 @@
     Private Sub BNuevo_Click(sender As Object, e As EventArgs) Handles BNuevo.Click
         ProductoresBindingSource.AddNew() 'Se selecciona la tabla a la que haremos referencia y añadimos una nueva fila'
         Block()
+        NumProductorTextBox.Enabled = True
         NumProductorTextBox.Focus()     'Apuntaremos a la caja de texto de ID_Personal'
     End Sub
 
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
         ProductoresBindingSource.CancelEdit() 'Se selecciona la tabla a la que haremos referencia y ponemos para cancelar'
         DesBlock()
+        NumProductorTextBox.Enabled = True
     End Sub
 
     Private Sub BEditar_Click(sender As Object, e As EventArgs) Handles BEditar.Click
         Block()
         BCancelar.Visible = True
+        NumProductorTextBox.Enabled = False
+        NombreTextBox.Focus()
     End Sub
 
     Private Sub BGuardar_Click(sender As Object, e As EventArgs) Handles BGuardar.Click
@@ -109,7 +115,7 @@
     End Sub
 
     Private Sub NombreTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles NombreTextBox.KeyPress
-        e.Handled = Not Char.IsLetter(e.KeyChar) And Not Char.IsControl(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
+        e.Handled = Not Char.IsLetter(e.KeyChar) And Not Char.IsControl(e.KeyChar) And Not Char.IsSeparator(e.KeyChar) 'e.Handled solo se puede usar en KeyPress'
     End Sub
 
     Private Sub TelefonoTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TelefonoTextBox.KeyPress
@@ -128,7 +134,11 @@
         End If
     End Sub
 
-    Private Sub TextBoxBuscar_TextChanged(sender As Object, e As EventArgs) Handles TextBoxBuscar.TextChanged
+    Private Sub NumProductorLabel_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub NombreTextBox_TextChanged(sender As Object, e As EventArgs) Handles NombreTextBox.TextChanged
 
     End Sub
 End Class

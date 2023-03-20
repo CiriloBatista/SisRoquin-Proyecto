@@ -4,9 +4,10 @@
     Public User
     Public Niv
 
+    Dim usuario = FLogin.NombreUserTextBox
     Public Class GlobalVariables
         Public Shared borrarRegistro As String = "¿Desea borrar el registro?"   'Error
-        Public Shared bienvenido As String = "¡ B i e n v e n i d o " + User + " !"          'Info
+        Public Shared bienvenido As String = "¡ B i e n v e n i d o " + usuario.text + " !"          'Info
         Public Shared falloConexion As String = "Falló la conexión"             'Info
         Public Shared falloGuardar As String = "Falló al tratar de guardar"     'Info
         Public Shared falloEliminar As String = "Falló al tratar de eliminar"   'Info

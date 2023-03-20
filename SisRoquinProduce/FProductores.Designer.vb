@@ -23,15 +23,14 @@ Partial Class FProductores
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim IdProductorLabel As System.Windows.Forms.Label
         Dim NumProductorLabel As System.Windows.Forms.Label
         Dim NombreLabel As System.Windows.Forms.Label
         Dim TelefonoLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FProductores))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LabelPersonal = New System.Windows.Forms.Label()
         Me.ProductoresBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
@@ -46,13 +45,11 @@ Partial Class FProductores
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.IdProductorTextBox = New System.Windows.Forms.TextBox()
         Me.NumProductorTextBox = New System.Windows.Forms.TextBox()
         Me.NombreTextBox = New System.Windows.Forms.TextBox()
         Me.TelefonoTextBox = New System.Windows.Forms.TextBox()
         Me.ProductoresDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumProductor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -66,7 +63,6 @@ Partial Class FProductores
         Me.BBuscar = New System.Windows.Forms.Button()
         Me.TextBoxBuscar = New System.Windows.Forms.TextBox()
         Me.LabelListado = New System.Windows.Forms.Label()
-        IdProductorLabel = New System.Windows.Forms.Label()
         NumProductorLabel = New System.Windows.Forms.Label()
         NombreLabel = New System.Windows.Forms.Label()
         TelefonoLabel = New System.Windows.Forms.Label()
@@ -79,31 +75,22 @@ Partial Class FProductores
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'IdProductorLabel
-        '
-        IdProductorLabel.AutoSize = True
-        IdProductorLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        IdProductorLabel.Location = New System.Drawing.Point(38, 253)
-        IdProductorLabel.Name = "IdProductorLabel"
-        IdProductorLabel.Size = New System.Drawing.Size(150, 29)
-        IdProductorLabel.TabIndex = 16
-        IdProductorLabel.Text = "Id Productor:"
-        '
         'NumProductorLabel
         '
         NumProductorLabel.AutoSize = True
         NumProductorLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        NumProductorLabel.Location = New System.Drawing.Point(7, 303)
+        NumProductorLabel.Location = New System.Drawing.Point(51, 247)
         NumProductorLabel.Name = "NumProductorLabel"
         NumProductorLabel.Size = New System.Drawing.Size(181, 29)
         NumProductorLabel.TabIndex = 18
         NumProductorLabel.Text = "Num Productor:"
+        AddHandler NumProductorLabel.Click, AddressOf Me.NumProductorLabel_Click
         '
         'NombreLabel
         '
         NombreLabel.AutoSize = True
         NombreLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        NombreLabel.Location = New System.Drawing.Point(81, 353)
+        NombreLabel.Location = New System.Drawing.Point(53, 289)
         NombreLabel.Name = "NombreLabel"
         NombreLabel.Size = New System.Drawing.Size(107, 29)
         NombreLabel.TabIndex = 20
@@ -113,7 +100,7 @@ Partial Class FProductores
         '
         TelefonoLabel.AutoSize = True
         TelefonoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        TelefonoLabel.Location = New System.Drawing.Point(72, 403)
+        TelefonoLabel.Location = New System.Drawing.Point(52, 376)
         TelefonoLabel.Name = "TelefonoLabel"
         TelefonoLabel.Size = New System.Drawing.Size(116, 29)
         TelefonoLabel.TabIndex = 22
@@ -238,27 +225,15 @@ Partial Class FProductores
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
         '
-        'IdProductorTextBox
-        '
-        Me.IdProductorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.IdProductorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductoresBindingSource, "IdProductor", True))
-        Me.IdProductorTextBox.Enabled = False
-        Me.IdProductorTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.IdProductorTextBox.Location = New System.Drawing.Point(198, 253)
-        Me.IdProductorTextBox.Name = "IdProductorTextBox"
-        Me.IdProductorTextBox.ReadOnly = True
-        Me.IdProductorTextBox.Size = New System.Drawing.Size(100, 34)
-        Me.IdProductorTextBox.TabIndex = 17
-        '
         'NumProductorTextBox
         '
         Me.NumProductorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NumProductorTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductoresBindingSource, "NumProductor", True))
         Me.NumProductorTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.NumProductorTextBox.Location = New System.Drawing.Point(198, 303)
+        Me.NumProductorTextBox.Location = New System.Drawing.Point(243, 246)
         Me.NumProductorTextBox.MaxLength = 3
         Me.NumProductorTextBox.Name = "NumProductorTextBox"
-        Me.NumProductorTextBox.Size = New System.Drawing.Size(100, 34)
+        Me.NumProductorTextBox.Size = New System.Drawing.Size(118, 34)
         Me.NumProductorTextBox.TabIndex = 19
         '
         'NombreTextBox
@@ -266,10 +241,10 @@ Partial Class FProductores
         Me.NombreTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NombreTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductoresBindingSource, "Nombre", True))
         Me.NombreTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.NombreTextBox.Location = New System.Drawing.Point(198, 353)
+        Me.NombreTextBox.Location = New System.Drawing.Point(60, 325)
         Me.NombreTextBox.MaxLength = 255
         Me.NombreTextBox.Name = "NombreTextBox"
-        Me.NombreTextBox.Size = New System.Drawing.Size(195, 34)
+        Me.NombreTextBox.Size = New System.Drawing.Size(301, 34)
         Me.NombreTextBox.TabIndex = 21
         '
         'TelefonoTextBox
@@ -277,18 +252,18 @@ Partial Class FProductores
         Me.TelefonoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TelefonoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductoresBindingSource, "Telefono", True))
         Me.TelefonoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.TelefonoTextBox.Location = New System.Drawing.Point(198, 403)
+        Me.TelefonoTextBox.Location = New System.Drawing.Point(178, 376)
         Me.TelefonoTextBox.MaxLength = 10
         Me.TelefonoTextBox.Name = "TelefonoTextBox"
-        Me.TelefonoTextBox.Size = New System.Drawing.Size(138, 34)
+        Me.TelefonoTextBox.Size = New System.Drawing.Size(183, 34)
         Me.TelefonoTextBox.TabIndex = 23
         '
         'ProductoresDataGridView
         '
         Me.ProductoresDataGridView.AllowUserToAddRows = False
         Me.ProductoresDataGridView.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.ProductoresDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.ProductoresDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
         Me.ProductoresDataGridView.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ProductoresDataGridView.AutoGenerateColumns = False
@@ -296,55 +271,49 @@ Partial Class FProductores
         Me.ProductoresDataGridView.BackgroundColor = System.Drawing.Color.LightGreen
         Me.ProductoresDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.ProductoresDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SeaGreen
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProductoresDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.SeaGreen
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProductoresDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.ProductoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ProductoresDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
+        Me.ProductoresDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumProductor, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
         Me.ProductoresDataGridView.DataSource = Me.ProductoresBindingSource
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ProductoresDataGridView.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ProductoresDataGridView.DefaultCellStyle = DataGridViewCellStyle15
         Me.ProductoresDataGridView.GridColor = System.Drawing.Color.Black
         Me.ProductoresDataGridView.Location = New System.Drawing.Point(410, 246)
         Me.ProductoresDataGridView.Name = "ProductoresDataGridView"
         Me.ProductoresDataGridView.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ProductoresDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ProductoresDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle16
         Me.ProductoresDataGridView.RowHeadersVisible = False
         Me.ProductoresDataGridView.RowTemplate.Height = 24
         Me.ProductoresDataGridView.Size = New System.Drawing.Size(560, 276)
         Me.ProductoresDataGridView.TabIndex = 23
         '
-        'DataGridViewTextBoxColumn1
+        'NumProductor
         '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "IdProductor"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Id Productor"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "NumProductor"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Num Productor"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.NumProductor.DataPropertyName = "NumProductor"
+        Me.NumProductor.FillWeight = 60.0!
+        Me.NumProductor.HeaderText = "NumProductor"
+        Me.NumProductor.Name = "NumProductor"
+        Me.NumProductor.ReadOnly = True
         '
         'DataGridViewTextBoxColumn3
         '
@@ -356,6 +325,7 @@ Partial Class FProductores
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "Telefono"
+        Me.DataGridViewTextBoxColumn4.FillWeight = 60.0!
         Me.DataGridViewTextBoxColumn4.HeaderText = "Teléfono"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
@@ -391,7 +361,7 @@ Partial Class FProductores
         Me.BEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.BEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BEliminar.Image = CType(resources.GetObject("BEliminar.Image"), System.Drawing.Image)
-        Me.BEliminar.Location = New System.Drawing.Point(894, 528)
+        Me.BEliminar.Location = New System.Drawing.Point(911, 528)
         Me.BEliminar.Name = "BEliminar"
         Me.BEliminar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.BEliminar.Size = New System.Drawing.Size(60, 60)
@@ -405,7 +375,7 @@ Partial Class FProductores
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BCancelar.Image = CType(resources.GetObject("BCancelar.Image"), System.Drawing.Image)
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelar.Location = New System.Drawing.Point(160, 462)
+        Me.BCancelar.Location = New System.Drawing.Point(217, 462)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BCancelar.Size = New System.Drawing.Size(150, 60)
@@ -420,7 +390,7 @@ Partial Class FProductores
         Me.BGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BGuardar.Image = CType(resources.GetObject("BGuardar.Image"), System.Drawing.Image)
-        Me.BGuardar.Location = New System.Drawing.Point(828, 528)
+        Me.BGuardar.Location = New System.Drawing.Point(140, 462)
         Me.BGuardar.Name = "BGuardar"
         Me.BGuardar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.BGuardar.Size = New System.Drawing.Size(60, 60)
@@ -434,7 +404,7 @@ Partial Class FProductores
         Me.BNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BNuevo.Image = CType(resources.GetObject("BNuevo.Image"), System.Drawing.Image)
         Me.BNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BNuevo.Location = New System.Drawing.Point(86, 462)
+        Me.BNuevo.Location = New System.Drawing.Point(60, 462)
         Me.BNuevo.Name = "BNuevo"
         Me.BNuevo.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BNuevo.Size = New System.Drawing.Size(140, 60)
@@ -449,7 +419,7 @@ Partial Class FProductores
         Me.BEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BEditar.Image = CType(resources.GetObject("BEditar.Image"), System.Drawing.Image)
         Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BEditar.Location = New System.Drawing.Point(243, 462)
+        Me.BEditar.Location = New System.Drawing.Point(217, 462)
         Me.BEditar.Name = "BEditar"
         Me.BEditar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BEditar.Size = New System.Drawing.Size(150, 60)
@@ -502,8 +472,6 @@ Partial Class FProductores
         Me.Controls.Add(Me.BGuardar)
         Me.Controls.Add(Me.BNuevo)
         Me.Controls.Add(Me.ProductoresDataGridView)
-        Me.Controls.Add(IdProductorLabel)
-        Me.Controls.Add(Me.IdProductorTextBox)
         Me.Controls.Add(NumProductorLabel)
         Me.Controls.Add(Me.NumProductorTextBox)
         Me.Controls.Add(NombreLabel)
@@ -549,15 +517,10 @@ Partial Class FProductores
     Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
-    Friend WithEvents IdProductorTextBox As TextBox
     Friend WithEvents NumProductorTextBox As TextBox
     Friend WithEvents NombreTextBox As TextBox
     Friend WithEvents TelefonoTextBox As TextBox
     Friend WithEvents ProductoresDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents BEliminar As Button
     Friend WithEvents BCancelar As Button
     Friend WithEvents BGuardar As Button
@@ -566,4 +529,7 @@ Partial Class FProductores
     Friend WithEvents BBuscar As Button
     Friend WithEvents TextBoxBuscar As TextBox
     Friend WithEvents LabelListado As Label
+    Friend WithEvents NumProductor As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
 End Class

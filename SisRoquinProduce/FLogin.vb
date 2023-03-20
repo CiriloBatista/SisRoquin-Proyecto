@@ -11,14 +11,17 @@
         'TODO: esta línea de código carga datos en la tabla 'RoquinDBDataSet.Usuarios' Puede moverla o quitarla según sea necesario.
         Me.UsuariosTableAdapter.Fill(Me.RoquinDBDataSet.Usuarios)
         TextBoxUsuario.Focus()
-        If GlobalVariables.autorizar = "autorizacion" Then
+        Dim autorizacion = GlobalVariables.autorizar
+        If autorizacion <> "" Then
             BIngresar.Visible = False
             BSalir.Visible = False
             BAutorizar.Visible = True
-        Else
+            BCancelar.Visible = True
+        ElseIf autorizacion = "" Then
             BIngresar.Visible = True
             BSalir.Visible = True
-            BAutorizar.visible = False
+            BAutorizar.Visible = False
+            BCancelar.Visible = False
         End If
         Actualiza()
     End Sub
@@ -105,6 +108,7 @@
         Else
             GlobalVariables.accionForm = "sinpermiso"
             FAlertInfo.Show()
+            GlobalVariables.autorizar = ""
             Me.Close()
         End If
     End Sub
@@ -112,4 +116,5 @@
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
         Me.Close()
     End Sub
+
 End Class

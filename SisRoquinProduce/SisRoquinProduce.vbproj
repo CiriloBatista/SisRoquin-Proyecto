@@ -94,6 +94,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FAbout.Designer.vb">
+      <DependentUpon>FAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FAlertErr.Designer.vb">
       <DependentUpon>FAlertErr.vb</DependentUpon>
     </Compile>
@@ -199,6 +205,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FAbout.resx">
+      <DependentUpon>FAbout.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FAlertErr.resx">
       <DependentUpon>FAlertErr.vb</DependentUpon>
     </EmbeddedResource>

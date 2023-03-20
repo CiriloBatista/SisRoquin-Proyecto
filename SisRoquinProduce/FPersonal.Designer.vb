@@ -23,7 +23,6 @@ Partial Class FPersonal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim IdPersonalLabel As System.Windows.Forms.Label
         Dim NumEmpleadoLabel As System.Windows.Forms.Label
         Dim NombreEmpleadoLabel As System.Windows.Forms.Label
         Dim ApellidosEmpLabel As System.Windows.Forms.Label
@@ -48,13 +47,11 @@ Partial Class FPersonal
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.IdPersonalTextBox = New System.Windows.Forms.TextBox()
         Me.NumEmpleadoTextBox = New System.Windows.Forms.TextBox()
         Me.NombreEmpleadoTextBox = New System.Windows.Forms.TextBox()
         Me.ApellidosEmpTextBox = New System.Windows.Forms.TextBox()
         Me.PuestoTextBox = New System.Windows.Forms.TextBox()
         Me.PersonalDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -70,7 +67,6 @@ Partial Class FPersonal
         Me.BBuscar = New System.Windows.Forms.Button()
         Me.TextBoxBuscar = New System.Windows.Forms.TextBox()
         Me.LabelListado = New System.Windows.Forms.Label()
-        IdPersonalLabel = New System.Windows.Forms.Label()
         NumEmpleadoLabel = New System.Windows.Forms.Label()
         NombreEmpleadoLabel = New System.Windows.Forms.Label()
         ApellidosEmpLabel = New System.Windows.Forms.Label()
@@ -84,31 +80,21 @@ Partial Class FPersonal
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'IdPersonalLabel
-        '
-        IdPersonalLabel.AutoSize = True
-        IdPersonalLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        IdPersonalLabel.Location = New System.Drawing.Point(68, 270)
-        IdPersonalLabel.Name = "IdPersonalLabel"
-        IdPersonalLabel.Size = New System.Drawing.Size(141, 29)
-        IdPersonalLabel.TabIndex = 1
-        IdPersonalLabel.Text = "Id Personal:"
-        '
         'NumEmpleadoLabel
         '
         NumEmpleadoLabel.AutoSize = True
         NumEmpleadoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        NumEmpleadoLabel.Location = New System.Drawing.Point(22, 320)
+        NumEmpleadoLabel.Location = New System.Drawing.Point(46, 287)
         NumEmpleadoLabel.Name = "NumEmpleadoLabel"
-        NumEmpleadoLabel.Size = New System.Drawing.Size(187, 29)
+        NumEmpleadoLabel.Size = New System.Drawing.Size(130, 29)
         NumEmpleadoLabel.TabIndex = 3
-        NumEmpleadoLabel.Text = "Num Empleado:"
+        NumEmpleadoLabel.Text = "Empleado:"
         '
         'NombreEmpleadoLabel
         '
         NombreEmpleadoLabel.AutoSize = True
         NombreEmpleadoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        NombreEmpleadoLabel.Location = New System.Drawing.Point(102, 370)
+        NombreEmpleadoLabel.Location = New System.Drawing.Point(46, 335)
         NombreEmpleadoLabel.Name = "NombreEmpleadoLabel"
         NombreEmpleadoLabel.Size = New System.Drawing.Size(107, 29)
         NombreEmpleadoLabel.TabIndex = 5
@@ -118,7 +104,7 @@ Partial Class FPersonal
         '
         ApellidosEmpLabel.AutoSize = True
         ApellidosEmpLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        ApellidosEmpLabel.Location = New System.Drawing.Point(89, 420)
+        ApellidosEmpLabel.Location = New System.Drawing.Point(46, 385)
         ApellidosEmpLabel.Name = "ApellidosEmpLabel"
         ApellidosEmpLabel.Size = New System.Drawing.Size(120, 29)
         ApellidosEmpLabel.TabIndex = 7
@@ -128,7 +114,7 @@ Partial Class FPersonal
         '
         PuestoLabel.AutoSize = True
         PuestoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        PuestoLabel.Location = New System.Drawing.Point(115, 470)
+        PuestoLabel.Location = New System.Drawing.Point(46, 435)
         PuestoLabel.Name = "PuestoLabel"
         PuestoLabel.Size = New System.Drawing.Size(94, 29)
         PuestoLabel.TabIndex = 9
@@ -246,27 +232,15 @@ Partial Class FPersonal
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
         '
-        'IdPersonalTextBox
-        '
-        Me.IdPersonalTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.IdPersonalTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "IdPersonal", True))
-        Me.IdPersonalTextBox.Enabled = False
-        Me.IdPersonalTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.IdPersonalTextBox.Location = New System.Drawing.Point(227, 270)
-        Me.IdPersonalTextBox.Name = "IdPersonalTextBox"
-        Me.IdPersonalTextBox.ReadOnly = True
-        Me.IdPersonalTextBox.Size = New System.Drawing.Size(100, 34)
-        Me.IdPersonalTextBox.TabIndex = 2
-        '
         'NumEmpleadoTextBox
         '
         Me.NumEmpleadoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NumEmpleadoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "NumEmpleado", True))
         Me.NumEmpleadoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.NumEmpleadoTextBox.Location = New System.Drawing.Point(227, 320)
+        Me.NumEmpleadoTextBox.Location = New System.Drawing.Point(195, 285)
         Me.NumEmpleadoTextBox.MaxLength = 20
         Me.NumEmpleadoTextBox.Name = "NumEmpleadoTextBox"
-        Me.NumEmpleadoTextBox.Size = New System.Drawing.Size(100, 34)
+        Me.NumEmpleadoTextBox.Size = New System.Drawing.Size(150, 34)
         Me.NumEmpleadoTextBox.TabIndex = 4
         '
         'NombreEmpleadoTextBox
@@ -274,10 +248,10 @@ Partial Class FPersonal
         Me.NombreEmpleadoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NombreEmpleadoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "NombreEmpleado", True))
         Me.NombreEmpleadoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.NombreEmpleadoTextBox.Location = New System.Drawing.Point(227, 370)
+        Me.NombreEmpleadoTextBox.Location = New System.Drawing.Point(169, 335)
         Me.NombreEmpleadoTextBox.MaxLength = 50
         Me.NombreEmpleadoTextBox.Name = "NombreEmpleadoTextBox"
-        Me.NombreEmpleadoTextBox.Size = New System.Drawing.Size(150, 34)
+        Me.NombreEmpleadoTextBox.Size = New System.Drawing.Size(176, 34)
         Me.NombreEmpleadoTextBox.TabIndex = 6
         '
         'ApellidosEmpTextBox
@@ -285,10 +259,10 @@ Partial Class FPersonal
         Me.ApellidosEmpTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ApellidosEmpTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "ApellidosEmp", True))
         Me.ApellidosEmpTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.ApellidosEmpTextBox.Location = New System.Drawing.Point(227, 420)
+        Me.ApellidosEmpTextBox.Location = New System.Drawing.Point(174, 385)
         Me.ApellidosEmpTextBox.MaxLength = 100
         Me.ApellidosEmpTextBox.Name = "ApellidosEmpTextBox"
-        Me.ApellidosEmpTextBox.Size = New System.Drawing.Size(150, 34)
+        Me.ApellidosEmpTextBox.Size = New System.Drawing.Size(171, 34)
         Me.ApellidosEmpTextBox.TabIndex = 8
         '
         'PuestoTextBox
@@ -296,10 +270,10 @@ Partial Class FPersonal
         Me.PuestoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PuestoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PersonalBindingSource, "Puesto", True))
         Me.PuestoTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.PuestoTextBox.Location = New System.Drawing.Point(227, 470)
+        Me.PuestoTextBox.Location = New System.Drawing.Point(148, 435)
         Me.PuestoTextBox.MaxLength = 100
         Me.PuestoTextBox.Name = "PuestoTextBox"
-        Me.PuestoTextBox.Size = New System.Drawing.Size(150, 34)
+        Me.PuestoTextBox.Size = New System.Drawing.Size(197, 34)
         Me.PuestoTextBox.TabIndex = 10
         '
         'PersonalDataGridView
@@ -324,7 +298,7 @@ Partial Class FPersonal
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.PersonalDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.PersonalDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PersonalDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
+        Me.PersonalDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
         Me.PersonalDataGridView.DataSource = Me.PersonalBindingSource
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
@@ -354,16 +328,10 @@ Partial Class FPersonal
         Me.PersonalDataGridView.Size = New System.Drawing.Size(560, 314)
         Me.PersonalDataGridView.TabIndex = 11
         '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "IdPersonal"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Id Personal"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "NumEmpleado"
+        Me.DataGridViewTextBoxColumn2.FillWeight = 70.0!
         Me.DataGridViewTextBoxColumn2.HeaderText = "Num Empleado"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
@@ -430,7 +398,7 @@ Partial Class FPersonal
         Me.BCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BCancelar.Image = CType(resources.GetObject("BCancelar.Image"), System.Drawing.Image)
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCancelar.Location = New System.Drawing.Point(139, 529)
+        Me.BCancelar.Location = New System.Drawing.Point(209, 508)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BCancelar.Size = New System.Drawing.Size(150, 60)
@@ -445,7 +413,7 @@ Partial Class FPersonal
         Me.BGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BGuardar.Image = CType(resources.GetObject("BGuardar.Image"), System.Drawing.Image)
-        Me.BGuardar.Location = New System.Drawing.Point(844, 573)
+        Me.BGuardar.Location = New System.Drawing.Point(130, 508)
         Me.BGuardar.Name = "BGuardar"
         Me.BGuardar.Padding = New System.Windows.Forms.Padding(10, 0, 10, 0)
         Me.BGuardar.Size = New System.Drawing.Size(60, 60)
@@ -459,7 +427,7 @@ Partial Class FPersonal
         Me.BNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BNuevo.Image = CType(resources.GetObject("BNuevo.Image"), System.Drawing.Image)
         Me.BNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BNuevo.Location = New System.Drawing.Point(68, 529)
+        Me.BNuevo.Location = New System.Drawing.Point(50, 507)
         Me.BNuevo.Name = "BNuevo"
         Me.BNuevo.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BNuevo.Size = New System.Drawing.Size(140, 60)
@@ -485,7 +453,7 @@ Partial Class FPersonal
         Me.BEditar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.BEditar.Image = CType(resources.GetObject("BEditar.Image"), System.Drawing.Image)
         Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BEditar.Location = New System.Drawing.Point(225, 530)
+        Me.BEditar.Location = New System.Drawing.Point(207, 508)
         Me.BEditar.Name = "BEditar"
         Me.BEditar.Padding = New System.Windows.Forms.Padding(8, 0, 8, 0)
         Me.BEditar.Size = New System.Drawing.Size(150, 60)
@@ -539,8 +507,6 @@ Partial Class FPersonal
         Me.Controls.Add(Me.BNuevo)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.PersonalDataGridView)
-        Me.Controls.Add(IdPersonalLabel)
-        Me.Controls.Add(Me.IdPersonalTextBox)
         Me.Controls.Add(NumEmpleadoLabel)
         Me.Controls.Add(Me.NumEmpleadoTextBox)
         Me.Controls.Add(NombreEmpleadoLabel)
@@ -583,18 +549,12 @@ Partial Class FPersonal
     Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
-    Friend WithEvents IdPersonalTextBox As TextBox
     Friend WithEvents NumEmpleadoTextBox As TextBox
     Friend WithEvents NombreEmpleadoTextBox As TextBox
     Friend WithEvents ApellidosEmpTextBox As TextBox
     Friend WithEvents PuestoTextBox As TextBox
     Friend WithEvents PersonalDataGridView As DataGridView
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents Panel1 As Panel
     Friend WithEvents LabelPersonal As Label
     Friend WithEvents BNuevo As Button
@@ -605,4 +565,8 @@ Partial Class FPersonal
     Friend WithEvents BBuscar As Button
     Friend WithEvents TextBoxBuscar As TextBox
     Friend WithEvents LabelListado As Label
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
 End Class

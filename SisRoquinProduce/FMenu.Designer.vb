@@ -27,13 +27,15 @@ Partial Class FMenu
         Me.CatalogoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PersonalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProduccionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SectoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProducciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CosechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProducciónToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -42,7 +44,7 @@ Partial Class FMenu
         Me.MenuStrip1.BackColor = System.Drawing.Color.LightGreen
         Me.MenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatalogoToolStripMenuItem, Me.InformesToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatalogoToolStripMenuItem, Me.SalirToolStripMenuItem, Me.ProducciónToolStripMenuItem, Me.InformesToolStripMenuItem, Me.AcercaDeToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(6, 10, 6, 10)
@@ -52,7 +54,7 @@ Partial Class FMenu
         '
         'CatalogoToolStripMenuItem
         '
-        Me.CatalogoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PersonalToolStripMenuItem, Me.ProductoresToolStripMenuItem, Me.ProduccionToolStripMenuItem, Me.SectoresToolStripMenuItem, Me.UsuariosToolStripMenuItem})
+        Me.CatalogoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PersonalToolStripMenuItem, Me.ProductoresToolStripMenuItem, Me.SectoresToolStripMenuItem, Me.UsuariosToolStripMenuItem})
         Me.CatalogoToolStripMenuItem.Image = CType(resources.GetObject("CatalogoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CatalogoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CatalogoToolStripMenuItem.Name = "CatalogoToolStripMenuItem"
@@ -71,12 +73,6 @@ Partial Class FMenu
         Me.ProductoresToolStripMenuItem.Size = New System.Drawing.Size(269, 40)
         Me.ProductoresToolStripMenuItem.Text = "Productores"
         '
-        'ProduccionToolStripMenuItem
-        '
-        Me.ProduccionToolStripMenuItem.Name = "ProduccionToolStripMenuItem"
-        Me.ProduccionToolStripMenuItem.Size = New System.Drawing.Size(269, 40)
-        Me.ProduccionToolStripMenuItem.Text = "Producción"
-        '
         'SectoresToolStripMenuItem
         '
         Me.SectoresToolStripMenuItem.Name = "SectoresToolStripMenuItem"
@@ -88,6 +84,34 @@ Partial Class FMenu
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
         Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(269, 40)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
+        '
+        'SalirToolStripMenuItem
+        '
+        Me.SalirToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.SalirToolStripMenuItem.BackColor = System.Drawing.Color.LightCoral
+        Me.SalirToolStripMenuItem.ForeColor = System.Drawing.Color.Black
+        Me.SalirToolStripMenuItem.Image = CType(resources.GetObject("SalirToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SalirToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.SalirToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 0, 6, 0)
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        Me.SalirToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(142, 54)
+        Me.SalirToolStripMenuItem.Text = "Salir"
+        '
+        'ProducciónToolStripMenuItem
+        '
+        Me.ProducciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CosechaToolStripMenuItem})
+        Me.ProducciónToolStripMenuItem.Image = CType(resources.GetObject("ProducciónToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.ProducciónToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ProducciónToolStripMenuItem.Name = "ProducciónToolStripMenuItem"
+        Me.ProducciónToolStripMenuItem.Size = New System.Drawing.Size(239, 54)
+        Me.ProducciónToolStripMenuItem.Text = "Producción"
+        '
+        'CosechaToolStripMenuItem
+        '
+        Me.CosechaToolStripMenuItem.Name = "CosechaToolStripMenuItem"
+        Me.CosechaToolStripMenuItem.Size = New System.Drawing.Size(220, 40)
+        Me.CosechaToolStripMenuItem.Text = "Cosecha"
         '
         'InformesToolStripMenuItem
         '
@@ -110,18 +134,13 @@ Partial Class FMenu
         Me.ProducciónToolStripMenuItem1.Size = New System.Drawing.Size(258, 40)
         Me.ProducciónToolStripMenuItem1.Text = "Producción"
         '
-        'SalirToolStripMenuItem
+        'AcercaDeToolStripMenuItem
         '
-        Me.SalirToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.SalirToolStripMenuItem.BackColor = System.Drawing.Color.LightCoral
-        Me.SalirToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.SalirToolStripMenuItem.Image = CType(resources.GetObject("SalirToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.SalirToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.SalirToolStripMenuItem.Margin = New System.Windows.Forms.Padding(0, 0, 6, 0)
-        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(142, 54)
-        Me.SalirToolStripMenuItem.Text = "Salir"
+        Me.AcercaDeToolStripMenuItem.Image = CType(resources.GetObject("AcercaDeToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.AcercaDeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(227, 54)
+        Me.AcercaDeToolStripMenuItem.Text = "Acerca de..."
         '
         'FMenu
         '
@@ -153,11 +172,13 @@ Partial Class FMenu
     Friend WithEvents CatalogoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PersonalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProductoresToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ProduccionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SectoresToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InformesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProducciónToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ProducciónToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CosechaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
 End Class

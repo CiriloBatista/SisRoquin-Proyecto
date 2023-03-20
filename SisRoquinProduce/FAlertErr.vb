@@ -11,7 +11,7 @@
     End Sub
 
     Private Sub BSi_Click(sender As Object, e As EventArgs) Handles BSi.Click
-        GlobalVariables.autorizar = "autorizacion"
+        GlobalVariables.autorizar = "autorizar"
         FLogin.Show()
         Me.Close()
     End Sub
